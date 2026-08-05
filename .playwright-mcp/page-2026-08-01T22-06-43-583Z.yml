@@ -1,0 +1,314 @@
+- main [ref=f2e3]:
+  - link "Pular para o conteúdo" [ref=f2e4] [cursor=pointer]:
+    - /url: "#conteudo"
+  - generic [ref=f2e6]:
+    - link "HAWKS BI — Smile Check, início" [ref=f2e7] [cursor=pointer]:
+      - /url: "#inicio"
+      - img "HAWKS BI" [ref=f2e8]
+      - generic [ref=f2e9]: Smile Check
+    - navigation "Navegação principal" [ref=f2e10]:
+      - link "Como funciona" [ref=f2e11] [cursor=pointer]:
+        - /url: "#como-funciona"
+      - link "Recursos" [ref=f2e12] [cursor=pointer]:
+        - /url: "#recursos"
+      - link "Para quem é" [ref=f2e13] [cursor=pointer]:
+        - /url: "#papeis"
+      - link "Controle" [ref=f2e14] [cursor=pointer]:
+        - /url: "#controle"
+    - generic [ref=f2e15]:
+      - link "Entrar" [ref=f2e16] [cursor=pointer]:
+        - /url: /login
+      - link "Solicitar demonstração" [ref=f2e17] [cursor=pointer]:
+        - /url: mailto:contato@hawksbi.com?subject=Solicitar%20demonstra%C3%A7%C3%A3o%20%E2%80%94%20Smile%20Check
+        - generic [ref=f2e19]: ↗
+  - region [ref=f2e20]:
+    - generic [ref=f2e21]:
+      - generic [ref=f2e22]:
+        - paragraph [ref=f2e23]: Controle operacional
+        - heading [level=1] [ref=f2e24]:
+          - text: A rotina certa.No momento certo.
+          - emphasis [ref=f2e25]: Com a evidência certa.
+        - paragraph [ref=f2e26]: O Smile Check organiza rotinas por setor e turno, orienta a execução e mostra ao gestor o que precisa de atenção antes que vire um problema maior.
+        - generic [ref=f2e27]:
+          - link "Solicitar demonstração" [ref=f2e28] [cursor=pointer]:
+            - /url: mailto:contato@hawksbi.com?subject=Solicitar%20demonstra%C3%A7%C3%A3o%20%E2%80%94%20Smile%20Check
+            - generic [ref=f2e30]: ↗
+          - link "Conhecer o sistema" [ref=f2e31] [cursor=pointer]:
+            - /url: "#como-funciona"
+            - text: Conhecer o sistema
+            - generic [ref=f2e32]: ↓
+      - generic "Demonstração sintética do painel gerencial do Smile Check" [ref=f2e33]:
+        - generic [ref=f2e34]:
+          - generic [ref=f2e35]: Smile Check
+          - generic [ref=f2e36]: Painel · 18 AGO 2026
+          - generic [ref=f2e37]: DEMONSTRAÇÃO · DADOS SINTÉTICOS
+        - generic [ref=f2e38]:
+          - generic [ref=f2e39]:
+            - generic [ref=f2e40]:
+              - paragraph [ref=f2e41]: Visão do dia
+              - strong [ref=f2e42]: O que precisa de atenção agora.
+            - generic [ref=f2e43]: 3 pendências
+          - generic [ref=f2e44]:
+            - generic [ref=f2e45]:
+              - generic [ref=f2e47]:
+                - strong [ref=f2e48]: Temperatura fora da faixa
+                - generic [ref=f2e49]: Operação 02 · Câmara fria · Manhã
+              - generic [ref=f2e50]:
+                - text: Abrir
+                - generic [ref=f2e51]: ↗
+            - generic [ref=f2e52]:
+              - generic [ref=f2e54]:
+                - strong [ref=f2e55]: Rotina atrasada
+                - generic [ref=f2e56]: Produção · Limpeza de bancada · Manhã
+              - generic [ref=f2e57]:
+                - text: Abrir
+                - generic [ref=f2e58]: ↗
+            - generic [ref=f2e59]:
+              - generic [ref=f2e61]:
+                - strong [ref=f2e62]: Evidência pendente
+                - generic [ref=f2e63]: Expedição · Conferência final · Tarde
+              - generic [ref=f2e64]:
+                - text: Ver
+                - generic [ref=f2e65]: ↗
+          - generic [ref=f2e66]:
+            - generic [ref=f2e67]: 12 rotinas previstas
+            - generic [ref=f2e68]: 9 finalizadas
+            - link "Ver visão completa" [ref=f2e69] [cursor=pointer]:
+              - /url: "#recursos"
+              - text: Ver visão completa →
+  - region [ref=f2e70]:
+    - generic [ref=f2e71]:
+      - generic [ref=f2e72]:
+        - paragraph [ref=f2e73]: O problema
+        - heading "Quando cada setor controla de um jeito, a gestão descobre tarde." [level=2] [ref=f2e74]
+      - generic [ref=f2e75]:
+        - article [ref=f2e76]:
+          - text: "01"
+          - paragraph [ref=f2e77]: Tarefa feita sem evidência.
+        - article [ref=f2e78]:
+          - text: "02"
+          - paragraph [ref=f2e79]: Problema registrado longe da rotina.
+        - article [ref=f2e80]:
+          - text: "03"
+          - paragraph [ref=f2e81]: Gestor procurando a exceção no meio de todos os registros.
+  - region [ref=f2e82]:
+    - generic [ref=f2e83]:
+      - generic [ref=f2e84]:
+        - paragraph [ref=f2e85]: Como funciona
+        - heading "Da execução no local à decisão da gestão." [level=2] [ref=f2e86]
+        - paragraph [ref=f2e87]: Um único fluxo para rotinas, respostas, fotos, correções, temperaturas e histórico.
+      - list [ref=f2e88]:
+        - listitem [ref=f2e89]:
+          - generic [ref=f2e90]: "01"
+          - generic [ref=f2e91]:
+            - heading "Configure a rotina." [level=3] [ref=f2e92]
+            - paragraph [ref=f2e93]: Defina setores, itens, turnos, dias ativos e faixas de temperatura de acordo com a operação real.
+          - generic [ref=f2e94]: ↘
+        - listitem [ref=f2e95]:
+          - generic [ref=f2e96]: "02"
+          - generic [ref=f2e97]:
+            - heading "Execute no local." [level=3] [ref=f2e98]
+            - paragraph [ref=f2e99]: O operador encontra a fila do dia, responde item a item e registra a correção quando algo sai do padrão.
+          - generic [ref=f2e100]: ↘
+        - listitem [ref=f2e101]:
+          - generic [ref=f2e102]: "03"
+          - generic [ref=f2e103]:
+            - heading "Acompanhe o que importa." [level=3] [ref=f2e104]
+            - paragraph [ref=f2e105]: O gestor começa pelas exceções, abre o detalhe com evidência e consulta o histórico sem procurar em controles paralelos.
+          - generic [ref=f2e106]: ↘
+  - region [ref=f2e107]:
+    - generic [ref=f2e108]:
+      - generic [ref=f2e109]:
+        - paragraph [ref=f2e110]: Gestão por exceção
+        - heading "Veja o que exige ação agora." [level=2] [ref=f2e111]
+        - paragraph [ref=f2e112]: A visão do gestor começa por atrasos, não conformidades, leituras críticas e evidências faltando — com caminho direto para abrir a rotina.
+        - link "Como a evidência permanece" [ref=f2e113] [cursor=pointer]:
+          - /url: "#evidencias"
+          - text: Como a evidência permanece
+          - generic [ref=f2e114]: ↓
+      - generic [ref=f2e115]:
+        - generic [ref=f2e116]:
+          - generic [ref=f2e117]: Saúde dos setores
+          - strong [ref=f2e118]: DEMONSTRAÇÃO
+        - generic [ref=f2e119]:
+          - generic [ref=f2e120]: Atenção
+          - generic [ref=f2e121]:
+            - strong [ref=f2e122]: Produção
+            - paragraph [ref=f2e123]: 6 de 8 rotinas finalizadas · 1 leitura fora da faixa.
+          - link "Ver setor" [ref=f2e124] [cursor=pointer]:
+            - /url: "#temperatura"
+            - text: Ver setor ↗
+        - generic [ref=f2e125]:
+          - generic [ref=f2e126]: Em andamento
+          - generic [ref=f2e127]:
+            - strong [ref=f2e128]: Expedição
+            - paragraph [ref=f2e129]: 4 de 5 rotinas finalizadas · Nenhuma evidência pendente.
+          - link "Ver setor" [ref=f2e130] [cursor=pointer]:
+            - /url: "#rotinas"
+            - text: Ver setor ↗
+        - generic [ref=f2e131]:
+          - generic [ref=f2e132]: OK
+          - generic [ref=f2e133]:
+            - strong [ref=f2e134]: Atendimento
+            - paragraph [ref=f2e135]: 3 de 3 rotinas finalizadas · Conformidade registrada.
+          - link "Ver setor" [ref=f2e136] [cursor=pointer]:
+            - /url: "#evidencias"
+            - text: Ver setor ↗
+  - region [ref=f2e137]:
+    - generic [ref=f2e138]:
+      - generic "Demonstração da fila diária de um operador" [ref=f2e139]:
+        - generic [ref=f2e140]:
+          - generic [ref=f2e141]: ‹
+          - strong [ref=f2e142]: Rotinas de hoje
+          - generic [ref=f2e143]: •••
+        - generic [ref=f2e144]:
+          - generic [ref=f2e145]: SEG, 18 AGO
+          - strong [ref=f2e146]: 3 para fazer
+        - generic [ref=f2e147]:
+          - generic [ref=f2e148]: 08:00
+          - generic [ref=f2e149]:
+            - strong [ref=f2e150]: Limpeza de bancada
+            - paragraph [ref=f2e151]: Produção · 8 itens
+          - emphasis [ref=f2e152]: Atrasada
+        - generic [ref=f2e153]:
+          - generic [ref=f2e154]: 13:30
+          - generic [ref=f2e155]:
+            - strong [ref=f2e156]: Conferência final
+            - paragraph [ref=f2e157]: Expedição · 6 itens
+          - emphasis [ref=f2e158]: Em andamento
+        - generic [ref=f2e159]:
+          - generic [ref=f2e160]: 15:00
+          - generic [ref=f2e161]:
+            - strong [ref=f2e162]: Temperatura da vitrine
+            - paragraph [ref=f2e163]: Atendimento · 2 itens
+          - emphasis [ref=f2e164]: Pendente
+      - generic [ref=f2e165]:
+        - paragraph [ref=f2e166]: Para quem executa
+        - heading "A rotina certa, no turno certo." [level=2] [ref=f2e167]
+        - paragraph [ref=f2e168]: O operador vê o que precisa fazer hoje, inicia a rotina e registra cada resposta sem interromper o trabalho.
+        - list [ref=f2e169]:
+          - listitem [ref=f2e170]:
+            - generic [ref=f2e171]: Fila do dia
+            - strong [ref=f2e172]: setor, turno, prazo e situação
+          - listitem [ref=f2e173]:
+            - generic [ref=f2e174]: Execução guiada
+            - strong [ref=f2e175]: itens, subrotinas e correções
+          - listitem [ref=f2e176]:
+            - generic [ref=f2e177]: Contexto no registro
+            - strong [ref=f2e178]: foto e temperatura quando necessário
+  - region [ref=f2e179]:
+    - generic [ref=f2e180]:
+      - generic [ref=f2e181]:
+        - paragraph [ref=f2e182]: Evidência no registro
+        - heading "Toda resposta pode carregar contexto." [level=2] [ref=f2e183]
+        - paragraph [ref=f2e184]: Registre conformidade, descreva o ajuste, anexe a foto e mantenha a evidência junto da execução — onde ela faz sentido.
+      - generic [ref=f2e185]:
+        - generic [ref=f2e186]:
+          - generic [ref=f2e187]: Produção · Limpeza de bancada
+          - strong [ref=f2e188]: Item 04 de 08
+        - generic [ref=f2e189]:
+          - generic [ref=f2e190]: Resposta
+          - strong [ref=f2e191]: Não conforme
+        - generic [ref=f2e193]:
+          - generic [ref=f2e194]: Correção
+          - strong [ref=f2e195]: Higienização refeita antes do início da produção.
+        - generic [ref=f2e196]:
+          - generic [ref=f2e197]: Foto registrada
+          - generic "Espaço reservado para a prévia da foto da evidência" [ref=f2e198]: Prévia da evidência
+          - emphasis [ref=f2e200]: 08:16
+  - region [ref=f2e201]:
+    - generic [ref=f2e202]:
+      - generic [ref=f2e203]:
+        - generic [ref=f2e204]:
+          - generic [ref=f2e205]: Leitura de temperatura
+          - strong [ref=f2e206]: DEMONSTRAÇÃO
+        - generic [ref=f2e207]:
+          - generic [ref=f2e208]: Alimento
+          - strong [ref=f2e209]: 8,6°
+          - emphasis [ref=f2e210]: Fora da faixa
+        - generic [ref=f2e211]:
+          - generic [ref=f2e212]: Faixa configurada
+          - strong [ref=f2e217]: 2° — 5°
+        - generic [ref=f2e218]:
+          - generic [ref=f2e219]: "Equipamento: Câmara fria 02"
+          - generic [ref=f2e220]: "Leitura: 08:05 · Manhã"
+      - generic [ref=f2e221]:
+        - paragraph [ref=f2e222]: Temperatura e relatório
+        - heading "Temperatura com faixa, histórico e leitura." [level=2] [ref=f2e223]
+        - paragraph [ref=f2e224]: Compare equipamento e alimento com os limites cadastrados, acompanhe situações críticas e gere o relatório do período em PDF.
+        - generic [ref=f2e225]:
+          - generic [ref=f2e226]:
+            - term [ref=f2e227]: Entrada
+            - definition [ref=f2e228]: Equipamento e alimento
+          - generic [ref=f2e229]:
+            - term [ref=f2e230]: Leitura
+            - definition [ref=f2e231]: Dentro, fora, próxima ou ausente
+          - generic [ref=f2e232]:
+            - term [ref=f2e233]: Saída
+            - definition [ref=f2e234]: Relatório por período e equipamento
+  - region [ref=f2e235]:
+    - generic [ref=f2e236]:
+      - generic [ref=f2e237]:
+        - paragraph [ref=f2e238]: Uma operação, três perspectivas
+        - heading "Cada pessoa vê o que precisa para agir." [level=2] [ref=f2e239]
+      - generic [ref=f2e240]:
+        - article [ref=f2e241]:
+          - text: "01"
+          - heading "Operador" [level=3] [ref=f2e242]
+          - paragraph [ref=f2e243]: Saiba o que fazer agora e registre sem interromper o trabalho.
+          - strong [ref=f2e244]: Fila do dia, turnos, status, fotos e check de temperatura.
+        - article [ref=f2e245]:
+          - text: "02"
+          - heading "Gestor" [level=3] [ref=f2e246]
+          - paragraph [ref=f2e247]: Encontre a exceção antes de abrir o relatório inteiro.
+          - strong [ref=f2e248]: Atenção agora, saúde dos setores, rankings e detalhe da rotina.
+        - article [ref=f2e249]:
+          - text: "03"
+          - heading "Administrador" [level=3] [ref=f2e250]
+          - paragraph [ref=f2e251]: Modele a operação e distribua o acesso certo.
+          - strong [ref=f2e252]: Setores, rotinas, subrotinas, grupos, papéis e permissões.
+  - region [ref=f2e253]:
+    - generic [ref=f2e254]:
+      - generic [ref=f2e255]:
+        - paragraph [ref=f2e256]: Configuração e acesso
+        - heading "A operação muda. A configuração acompanha." [level=2] [ref=f2e257]
+        - paragraph [ref=f2e258]: Monte setores, rotinas, subrotinas, itens, turnos, dias ativos, fotos obrigatórias e faixas ideais sem depender de controles paralelos.
+      - generic "Mapa da configuração operacional" [ref=f2e259]:
+        - generic [ref=f2e260]:
+          - strong [ref=f2e261]: Estrutura da operação
+          - generic [ref=f2e262]: Organização
+        - generic [ref=f2e263]:
+          - generic [ref=f2e264]: Setores
+          - generic [ref=f2e265]: →
+          - generic [ref=f2e266]: Rotinas
+          - generic [ref=f2e267]: →
+          - generic [ref=f2e268]: Itens
+        - generic [ref=f2e270]:
+          - generic [ref=f2e271]: Grupos
+          - generic [ref=f2e272]: →
+          - generic [ref=f2e273]: Visibilidade por papel
+        - paragraph [ref=f2e274]:
+          - strong [ref=f2e275]: Sinal opcional
+          - text: Escolha setores e eventos de início ou conclusão que devem avisar este gestor.
+  - region [ref=f2e276]:
+    - generic [ref=f2e277]:
+      - generic [ref=f2e278]:
+        - paragraph [ref=f2e279]: Smile Check · HAWKS BI
+        - heading "Coloque a rotina no fluxo da operação." [level=2] [ref=f2e280]
+      - generic [ref=f2e281]:
+        - paragraph [ref=f2e282]: Conheça o Smile Check e veja como transformar execução dispersa em clareza operacional.
+        - link "Solicitar demonstração" [ref=f2e283] [cursor=pointer]:
+          - /url: mailto:contato@hawksbi.com?subject=Solicitar%20demonstra%C3%A7%C3%A3o%20%E2%80%94%20Smile%20Check
+          - generic [ref=f2e285]: ↗
+  - generic [ref=f2e287]:
+    - generic [ref=f2e288]:
+      - img "HAWKS BI" [ref=f2e289]
+      - generic [ref=f2e290]: Smile Check
+    - navigation "Links do rodapé" [ref=f2e291]:
+      - link "Como funciona" [ref=f2e292] [cursor=pointer]:
+        - /url: "#como-funciona"
+      - link "Entrar no sistema" [ref=f2e293] [cursor=pointer]:
+        - /url: /login
+      - link "Solicitar demonstração" [ref=f2e294] [cursor=pointer]:
+        - /url: mailto:contato@hawksbi.com?subject=Solicitar%20demonstra%C3%A7%C3%A3o%20%E2%80%94%20Smile%20Check
+    - paragraph [ref=f2e295]: Controle operacional de rotinas e evidências por setor.

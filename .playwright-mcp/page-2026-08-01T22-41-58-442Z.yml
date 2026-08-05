@@ -1,0 +1,275 @@
+- main [ref=e3]:
+  - link "Pular para o conteúdo" [ref=e4] [cursor=pointer]:
+    - /url: "#conteudo"
+  - generic [ref=e6]:
+    - link "HAWKS BI — Smile Check, início" [ref=e7] [cursor=pointer]:
+      - /url: "#inicio"
+      - img "HAWKS BI" [ref=e8]
+      - generic [ref=e9]: Smile Check
+    - navigation "Navegação principal" [ref=e10]:
+      - link "Produto" [ref=e11] [cursor=pointer]:
+        - /url: "#produto"
+      - link "Como funciona" [ref=e12] [cursor=pointer]:
+        - /url: "#como-funciona"
+      - link "Para quem é" [ref=e13] [cursor=pointer]:
+        - /url: "#para-quem"
+    - generic [ref=e14]:
+      - link "Já sou cliente" [ref=e15] [cursor=pointer]:
+        - /url: http://localhost:5174/login
+      - link "Ver demonstração" [ref=e16] [cursor=pointer]:
+        - /url: mailto:contato@hawksbi.com?subject=Agendar%20demonstra%C3%A7%C3%A3o%20%E2%80%94%20Smile%20Check
+        - generic [ref=e18]: ↗
+  - region [ref=e19]:
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - paragraph [ref=e22]: Smile Check · checklist operacional
+        - heading [level=1] [ref=e24]:
+          - text: Checklist que
+          - emphasis [ref=e25]: move
+          - text: a operação.
+        - paragraph [ref=e26]: A rotina entra em ordem, a exceção aparece cedo e cada resposta deixa um registro. O Smile Check transforma checklist em clareza para quem executa e para quem decide.
+        - generic [ref=e27]:
+          - link "Ver o Smile Check" [ref=e28] [cursor=pointer]:
+            - /url: mailto:contato@hawksbi.com?subject=Agendar%20demonstra%C3%A7%C3%A3o%20%E2%80%94%20Smile%20Check
+            - generic [ref=e30]: ↗
+          - link "Entender o fluxo" [ref=e31] [cursor=pointer]:
+            - /url: "#como-funciona"
+            - text: Entender o fluxo
+            - generic [ref=e32]: ↓
+        - generic [ref=e33]:
+          - generic [ref=e34]: Feito para operações multi-setor
+          - generic [ref=e36]: Interface simples · visão acionável
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - generic [ref=e39]:
+            - generic [ref=e40]:
+              - generic [ref=e41]:
+                - generic [ref=e42]: S
+                - strong [ref=e43]: smile check
+              - generic [ref=e44]:
+                - generic [ref=e45]: Dados fictícios
+                - generic [ref=e46]: MC
+            - generic [ref=e47]:
+              - complementary "Menu do produto" [ref=e48]:
+                - generic [ref=e49]: Visão geral
+                - generic [ref=e51]: Rotinas
+                - generic [ref=e53]: Setores
+                - generic [ref=e55]: Relatórios
+                - generic [ref=e57]: Configurações
+              - generic [ref=e60]:
+                - generic [ref=e61]:
+                  - generic [ref=e62]:
+                    - text: SEG · 18 AGO · MANHÃ
+                    - heading "Visão da operação" [level=3] [ref=e63]
+                  - button "Todos os setores ⌄" [ref=e64]
+                - tablist "Demonstração do Smile Check" [ref=e65]:
+                  - tab "Visão geral" [selected] [ref=e66] [cursor=pointer]
+                  - tab "Execução" [ref=e67] [cursor=pointer]
+                  - tab "Evidência" [ref=e68] [cursor=pointer]
+                - tabpanel [ref=e69]:
+                  - generic [ref=e70]:
+                    - generic [ref=e71]:
+                      - generic [ref=e72]:
+                        - text: Rotinas de hoje
+                        - strong [ref=e73]: "12"
+                      - generic [ref=e75]: 9 concluídas · 3 em atenção
+                    - generic [ref=e76]:
+                      - generic [ref=e77]: Conformidade
+                      - strong [ref=e78]: 92%
+                      - generic [ref=e79]: ↑ 4,8% nesta semana
+                    - generic [ref=e80]:
+                      - generic [ref=e81]: Setores ativos
+                      - strong [ref=e82]: "04"
+                      - generic [ref=e83]: todos com rotina hoje
+                  - generic [ref=e84]:
+                    - generic [ref=e85]:
+                      - generic [ref=e86]:
+                        - generic [ref=e87]: Fila prioritária
+                        - generic [ref=e88]: 3 itens
+                      - generic [ref=e89]:
+                        - generic [ref=e91]:
+                          - strong [ref=e92]: Temperatura da câmara fria
+                          - generic [ref=e93]: Produção · 08:05
+                        - emphasis [ref=e94]: Atenção
+                      - generic [ref=e95]:
+                        - generic [ref=e97]:
+                          - strong [ref=e98]: Limpeza de bancada
+                          - generic [ref=e99]: Produção · 08:16
+                        - emphasis [ref=e100]: Atrasada
+                      - generic [ref=e101]:
+                        - generic [ref=e102]: ✓
+                        - generic [ref=e103]:
+                          - strong [ref=e104]: Conferência final
+                          - generic [ref=e105]: Expedição · 08:42
+                        - emphasis [ref=e106]: Concluída
+                    - generic [ref=e107]:
+                      - generic [ref=e108]:
+                        - generic [ref=e109]: Agora
+                        - generic [ref=e110]: 1 crítica
+                      - strong [ref=e112]: Temperatura fora da faixa
+                      - paragraph [ref=e113]: Câmara fria 02 precisa de correção e novo registro.
+                      - link "Abrir ocorrência ↗" [ref=e114] [cursor=pointer]:
+                        - /url: "#produto"
+                        - text: Abrir ocorrência
+                        - generic [ref=e115]: ↗
+          - generic [ref=e116]:
+            - generic [ref=e118]:
+              - strong [ref=e119]: 1 atenção agora
+              - generic [ref=e120]: Temperatura · Produção
+            - generic [ref=e121]: ↗
+          - generic [ref=e122]:
+            - generic [ref=e123]: ✓
+            - generic [ref=e124]:
+              - strong [ref=e125]: Registro salvo
+              - generic [ref=e126]: com evidência vinculada
+        - paragraph [ref=e127]: Interface ilustrativa · cenário de demonstração
+  - region "Resumo do produto" [ref=e129]:
+    - generic [ref=e130]:
+      - generic [ref=e131]:
+        - strong [ref=e132]: "01"
+        - generic [ref=e133]: Configure uma vez
+        - paragraph [ref=e134]: Setores, turnos e faixas que refletem o seu dia.
+      - generic [ref=e135]:
+        - strong [ref=e136]: "02"
+        - generic [ref=e137]: Execute sem ruído
+        - paragraph [ref=e138]: O time sabe o que fazer e registra no momento.
+      - generic [ref=e139]:
+        - strong [ref=e140]: "03"
+        - generic [ref=e141]: Aja por exceção
+        - paragraph [ref=e142]: A gestão encontra o que merece atenção primeiro.
+  - region [ref=e143]:
+    - generic [ref=e144]:
+      - generic [ref=e145]:
+        - paragraph [ref=e146]: Como funciona
+        - heading "Do checklist à decisão em três movimentos." [level=2] [ref=e148]
+        - paragraph [ref=e149]: Um produto único para ligar o que a operação faz ao que a gestão precisa saber.
+      - generic [ref=e150]:
+        - article [ref=e151]:
+          - generic [ref=e152]: 01 · configurar
+          - generic [ref=e153]:
+            - generic [ref=e156]: Rotina da manhã
+            - generic [ref=e157]: Produção · 08:00
+          - heading "Modele a rotina real." [level=3] [ref=e158]
+          - paragraph [ref=e159]: Cadastre setores, itens, subtarefas e faixas de temperatura sem adaptar o processo ao sistema.
+        - article [ref=e160]:
+          - generic [ref=e161]: 02 · executar
+          - generic [ref=e162]:
+            - generic [ref=e163]: ✓
+            - generic [ref=e164]: 6 de 8 itens
+            - generic [ref=e165]: Registro em andamento
+          - heading "Faça acontecer no local." [level=3] [ref=e166]
+          - paragraph [ref=e167]: O operador recebe a fila certa, responde em sequência e corrige quando algo sai do padrão.
+        - article [ref=e168]:
+          - generic [ref=e169]: 03 · agir
+          - generic [ref=e170]:
+            - generic [ref=e172]: 1 atenção agora
+            - generic [ref=e173]: Câmara fria 02
+          - heading "Decida com contexto." [level=3] [ref=e174]
+          - paragraph [ref=e175]: Exceção, evidência e histórico ficam próximos para a gestão agir sem investigar em vários lugares.
+  - region [ref=e176]:
+    - generic [ref=e177]:
+      - generic [ref=e178]:
+        - generic [ref=e179]:
+          - paragraph [ref=e180]: Dentro do produto
+          - heading [level=2] [ref=e182]:
+            - text: Menos caça ao problema.
+            - emphasis [ref=e183]: Mais ação no momento certo.
+        - paragraph [ref=e184]: O Smile Check organiza a operação em uma leitura que cabe no ritmo do seu time — e na agenda de quem acompanha tudo.
+      - generic [ref=e185]:
+        - generic [ref=e186]:
+          - generic [ref=e187]:
+            - generic [ref=e188]: Fila do dia
+            - generic [ref=e189]: Execução
+          - generic [ref=e190]:
+            - generic [ref=e191]:
+              - generic [ref=e192]: Rotinas de hoje
+              - strong [ref=e193]: 09 / 12
+            - generic [ref=e194]:
+              - generic [ref=e195]: ✓
+              - generic [ref=e196]:
+                - strong [ref=e197]: Limpeza de bancada
+                - generic [ref=e198]: Produção
+              - time [ref=e199]: 08:16
+            - generic [ref=e200]:
+              - generic [ref=e201]: ✓
+              - generic [ref=e202]:
+                - strong [ref=e203]: Conferência final
+                - generic [ref=e204]: Expedição
+              - time [ref=e205]: 08:42
+            - generic [ref=e206]:
+              - generic [ref=e208]:
+                - strong [ref=e209]: Temperatura da câmara
+                - generic [ref=e210]: Produção
+              - time [ref=e211]: Agora
+          - paragraph [ref=e212]: O operador começa pelo que precisa acontecer — não por uma planilha.
+        - generic [ref=e213]:
+          - generic [ref=e214]:
+            - generic [ref=e215]: Gestão por exceção
+            - generic [ref=e216]: Agora
+          - strong [ref=e219]: Temperatura fora da faixa
+          - paragraph [ref=e220]: O sistema sinaliza o desvio antes que ele vire retrabalho.
+          - link "Ver ocorrência ↗" [ref=e221] [cursor=pointer]:
+            - /url: "#solicitar-demonstracao"
+            - text: Ver ocorrência
+            - generic [ref=e222]: ↗
+        - generic [ref=e223]:
+          - generic [ref=e224]:
+            - generic [ref=e225]: Evidência
+            - generic [ref=e226]: Registro
+          - generic [ref=e227]:
+            - generic [ref=e228]: IMG
+            - generic [ref=e229]:
+              - strong [ref=e230]: Correção concluída
+              - generic [ref=e231]: Foto · resposta · horário
+            - generic [ref=e232]: ✓
+          - paragraph [ref=e233]: Tudo que prova a execução permanece ligado ao item certo.
+      - paragraph [ref=e234]: Interface ilustrativa para demonstração comercial · os dados exibidos são fictícios.
+  - region [ref=e235]:
+    - generic [ref=e236]:
+      - generic [ref=e237]:
+        - paragraph [ref=e238]: Para quem é
+        - heading "Uma visão para cada pessoa que faz a operação acontecer." [level=2] [ref=e240]
+        - paragraph [ref=e241]: O mesmo dado muda de forma conforme a responsabilidade — sem criar mais uma camada de trabalho.
+      - generic [ref=e242]:
+        - article [ref=e243]:
+          - generic [ref=e244]: "01"
+          - generic [ref=e245]:
+            - heading "Operador" [level=3] [ref=e246]
+            - paragraph [ref=e247]: Fila do dia, instrução clara e registro sem interromper o ritmo.
+          - generic [ref=e248]: Executar ↗
+        - article [ref=e249]:
+          - generic [ref=e250]: "02"
+          - generic [ref=e251]:
+            - heading "Gestor" [level=3] [ref=e252]
+            - paragraph [ref=e253]: Atenção, setor e histórico para escolher a próxima ação.
+          - generic [ref=e254]: Priorizar ↗
+        - article [ref=e255]:
+          - generic [ref=e256]: "03"
+          - generic [ref=e257]:
+            - heading "Administrador" [level=3] [ref=e258]
+            - paragraph [ref=e259]: Rotinas, permissões e configurações que acompanham o negócio.
+          - generic [ref=e260]: Organizar ↗
+  - region [ref=e261]:
+    - generic [ref=e262]:
+      - generic [ref=e263]:
+        - paragraph [ref=e264]: Smile Check · HAWKS BI
+        - heading [level=2] [ref=e266]:
+          - text: Sua operação já tem o processo.
+          - emphasis [ref=e267]: Agora dê visibilidade a ele.
+      - generic [ref=e268]:
+        - paragraph [ref=e269]: Veja o Smile Check em uma demonstração guiada e descubra onde a rotina pode ganhar clareza, rastreio e velocidade de resposta.
+        - link "Agendar demonstração" [ref=e270] [cursor=pointer]:
+          - /url: mailto:contato@hawksbi.com?subject=Agendar%20demonstra%C3%A7%C3%A3o%20%E2%80%94%20Smile%20Check
+          - generic [ref=e272]: ↗
+  - generic [ref=e274]:
+    - generic [ref=e275]:
+      - img "HAWKS BI" [ref=e276]
+      - generic [ref=e277]: Smile Check
+    - navigation "Links do rodapé" [ref=e278]:
+      - link "Produto" [ref=e279] [cursor=pointer]:
+        - /url: "#produto"
+      - link "Entrar no sistema" [ref=e280] [cursor=pointer]:
+        - /url: http://localhost:5174/login
+      - link "Agendar demonstração" [ref=e281] [cursor=pointer]:
+        - /url: mailto:contato@hawksbi.com?subject=Agendar%20demonstra%C3%A7%C3%A3o%20%E2%80%94%20Smile%20Check
+    - paragraph [ref=e282]: Checklist e controle operacional para rotinas que precisam acontecer.

@@ -1,0 +1,16 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+import { SmileCheckLanding } from "./App";
+
+const root = document.getElementById("root");
+
+if (!root) {
+  throw new Error("Root element #root not found.");
+}
+
+ReactDOM.createRoot(root).render(
+  <React.StrictMode>
+    <SmileCheckLanding />
+  </React.StrictMode>,
+);

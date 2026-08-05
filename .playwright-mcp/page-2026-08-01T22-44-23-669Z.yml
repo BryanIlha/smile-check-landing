@@ -1,0 +1,275 @@
+- main [ref=f2e3]:
+  - link "Pular para o conteúdo" [ref=f2e4] [cursor=pointer]:
+    - /url: "#conteudo"
+  - generic [ref=f2e6]:
+    - link "HAWKS BI — Smile Check, início" [ref=f2e7] [cursor=pointer]:
+      - /url: "#inicio"
+      - img "HAWKS BI" [ref=f2e8]
+      - generic [ref=f2e9]: Smile Check
+    - navigation "Navegação principal" [ref=f2e10]:
+      - link "Produto" [ref=f2e11] [cursor=pointer]:
+        - /url: "#produto"
+      - link "Como funciona" [ref=f2e12] [cursor=pointer]:
+        - /url: "#como-funciona"
+      - link "Para quem é" [ref=f2e13] [cursor=pointer]:
+        - /url: "#para-quem"
+    - generic [ref=f2e14]:
+      - link "Já sou cliente" [ref=f2e15] [cursor=pointer]:
+        - /url: http://localhost:5174/login
+      - link "Ver demonstração" [ref=f2e16] [cursor=pointer]:
+        - /url: mailto:contato@hawksbi.com?subject=Agendar%20demonstra%C3%A7%C3%A3o%20%E2%80%94%20Smile%20Check
+        - generic [ref=f2e18]: ↗
+  - region [ref=f2e19]:
+    - generic [ref=f2e20]:
+      - generic [ref=f2e21]:
+        - paragraph [ref=f2e22]: Smile Check · checklist operacional
+        - heading [level=1] [ref=f2e24]:
+          - text: Checklist que
+          - emphasis [ref=f2e25]: move
+          - text: a operação.
+        - paragraph [ref=f2e26]: A rotina entra em ordem, a exceção aparece cedo e cada resposta deixa um registro. O Smile Check transforma checklist em clareza para quem executa e para quem decide.
+        - generic [ref=f2e27]:
+          - link "Ver o Smile Check" [ref=f2e28] [cursor=pointer]:
+            - /url: mailto:contato@hawksbi.com?subject=Agendar%20demonstra%C3%A7%C3%A3o%20%E2%80%94%20Smile%20Check
+            - generic [ref=f2e30]: ↗
+          - link "Entender o fluxo" [ref=f2e31] [cursor=pointer]:
+            - /url: "#como-funciona"
+            - text: Entender o fluxo
+            - generic [ref=f2e32]: ↓
+        - generic [ref=f2e33]:
+          - generic [ref=f2e34]: Feito para operações multi-setor
+          - generic [ref=f2e36]: Interface simples · visão acionável
+      - generic [ref=f2e37]:
+        - generic [ref=f2e38]:
+          - generic [ref=f2e39]:
+            - generic [ref=f2e40]:
+              - generic [ref=f2e41]:
+                - generic [ref=f2e42]: S
+                - strong [ref=f2e43]: smile check
+              - generic [ref=f2e44]:
+                - generic [ref=f2e45]: Dados fictícios
+                - generic [ref=f2e46]: MC
+            - generic [ref=f2e47]:
+              - complementary "Menu do produto" [ref=f2e48]:
+                - generic [ref=f2e49]: Visão geral
+                - generic [ref=f2e51]: Rotinas
+                - generic [ref=f2e53]: Setores
+                - generic [ref=f2e55]: Relatórios
+                - generic [ref=f2e57]: Configurações
+              - generic [ref=f2e60]:
+                - generic [ref=f2e61]:
+                  - generic [ref=f2e62]:
+                    - text: SEG · 18 AGO · MANHÃ
+                    - heading "Visão da operação" [level=3] [ref=f2e63]
+                  - button "Todos os setores ⌄" [ref=f2e64]
+                - tablist "Demonstração do Smile Check" [ref=f2e65]:
+                  - tab "Visão geral" [selected] [ref=f2e66] [cursor=pointer]
+                  - tab "Execução" [ref=f2e67] [cursor=pointer]
+                  - tab "Evidência" [ref=f2e68] [cursor=pointer]
+                - tabpanel [ref=f2e69]:
+                  - generic [ref=f2e70]:
+                    - generic [ref=f2e71]:
+                      - generic [ref=f2e72]:
+                        - text: Rotinas de hoje
+                        - strong [ref=f2e73]: "12"
+                      - generic [ref=f2e75]: 9 concluídas · 3 em atenção
+                    - generic [ref=f2e76]:
+                      - generic [ref=f2e77]: Conformidade
+                      - strong [ref=f2e78]: 92%
+                      - generic [ref=f2e79]: ↑ 4,8% nesta semana
+                    - generic [ref=f2e80]:
+                      - generic [ref=f2e81]: Setores ativos
+                      - strong [ref=f2e82]: "04"
+                      - generic [ref=f2e83]: todos com rotina hoje
+                  - generic [ref=f2e84]:
+                    - generic [ref=f2e85]:
+                      - generic [ref=f2e86]:
+                        - generic [ref=f2e87]: Fila prioritária
+                        - generic [ref=f2e88]: 3 itens
+                      - generic [ref=f2e89]:
+                        - generic [ref=f2e91]:
+                          - strong [ref=f2e92]: Temperatura da câmara fria
+                          - generic [ref=f2e93]: Produção · 08:05
+                        - emphasis [ref=f2e94]: Atenção
+                      - generic [ref=f2e95]:
+                        - generic [ref=f2e97]:
+                          - strong [ref=f2e98]: Limpeza de bancada
+                          - generic [ref=f2e99]: Produção · 08:16
+                        - emphasis [ref=f2e100]: Atrasada
+                      - generic [ref=f2e101]:
+                        - generic [ref=f2e102]: ✓
+                        - generic [ref=f2e103]:
+                          - strong [ref=f2e104]: Conferência final
+                          - generic [ref=f2e105]: Expedição · 08:42
+                        - emphasis [ref=f2e106]: Concluída
+                    - generic [ref=f2e107]:
+                      - generic [ref=f2e108]:
+                        - generic [ref=f2e109]: Agora
+                        - generic [ref=f2e110]: 1 crítica
+                      - strong [ref=f2e112]: Temperatura fora da faixa
+                      - paragraph [ref=f2e113]: Câmara fria 02 precisa de correção e novo registro.
+                      - link "Abrir ocorrência ↗" [ref=f2e114] [cursor=pointer]:
+                        - /url: "#produto"
+                        - text: Abrir ocorrência
+                        - generic [ref=f2e115]: ↗
+          - generic [ref=f2e116]:
+            - generic [ref=f2e118]:
+              - strong [ref=f2e119]: 1 atenção agora
+              - generic [ref=f2e120]: Temperatura · Produção
+            - generic [ref=f2e121]: ↗
+          - generic [ref=f2e122]:
+            - generic [ref=f2e123]: ✓
+            - generic [ref=f2e124]:
+              - strong [ref=f2e125]: Registro salvo
+              - generic [ref=f2e126]: com evidência vinculada
+        - paragraph [ref=f2e127]: Interface ilustrativa · cenário de demonstração
+  - region "Resumo do produto" [ref=f2e129]:
+    - generic [ref=f2e130]:
+      - generic [ref=f2e131]:
+        - strong [ref=f2e132]: "01"
+        - generic [ref=f2e133]: Configure uma vez
+        - paragraph [ref=f2e134]: Setores, turnos e faixas que refletem o seu dia.
+      - generic [ref=f2e135]:
+        - strong [ref=f2e136]: "02"
+        - generic [ref=f2e137]: Execute sem ruído
+        - paragraph [ref=f2e138]: O time sabe o que fazer e registra no momento.
+      - generic [ref=f2e139]:
+        - strong [ref=f2e140]: "03"
+        - generic [ref=f2e141]: Aja por exceção
+        - paragraph [ref=f2e142]: A gestão encontra o que merece atenção primeiro.
+  - region [ref=f2e143]:
+    - generic [ref=f2e144]:
+      - generic [ref=f2e145]:
+        - paragraph [ref=f2e146]: Como funciona
+        - heading "Do checklist à decisão em três movimentos." [level=2] [ref=f2e148]
+        - paragraph [ref=f2e149]: Um produto único para ligar o que a operação faz ao que a gestão precisa saber.
+      - generic [ref=f2e150]:
+        - article [ref=f2e151]:
+          - generic [ref=f2e152]: 01 · configurar
+          - generic [ref=f2e153]:
+            - generic [ref=f2e156]: Rotina da manhã
+            - generic [ref=f2e157]: Produção · 08:00
+          - heading "Modele a rotina real." [level=3] [ref=f2e158]
+          - paragraph [ref=f2e159]: Cadastre setores, itens, subtarefas e faixas de temperatura sem adaptar o processo ao sistema.
+        - article [ref=f2e160]:
+          - generic [ref=f2e161]: 02 · executar
+          - generic [ref=f2e162]:
+            - generic [ref=f2e163]: ✓
+            - generic [ref=f2e164]: 6 de 8 itens
+            - generic [ref=f2e165]: Registro em andamento
+          - heading "Faça acontecer no local." [level=3] [ref=f2e166]
+          - paragraph [ref=f2e167]: O operador recebe a fila certa, responde em sequência e corrige quando algo sai do padrão.
+        - article [ref=f2e168]:
+          - generic [ref=f2e169]: 03 · agir
+          - generic [ref=f2e170]:
+            - generic [ref=f2e172]: 1 atenção agora
+            - generic [ref=f2e173]: Câmara fria 02
+          - heading "Decida com contexto." [level=3] [ref=f2e174]
+          - paragraph [ref=f2e175]: Exceção, evidência e histórico ficam próximos para a gestão agir sem investigar em vários lugares.
+  - region [ref=f2e176]:
+    - generic [ref=f2e177]:
+      - generic [ref=f2e178]:
+        - generic [ref=f2e179]:
+          - paragraph [ref=f2e180]: Dentro do produto
+          - heading [level=2] [ref=f2e182]:
+            - text: Menos caça ao problema.
+            - emphasis [ref=f2e183]: Mais ação no momento certo.
+        - paragraph [ref=f2e184]: O Smile Check organiza a operação em uma leitura que cabe no ritmo do seu time — e na agenda de quem acompanha tudo.
+      - generic [ref=f2e185]:
+        - generic [ref=f2e186]:
+          - generic [ref=f2e187]:
+            - generic [ref=f2e188]: Fila do dia
+            - generic [ref=f2e189]: Execução
+          - generic [ref=f2e190]:
+            - generic [ref=f2e191]:
+              - generic [ref=f2e192]: Rotinas de hoje
+              - strong [ref=f2e193]: 09 / 12
+            - generic [ref=f2e194]:
+              - generic [ref=f2e195]: ✓
+              - generic [ref=f2e196]:
+                - strong [ref=f2e197]: Limpeza de bancada
+                - generic [ref=f2e198]: Produção
+              - time [ref=f2e199]: 08:16
+            - generic [ref=f2e200]:
+              - generic [ref=f2e201]: ✓
+              - generic [ref=f2e202]:
+                - strong [ref=f2e203]: Conferência final
+                - generic [ref=f2e204]: Expedição
+              - time [ref=f2e205]: 08:42
+            - generic [ref=f2e206]:
+              - generic [ref=f2e208]:
+                - strong [ref=f2e209]: Temperatura da câmara
+                - generic [ref=f2e210]: Produção
+              - time [ref=f2e211]: Agora
+          - paragraph [ref=f2e212]: O operador começa pelo que precisa acontecer — não por uma planilha.
+        - generic [ref=f2e213]:
+          - generic [ref=f2e214]:
+            - generic [ref=f2e215]: Gestão por exceção
+            - generic [ref=f2e216]: Agora
+          - strong [ref=f2e219]: Temperatura fora da faixa
+          - paragraph [ref=f2e220]: O sistema sinaliza o desvio antes que ele vire retrabalho.
+          - link "Ver ocorrência ↗" [ref=f2e221] [cursor=pointer]:
+            - /url: "#solicitar-demonstracao"
+            - text: Ver ocorrência
+            - generic [ref=f2e222]: ↗
+        - generic [ref=f2e223]:
+          - generic [ref=f2e224]:
+            - generic [ref=f2e225]: Evidência
+            - generic [ref=f2e226]: Registro
+          - generic [ref=f2e227]:
+            - generic [ref=f2e228]: IMG
+            - generic [ref=f2e229]:
+              - strong [ref=f2e230]: Correção concluída
+              - generic [ref=f2e231]: Foto · resposta · horário
+            - generic [ref=f2e232]: ✓
+          - paragraph [ref=f2e233]: Tudo que prova a execução permanece ligado ao item certo.
+      - paragraph [ref=f2e234]: Interface ilustrativa para demonstração comercial · os dados exibidos são fictícios.
+  - region [ref=f2e235]:
+    - generic [ref=f2e236]:
+      - generic [ref=f2e237]:
+        - paragraph [ref=f2e238]: Para quem é
+        - heading "Uma visão para cada pessoa que faz a operação acontecer." [level=2] [ref=f2e240]
+        - paragraph [ref=f2e241]: O mesmo dado muda de forma conforme a responsabilidade — sem criar mais uma camada de trabalho.
+      - generic [ref=f2e242]:
+        - article [ref=f2e243]:
+          - generic [ref=f2e244]: "01"
+          - generic [ref=f2e245]:
+            - heading "Operador" [level=3] [ref=f2e246]
+            - paragraph [ref=f2e247]: Fila do dia, instrução clara e registro sem interromper o ritmo.
+          - generic [ref=f2e248]: Executar ↗
+        - article [ref=f2e249]:
+          - generic [ref=f2e250]: "02"
+          - generic [ref=f2e251]:
+            - heading "Gestor" [level=3] [ref=f2e252]
+            - paragraph [ref=f2e253]: Atenção, setor e histórico para escolher a próxima ação.
+          - generic [ref=f2e254]: Priorizar ↗
+        - article [ref=f2e255]:
+          - generic [ref=f2e256]: "03"
+          - generic [ref=f2e257]:
+            - heading "Administrador" [level=3] [ref=f2e258]
+            - paragraph [ref=f2e259]: Rotinas, permissões e configurações que acompanham o negócio.
+          - generic [ref=f2e260]: Organizar ↗
+  - region [ref=f2e261]:
+    - generic [ref=f2e262]:
+      - generic [ref=f2e263]:
+        - paragraph [ref=f2e264]: Smile Check · HAWKS BI
+        - heading [level=2] [ref=f2e266]:
+          - text: Sua operação já tem o processo.
+          - emphasis [ref=f2e267]: Agora dê visibilidade a ele.
+      - generic [ref=f2e268]:
+        - paragraph [ref=f2e269]: Veja o Smile Check em uma demonstração guiada e descubra onde a rotina pode ganhar clareza, rastreio e velocidade de resposta.
+        - link "Agendar demonstração" [ref=f2e270] [cursor=pointer]:
+          - /url: mailto:contato@hawksbi.com?subject=Agendar%20demonstra%C3%A7%C3%A3o%20%E2%80%94%20Smile%20Check
+          - generic [ref=f2e272]: ↗
+  - generic [ref=f2e274]:
+    - generic [ref=f2e275]:
+      - img "HAWKS BI" [ref=f2e276]
+      - generic [ref=f2e277]: Smile Check
+    - navigation "Links do rodapé" [ref=f2e278]:
+      - link "Produto" [ref=f2e279] [cursor=pointer]:
+        - /url: "#produto"
+      - link "Entrar no sistema" [ref=f2e280] [cursor=pointer]:
+        - /url: http://localhost:5174/login
+      - link "Agendar demonstração" [ref=f2e281] [cursor=pointer]:
+        - /url: mailto:contato@hawksbi.com?subject=Agendar%20demonstra%C3%A7%C3%A3o%20%E2%80%94%20Smile%20Check
+    - paragraph [ref=f2e282]: Checklist e controle operacional para rotinas que precisam acontecer.

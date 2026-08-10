@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 88" role="img" aria-labelledby="title desc">
+  <title id="title">Visto wordmark</title>
+  <desc id="desc">Visto geometric V mark and wordmark for light surfaces.</desc>
+  <path fill="#080808" d="M7 20h13l12 30 12-30h13L32 68 7 20Z"/>
+  <path fill="#F2610A" d="M27 42h10l-5 16-5-16Z"/>
+  <text x="88" y="58" fill="#080808" font-family="Instrument Sans, ui-sans-serif, sans-serif" font-size="43" font-weight="700" letter-spacing="-1.4">VISTO</text>
+</svg>

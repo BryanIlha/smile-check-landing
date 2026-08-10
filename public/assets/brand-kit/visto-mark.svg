@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Visto mark</title>
+  <desc id="desc">Geometric V mark with an orange signal wedge.</desc>
+  <path fill="#080808" d="M7 8h13l12 30L44 8h13L32 56 7 8Z"/>
+  <path fill="#F2610A" d="M27 30h10l-5 16-5-16Z"/>
+</svg>

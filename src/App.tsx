@@ -6,9 +6,9 @@ import "./landing.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function HawksWordmark({
+function VistoWordmark({
   reversed = false,
-  alt = "HAWKS BI",
+  alt = "Visto",
   className,
 }: {
   reversed?: boolean;
@@ -17,7 +17,7 @@ function HawksWordmark({
 }) {
   return (
     <img
-      src={`/assets/brand-kit/hawks-bi-wordmark${reversed ? "-reverse" : ""}.svg`}
+      src={`/assets/brand-kit/visto-wordmark${reversed ? "-reverse" : ""}.svg`}
       alt={alt}
       className={className}
       width="2111"
@@ -27,9 +27,9 @@ function HawksWordmark({
 }
 
 const DEMO_URL =
-  import.meta.env.VITE_SMILE_CHECK_DEMO_URL ??
-  "mailto:contato@hawksbi.com?subject=Agendar%20demonstra%C3%A7%C3%A3o%20%E2%80%94%20Smile%20Check";
-const LOGIN_URL = import.meta.env.VITE_SMILE_CHECK_LOGIN_URL ?? "http://localhost:5174/login";
+  import.meta.env.VITE_VISTO_DEMO_URL ??
+  "mailto:contato@hawksbi.com?subject=Agendar%20demonstra%C3%A7%C3%A3o%20%E2%80%94%20Visto";
+const LOGIN_URL = import.meta.env.VITE_VISTO_LOGIN_URL ?? "http://localhost:5174/login";
 
 const navigation = [
   ["Produto", "#produto"],
@@ -80,8 +80,8 @@ function ChecklistScene() {
         <div className="scene-board" data-depth="board">
           <div className="scene-board__topbar">
             <div className="scene-board__brand">
-              <span className="scene-brand-mark">S</span>
-              <strong>smile check</strong>
+              <span className="scene-brand-mark">V</span>
+              <strong>Visto</strong>
             </div>
             <div className="scene-board__topbar-right">
               <span className="scene-demo-label">Dados fictícios</span>
@@ -107,7 +107,7 @@ function ChecklistScene() {
                 <button type="button" className="scene-filter">Todos os setores <span>⌄</span></button>
               </div>
 
-              <div className="scene-tabs" role="tablist" aria-label="Demonstração do Smile Check">
+              <div className="scene-tabs" role="tablist" aria-label="Demonstração do Visto">
                 {[
                   ["visao", "Visão geral"],
                   ["execucao", "Execução"],
@@ -269,7 +269,7 @@ function useSaaSMotion(rootRef: React.RefObject<HTMLElement | null>) {
   }, [rootRef]);
 }
 
-export function SmileCheckLanding() {
+export function VistoLanding() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
   const firstLink = useRef<HTMLAnchorElement>(null);
@@ -311,9 +311,9 @@ export function SmileCheckLanding() {
 
       <header className="marketing-header">
         <div className="marketing-nav-island">
-          <a className="marketing-brand" href="#inicio" aria-label="HAWKS BI — Smile Check, início">
-            <HawksWordmark alt="HAWKS BI" />
-            <span>Smile Check</span>
+          <a className="marketing-brand" href="#inicio" aria-label="Visto, início">
+            <VistoWordmark alt="Visto" />
+            <span>por HAWKS BI</span>
           </a>
           <nav className="marketing-nav-links" aria-label="Navegação principal">
             {navigation.map(([label, href]) => <a key={href} href={href}>{label}</a>)}
@@ -358,13 +358,13 @@ export function SmileCheckLanding() {
       <section id="inicio" className="marketing-hero" aria-labelledby="hero-title">
         <div className="marketing-frame marketing-hero__layout">
           <div className="marketing-hero__copy">
-            <p className="marketing-eyebrow" data-hero-label><span className="eyebrow-dot" /> Smile Check · checklist operacional</p>
+            <p className="marketing-eyebrow" data-hero-label><span className="eyebrow-dot" /> Visto · checklist operacional</p>
             <h1 id="hero-title" data-hero-title>Checklist que <em>move</em> a operação.</h1>
             <p className="marketing-lede" data-hero-copy>
-              A rotina entra em ordem, a exceção aparece cedo e cada resposta deixa um registro. O Smile Check transforma checklist em clareza para quem executa e para quem decide.
+              A rotina entra em ordem, a exceção aparece cedo e cada resposta deixa um registro. O Visto transforma checklist em clareza para quem executa e para quem decide.
             </p>
             <div className="marketing-hero__actions" data-hero-actions>
-              <Action href={DEMO_URL}>Ver o Smile Check</Action>
+              <Action href={DEMO_URL}>Ver o Visto</Action>
               <a className="marketing-text-link" href="#como-funciona">Entender o fluxo <span aria-hidden="true">↓</span></a>
             </div>
             <div className="marketing-hero__meta" data-hero-copy>
@@ -418,7 +418,7 @@ export function SmileCheckLanding() {
         <div className="marketing-frame">
           <div className="marketing-product__heading" data-gsap-reveal>
             <div><p className="marketing-eyebrow marketing-eyebrow--light"><span className="eyebrow-dot" /> Dentro do produto</p><h2 id="product-title">Menos caça ao problema.<br /><em>Mais ação no momento certo.</em></h2></div>
-            <p>O Smile Check organiza a operação em uma leitura que cabe no ritmo do seu time — e na agenda de quem acompanha tudo.</p>
+            <p>O Visto organiza a operação em uma leitura que cabe no ritmo do seu time — e na agenda de quem acompanha tudo.</p>
           </div>
           <div className="marketing-product__bento">
             <div className="bento-card bento-card--main" data-gsap-reveal>
@@ -463,14 +463,14 @@ export function SmileCheckLanding() {
 
       <section id="solicitar-demonstracao" className="marketing-final-cta" aria-labelledby="cta-title">
         <div className="marketing-frame marketing-final-cta__layout" data-gsap-reveal>
-          <div><p className="marketing-eyebrow"><span className="eyebrow-dot" /> Smile Check · HAWKS BI</p><h2 id="cta-title">Sua operação já tem o processo.<br /><em>Agora dê visibilidade a ele.</em></h2></div>
-          <div><p>Veja o Smile Check em uma demonstração guiada e descubra onde a rotina pode ganhar clareza, rastreio e velocidade de resposta.</p><Action href={DEMO_URL}>Agendar demonstração</Action></div>
+          <div><p className="marketing-eyebrow"><span className="eyebrow-dot" /> Visto · HAWKS BI</p><h2 id="cta-title">Sua operação já tem o processo.<br /><em>Agora dê visibilidade a ele.</em></h2></div>
+          <div><p>Veja o Visto em uma demonstração guiada e descubra onde a rotina pode ganhar clareza, rastreio e velocidade de resposta.</p><Action href={DEMO_URL}>Agendar demonstração</Action></div>
         </div>
       </section>
 
       <footer className="marketing-footer">
         <div className="marketing-frame marketing-footer__layout">
-          <div className="marketing-footer__brand"><HawksWordmark reversed alt="HAWKS BI" /><span>Smile Check</span></div>
+          <div className="marketing-footer__brand"><VistoWordmark reversed alt="Visto" /><span>Produto HAWKS BI</span></div>
           <nav aria-label="Links do rodapé"><a href="#produto">Produto</a><a href={LOGIN_URL}>Entrar no sistema</a><a href={DEMO_URL}>Agendar demonstração</a></nav>
           <p>Checklist e controle operacional para rotinas que precisam acontecer.</p>
         </div>

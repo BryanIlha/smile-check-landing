@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Visto favicon</title>
+  <desc id="desc">Compact geometric Visto mark.</desc>
+  <rect width="64" height="64" rx="12" fill="#080808"/>
+  <path fill="#F5F0E7" d="M10 13h12l10 25 10-25h12L32 54 10 13Z"/>
+  <path fill="#F2610A" d="M27 34h10l-5 14-5-14Z"/>
+</svg>

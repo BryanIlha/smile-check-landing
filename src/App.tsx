@@ -6,9 +6,9 @@ import "./landing.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function HawksWordmark({
+function VistoWordmark({
   reversed = false,
-  alt = "HAWKS BI",
+  alt = "Visto",
   className,
 }: {
   reversed?: boolean;
@@ -17,19 +17,24 @@ function HawksWordmark({
 }) {
   return (
     <img
-      src={`/assets/brand-kit/hawks-bi-wordmark${reversed ? "-reverse" : ""}.svg`}
+      src={`/assets/visto/visto-wordmark${reversed ? "-reverse" : ""}.svg`}
       alt={alt}
       className={className}
-      width="2111"
-      height="745"
+      width="500"
+      height="160"
     />
   );
 }
 
+function VistoMark({ className, alt = "" }: { className?: string; alt?: string }) {
+  return <img src="/assets/visto/visto-mark.svg" alt={alt} className={className} width="160" height="160" />;
+}
+
 const DEMO_URL =
-  import.meta.env.VITE_SMILE_CHECK_DEMO_URL ??
-  "mailto:contato@hawksbi.com?subject=Agendar%20demonstra%C3%A7%C3%A3o%20%E2%80%94%20Smile%20Check";
-const LOGIN_URL = import.meta.env.VITE_SMILE_CHECK_LOGIN_URL ?? "http://localhost:5174/login";
+  import.meta.env.VITE_VISTO_DEMO_URL ??
+  "mailto:contato@hawksbi.com.br?subject=Agendar%20demonstra%C3%A7%C3%A3o%20%E2%80%94%20Visto";
+const LOGIN_URL = import.meta.env.VITE_VISTO_LOGIN_URL ?? "http://localhost:5174/login";
+const HAWKS_SITE_URL = "https://hawksbi.com.br";
 
 const navigation = [
   ["Produto", "#produto"],
@@ -49,15 +54,23 @@ function Action({
   href,
   children,
   secondary = false,
+  external = false,
+  tabIndex,
 }: {
   href: string;
   children: string;
   secondary?: boolean;
+  external?: boolean;
+  tabIndex?: number;
 }) {
   return (
     <a
       className={`marketing-action${secondary ? " marketing-action--secondary" : ""}`}
       href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noreferrer" : undefined}
+      aria-label={external ? `${children} (abre em nova aba)` : undefined}
+      tabIndex={tabIndex}
     >
       <span>{children}</span>
       {!secondary && <Arrow />}
@@ -77,119 +90,151 @@ function ChecklistScene() {
       <div className="scene-orbit scene-orbit--one" aria-hidden="true" />
       <div className="scene-orbit scene-orbit--two" aria-hidden="true" />
       <div className="scene-tilt" data-scene-tilt>
-        <div className="scene-board" data-depth="board">
-          <div className="scene-board__topbar">
-            <div className="scene-board__brand">
-              <span className="scene-brand-mark">S</span>
-              <strong>smile check</strong>
-            </div>
-            <div className="scene-board__topbar-right">
-              <span className="scene-demo-label">Dados fictícios</span>
-              <span className="scene-avatar">MC</span>
-            </div>
-          </div>
-
-          <div className="scene-board__body">
-            <aside className="scene-sidebar" aria-label="Menu do produto">
-              <span className="scene-sidebar__active"><i />Visão geral</span>
-              <span><i />Rotinas</span>
-              <span><i />Setores</span>
-              <span><i />Relatórios</span>
-              <div className="scene-sidebar__bottom"><span><i />Configurações</span></div>
-            </aside>
-
-            <div className="scene-dashboard">
-              <div className="scene-dashboard__heading">
-                <div>
-                  <span className="scene-overline">SEG · 18 AGO · MANHÃ</span>
-                  <h3>Visão da operação</h3>
+        <div className="device-mac" data-depth="board" aria-label="Visto no computador">
+          <div className="device-mac__screen-shell">
+            <span className="device-mac__camera" aria-hidden="true" />
+            <div className="scene-board">
+              <div className="scene-board__topbar">
+                <div className="scene-board__brand">
+                  <VistoMark className="scene-brand-mark" />
+                  <strong>Visto</strong>
                 </div>
-                <button type="button" className="scene-filter">Todos os setores <span>⌄</span></button>
+                <div className="scene-board__topbar-right">
+                  <span className="scene-demo-label">Dados fictícios</span>
+                  <span className="scene-avatar">MC</span>
+                </div>
               </div>
 
-              <div className="scene-tabs" role="tablist" aria-label="Demonstração do Smile Check">
-                {[
-                  ["visao", "Visão geral"],
-                  ["execucao", "Execução"],
-                  ["evidencia", "Evidência"],
-                ].map(([key, label]) => (
-                  <button
-                    key={key}
-                    type="button"
-                    role="tab"
-                    aria-selected={view === key}
-                    className={view === key ? "is-active" : ""}
-                    onClick={() => setView(key as typeof view)}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
+              <div className="scene-board__body">
+                <aside className="scene-sidebar" aria-label="Menu do produto">
+                  <span className="scene-sidebar__active"><i />Visão geral</span>
+                  <span><i />Rotinas</span>
+                  <span><i />Setores</span>
+                  <span><i />Relatórios</span>
+                  <div className="scene-sidebar__bottom"><span><i />Configurações</span></div>
+                </aside>
 
-              {view === "visao" && (
-                <div className="scene-dashboard__content" role="tabpanel">
-                  <div className="scene-kpi-row">
-                    <div className="scene-kpi scene-kpi--main">
-                      <div><span>Rotinas de hoje</span><strong>12</strong></div>
-                      <div className="scene-progress"><span className="scene-progress__fill" /></div>
-                      <small>9 concluídas <b>·</b> 3 em atenção</small>
+                <div className="scene-dashboard">
+                  <div className="scene-dashboard__heading">
+                    <div>
+                      <span className="scene-overline">SEG · 18 AGO · MANHÃ</span>
+                      <h3>Visão da operação</h3>
                     </div>
-                    <div className="scene-kpi"><span>Conformidade</span><strong>92<span>%</span></strong><small className="scene-positive">↑ 4,8% nesta semana</small></div>
-                    <div className="scene-kpi"><span>Setores ativos</span><strong>04</strong><small>todos com rotina hoje</small></div>
+                    <span className="scene-filter" aria-hidden="true">Todos os setores <span>⌄</span></span>
                   </div>
-                  <div className="scene-main-grid">
-                    <div className="scene-checklist">
-                      <div className="scene-module-heading"><span>Fila prioritária</span><b>3 itens</b></div>
+
+                  <div className="scene-tabs" role="tablist" aria-label="Demonstração do Visto">
+                    {[
+                      ["visao", "Visão geral"],
+                      ["execucao", "Execução"],
+                      ["evidencia", "Evidência"],
+                    ].map(([key, label]) => (
+                      <button
+                        key={key}
+                        type="button"
+                        role="tab"
+                        id={`scene-tab-${key}`}
+                        aria-controls="scene-panel"
+                        aria-selected={view === key}
+                        className={view === key ? "is-active" : ""}
+                        onClick={() => setView(key as typeof view)}
+                      >
+                        {label}
+                      </button>
+                    ))}
+                  </div>
+
+                  {view === "visao" && (
+                    <div className="scene-dashboard__content" id="scene-panel" role="tabpanel" aria-labelledby="scene-tab-visao">
+                      <div className="scene-kpi-row">
+                        <div className="scene-kpi scene-kpi--main">
+                          <div><span>Rotinas de hoje</span><strong>12</strong></div>
+                          <div className="scene-progress"><span className="scene-progress__fill" /></div>
+                          <small>9 concluídas <b>·</b> 3 em atenção</small>
+                        </div>
+                        <div className="scene-kpi"><span>Conformidade</span><strong>92<span>%</span></strong><small className="scene-positive">↑ 4,8% nesta semana</small></div>
+                        <div className="scene-kpi"><span>Setores ativos</span><strong>04</strong><small>todos com rotina hoje</small></div>
+                      </div>
+                      <div className="scene-main-grid">
+                        <div className="scene-checklist">
+                          <div className="scene-module-heading"><span>Fila prioritária</span><b>3 itens</b></div>
+                          {[
+                            ["Temperatura da câmara fria", "Produção · 08:05", "orange", "Atenção"],
+                            ["Limpeza de bancada", "Produção · 08:16", "orange", "Atrasada"],
+                            ["Conferência final", "Expedição · 08:42", "green", "Concluída"],
+                          ].map(([title, detail, tone, status]) => (
+                            <div className="scene-check-row" key={title}>
+                              <span className="scene-check-box">{tone === "green" ? "✓" : ""}</span>
+                              <div><strong>{title}</strong><span>{detail}</span></div>
+                              <em className={`scene-row-status scene-row-status--${tone}`}>{status}</em>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="scene-attention-card">
+                          <div className="scene-module-heading"><span>Agora</span><b className="scene-badge">1 crítica</b></div>
+                          <StatusDot tone="orange" />
+                          <strong>Temperatura fora da faixa</strong>
+                          <p>Câmara fria 02 precisa de correção e novo registro.</p>
+                          <a href="#produto">Abrir ocorrência <span>↗</span></a>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {view === "execucao" && (
+                    <div className="scene-dashboard__content scene-dashboard__content--single" id="scene-panel" role="tabpanel" aria-labelledby="scene-tab-execucao">
+                      <div className="scene-execution-heading"><span>Fila do dia</span><strong>O que precisa acontecer agora.</strong></div>
                       {[
-                        ["Temperatura da câmara fria", "Produção · 08:05", "orange", "Atenção"],
-                        ["Limpeza de bancada", "Produção · 08:16", "orange", "Atrasada"],
-                        ["Conferência final", "Expedição · 08:42", "green", "Concluída"],
-                      ].map(([title, detail, tone, status]) => (
-                        <div className="scene-check-row" key={title}>
-                          <span className="scene-check-box">{tone === "green" ? "✓" : ""}</span>
-                          <div><strong>{title}</strong><span>{detail}</span></div>
-                          <em className={`scene-row-status scene-row-status--${tone}`}>{status}</em>
+                        ["08:00", "Limpeza de bancada", "Produção · 8 itens", "Atrasada"],
+                        ["13:30", "Conferência final", "Expedição · 6 itens", "Em andamento"],
+                        ["15:00", "Temperatura da vitrine", "Atendimento · 2 itens", "Pendente"],
+                      ].map(([time, title, detail, status]) => (
+                        <div className="scene-execution-row" key={time}>
+                          <time>{time}</time><div><strong>{title}</strong><span>{detail}</span></div><em>{status}</em>
                         </div>
                       ))}
                     </div>
-                    <div className="scene-attention-card">
-                      <div className="scene-module-heading"><span>Agora</span><b className="scene-badge">1 crítica</b></div>
-                      <StatusDot tone="orange" />
-                      <strong>Temperatura fora da faixa</strong>
-                      <p>Câmara fria 02 precisa de correção e novo registro.</p>
-                      <a href="#produto">Abrir ocorrência <span>↗</span></a>
-                    </div>
-                  </div>
-                </div>
-              )}
+                  )}
 
-              {view === "execucao" && (
-                <div className="scene-dashboard__content scene-dashboard__content--single" role="tabpanel">
-                  <div className="scene-execution-heading"><span>Fila do dia</span><strong>O que precisa acontecer agora.</strong></div>
-                  {[
-                    ["08:00", "Limpeza de bancada", "Produção · 8 itens", "Atrasada"],
-                    ["13:30", "Conferência final", "Expedição · 6 itens", "Em andamento"],
-                    ["15:00", "Temperatura da vitrine", "Atendimento · 2 itens", "Pendente"],
-                  ].map(([time, title, detail, status]) => (
-                    <div className="scene-execution-row" key={time}>
-                      <time>{time}</time><div><strong>{title}</strong><span>{detail}</span></div><em>{status}</em>
+                  {view === "evidencia" && (
+                    <div className="scene-dashboard__content scene-dashboard__content--single" id="scene-panel" role="tabpanel" aria-labelledby="scene-tab-evidencia">
+                      <div className="scene-execution-heading"><span>Registro em contexto</span><strong>O que aconteceu fica no mesmo lugar.</strong></div>
+                      <div className="scene-record-card">
+                        <div><span>Produção · Limpeza de bancada</span><b>Item 04 de 08</b></div>
+                        <strong><StatusDot tone="orange" /> Não conforme</strong>
+                        <p>Higienização refeita antes do início da produção.</p>
+                        <small>Foto anexada · 08:16 · histórico disponível</small>
+                      </div>
                     </div>
-                  ))}
+                  )}
                 </div>
-              )}
-
-              {view === "evidencia" && (
-                <div className="scene-dashboard__content scene-dashboard__content--single" role="tabpanel">
-                  <div className="scene-execution-heading"><span>Registro em contexto</span><strong>O que aconteceu fica no mesmo lugar.</strong></div>
-                  <div className="scene-record-card">
-                    <div><span>Produção · Limpeza de bancada</span><b>Item 04 de 08</b></div>
-                    <strong><StatusDot tone="orange" /> Não conforme</strong>
-                    <p>Higienização refeita antes do início da produção.</p>
-                    <small>Foto anexada · 08:16 · histórico disponível</small>
-                  </div>
-                </div>
-              )}
+              </div>
             </div>
+          </div>
+          <div className="device-mac__base" aria-hidden="true"><span /></div>
+        </div>
+
+        <div className="device-phone" data-depth="phone" aria-hidden="true">
+          <div className="device-phone__screen">
+            <div className="device-phone__status"><span>9:41</span><span className="device-phone__signal"><i /><i /><i /></span></div>
+            <div className="device-phone__brand"><VistoMark className="device-phone__mark" /><strong>Visto</strong></div>
+            <div className="device-phone__heading"><span>Rotina da manhã</span><strong>3/5</strong></div>
+            <div className="device-phone__progress"><span /></div>
+            <div className="device-phone__list">
+              <div className="device-phone__row device-phone__row--done">
+                <span className="device-phone__check">✓</span>
+                <div><strong>Higienizar bancada</strong><small>Produção · agora</small></div>
+              </div>
+              <div className="device-phone__row device-phone__row--done">
+                <span className="device-phone__check">✓</span>
+                <div><strong>Conferência final</strong><small>Expedição · agora</small></div>
+              </div>
+              <div className="device-phone__row device-phone__row--attention">
+                <span className="device-phone__check" />
+                <div><strong>Temperatura</strong><small>Próximo item</small></div>
+              </div>
+            </div>
+            <div className="device-phone__saved"><span>✓</span> Registro salvo</div>
           </div>
         </div>
 
@@ -242,7 +287,8 @@ function useSaaSMotion(rootRef: React.RefObject<HTMLElement | null>) {
       });
 
       const tilt = root.querySelector<HTMLElement>("[data-scene-tilt]");
-      if (tilt) {
+      const canTilt = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      if (tilt && canTilt) {
         const move = (event: PointerEvent) => {
           const bounds = tilt.getBoundingClientRect();
           const x = (event.clientX - bounds.left) / bounds.width - 0.5;
@@ -269,7 +315,7 @@ function useSaaSMotion(rootRef: React.RefObject<HTMLElement | null>) {
   }, [rootRef]);
 }
 
-export function SmileCheckLanding() {
+export function VistoLanding() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
   const firstLink = useRef<HTMLAnchorElement>(null);
@@ -311,14 +357,15 @@ export function SmileCheckLanding() {
 
       <header className="marketing-header">
         <div className="marketing-nav-island">
-          <a className="marketing-brand" href="#inicio" aria-label="HAWKS BI — Smile Check, início">
-            <HawksWordmark alt="HAWKS BI" />
-            <span>Smile Check</span>
+          <a className="marketing-brand" href="#inicio" aria-label="Visto — início">
+            <VistoWordmark alt="Visto" />
+            <span>HAWKS BI</span>
           </a>
           <nav className="marketing-nav-links" aria-label="Navegação principal">
             {navigation.map(([label, href]) => <a key={href} href={href}>{label}</a>)}
           </nav>
           <div className="marketing-nav-actions">
+            <Action href={HAWKS_SITE_URL} external secondary>Site HAWKS BI</Action>
             <a className="marketing-login" href={LOGIN_URL}>Já sou cliente</a>
             <Action href={DEMO_URL}>Ver demonstração</Action>
           </div>
@@ -349,7 +396,10 @@ export function SmileCheckLanding() {
             ))}
           </nav>
           <div className="marketing-mobile-menu__actions">
-            <Action href={DEMO_URL}>Ver demonstração</Action>
+            <div className="marketing-mobile-menu__buttons">
+              <Action href={DEMO_URL} tabIndex={menuOpen ? 0 : -1}>Ver demonstração</Action>
+              <Action href={HAWKS_SITE_URL} external secondary tabIndex={menuOpen ? 0 : -1}>Site HAWKS BI</Action>
+            </div>
             <a ref={lastMenuLink} href={LOGIN_URL} tabIndex={menuOpen ? 0 : -1} onClick={() => setMenuOpen(false)}>Entrar no sistema</a>
           </div>
         </aside>
@@ -358,13 +408,13 @@ export function SmileCheckLanding() {
       <section id="inicio" className="marketing-hero" aria-labelledby="hero-title">
         <div className="marketing-frame marketing-hero__layout">
           <div className="marketing-hero__copy">
-            <p className="marketing-eyebrow" data-hero-label><span className="eyebrow-dot" /> Smile Check · checklist operacional</p>
+            <p className="marketing-eyebrow" data-hero-label><span className="eyebrow-dot" /> Visto · checklist operacional</p>
             <h1 id="hero-title" data-hero-title>Checklist que <em>move</em> a operação.</h1>
             <p className="marketing-lede" data-hero-copy>
-              A rotina entra em ordem, a exceção aparece cedo e cada resposta deixa um registro. O Smile Check transforma checklist em clareza para quem executa e para quem decide.
+              A rotina entra em ordem, a exceção aparece cedo e cada resposta deixa um registro. O Visto transforma checklist em clareza para quem executa e para quem decide.
             </p>
             <div className="marketing-hero__actions" data-hero-actions>
-              <Action href={DEMO_URL}>Ver o Smile Check</Action>
+              <Action href={DEMO_URL}>Ver o Visto</Action>
               <a className="marketing-text-link" href="#como-funciona">Entender o fluxo <span aria-hidden="true">↓</span></a>
             </div>
             <div className="marketing-hero__meta" data-hero-copy>
@@ -418,7 +468,7 @@ export function SmileCheckLanding() {
         <div className="marketing-frame">
           <div className="marketing-product__heading" data-gsap-reveal>
             <div><p className="marketing-eyebrow marketing-eyebrow--light"><span className="eyebrow-dot" /> Dentro do produto</p><h2 id="product-title">Menos caça ao problema.<br /><em>Mais ação no momento certo.</em></h2></div>
-            <p>O Smile Check organiza a operação em uma leitura que cabe no ritmo do seu time — e na agenda de quem acompanha tudo.</p>
+            <p>O Visto organiza a operação em uma leitura que cabe no ritmo do seu time — e na agenda de quem acompanha tudo.</p>
           </div>
           <div className="marketing-product__bento">
             <div className="bento-card bento-card--main" data-gsap-reveal>
@@ -463,16 +513,23 @@ export function SmileCheckLanding() {
 
       <section id="solicitar-demonstracao" className="marketing-final-cta" aria-labelledby="cta-title">
         <div className="marketing-frame marketing-final-cta__layout" data-gsap-reveal>
-          <div><p className="marketing-eyebrow"><span className="eyebrow-dot" /> Smile Check · HAWKS BI</p><h2 id="cta-title">Sua operação já tem o processo.<br /><em>Agora dê visibilidade a ele.</em></h2></div>
-          <div><p>Veja o Smile Check em uma demonstração guiada e descubra onde a rotina pode ganhar clareza, rastreio e velocidade de resposta.</p><Action href={DEMO_URL}>Agendar demonstração</Action></div>
+          <div><p className="marketing-eyebrow"><span className="eyebrow-dot" /> Visto · HAWKS BI</p><h2 id="cta-title">Sua operação já tem o processo.<br /><em>Agora dê visibilidade a ele.</em></h2></div>
+          <div>
+            <p>Veja o Visto em uma demonstração guiada e descubra onde a rotina pode ganhar clareza, rastreio e velocidade de resposta.</p>
+            <p className="marketing-company-note">A HAWKS BI transforma complexidade em controle com dados, automação e tecnologia.</p>
+            <div className="marketing-final-cta__actions">
+              <Action href={DEMO_URL}>Agendar demonstração</Action>
+              <Action href={HAWKS_SITE_URL} external secondary>Conhecer a HAWKS BI</Action>
+            </div>
+          </div>
         </div>
       </section>
 
       <footer className="marketing-footer">
         <div className="marketing-frame marketing-footer__layout">
-          <div className="marketing-footer__brand"><HawksWordmark reversed alt="HAWKS BI" /><span>Smile Check</span></div>
-          <nav aria-label="Links do rodapé"><a href="#produto">Produto</a><a href={LOGIN_URL}>Entrar no sistema</a><a href={DEMO_URL}>Agendar demonstração</a></nav>
-          <p>Checklist e controle operacional para rotinas que precisam acontecer.</p>
+          <div className="marketing-footer__brand"><VistoWordmark reversed alt="Visto" /><span>HAWKS BI</span></div>
+          <nav aria-label="Links do rodapé"><a href="#produto">Produto</a><a href={LOGIN_URL}>Entrar no sistema</a><a href={DEMO_URL}>Agendar demonstração</a><a href={HAWKS_SITE_URL} target="_blank" rel="noreferrer">HAWKS BI ↗</a></nav>
+          <p>HAWKS BI · Dados, Automação e Tecnologia para operações que precisam avançar.</p>
         </div>
       </footer>
     </main>

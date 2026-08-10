@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Visto mark</title>
+  <desc id="desc">A two-tone confirmation check that forms the V of Visto.</desc>
+  <path fill="#080808" d="m12 74 22-22 42 42v31Z"/>
+  <path fill="#F2610A" d="m76 94 63.5-75 21.5 18.5L76 130Z"/>
+</svg>

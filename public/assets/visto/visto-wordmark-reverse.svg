@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 160" role="img" aria-labelledby="title desc">
+  <title id="title">Visto — opção 02 reversa</title>
+  <desc id="desc">A reverse Visto wordmark where the V is a two-tone confirmation check.</desc>
+
+  <path fill="#F5F0E7" d="m12 74 22-22 42 42v31Z"/>
+  <path fill="#F2610A" d="m76 94 63.5-75 21.5 18.5L76 130Z"/>
+
+  <text
+    x="177"
+    y="120"
+    fill="#F5F0E7"
+    font-family="Instrument Sans, Arial, Helvetica, sans-serif"
+    font-size="108"
+    font-weight="650"
+    letter-spacing="-7"
+  >isto</text>
+</svg>

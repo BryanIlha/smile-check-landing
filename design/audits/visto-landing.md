@@ -1,27 +1,27 @@
 ---
-title: Design review of Smile Check checklist SaaS landing page
-slug: smile-check-landing
+title: Design review of Visto checklist SaaS landing page
+slug: visto-landing
 panel: [don-norman-designer, jared-spool-designer, dieter-rams-designer]
 created: 2026-08-01
 target: src/App.tsx, src/landing.css, index.html
 target_lines: 2100
 ---
 
-# Design review: Smile Check checklist SaaS landing page
+# Design review: Visto checklist SaaS landing page
 
 ## Context and evidence
 
-The target is an independent Vite/React commercial landing page for Smile Check. The integrated Smile Check app on `localhost:5174` remains a separate product surface: its public marketing route is `/landing`, while the authenticated product redirects `/` to `/login` without a session. The standalone page does not import the application’s routes, styles, or code.
+The target is an independent Vite/React commercial landing page for Visto. The integrated Visto app on `localhost:5174` remains a separate product surface: its public marketing route is `/landing`, while the authenticated product redirects `/` to `/login` without a session. The standalone page does not import the application’s routes, styles, or code.
 
 The visual direction was deliberately changed after review: away from HAWKS BI’s institutional/editorial service page and toward a checklist SaaS product page. The HAWKS reference contributed only the useful motion language — staged hero entrance, state selection, scroll reveals, and reduced-motion awareness. The orange/ink/paper palette and official wordmark remain as the trust layer.
 
 Playwright proof is saved under `public/assets/evidence/`:
 
 - `hawks-site-hero-reference.png` — the institutional reference used for motion and identity comparison.
-- `smile-check-saas-hero.png` — desktop first viewport.
-- `smile-check-saas-mobile.png` — mobile first viewport.
-- `smile-check-saas-full.png` — full-page capture after triggering all reveal states.
-- `smile-check-saas-print.png` — print-emulated capture with reveal content forced visible.
+- `visto-saas-hero.png` — desktop first viewport.
+- `visto-saas-mobile.png` — mobile first viewport.
+- `visto-saas-full.png` — full-page capture after triggering all reveal states.
+- `visto-saas-print.png` — print-emulated capture with reveal content forced visible.
 
 ## Per-persona verdicts
 
@@ -31,7 +31,7 @@ Playwright proof is saved under `public/assets/evidence/`:
 
 The buyer can now infer:
 
-- Smile Check is an operational checklist product, not a general HAWKS BI service page.
+- Visto is an operational checklist product, not a general HAWKS BI service page.
 - The workflow is configure → execute → act on the exception.
 - The interface serves both the operator and the manager.
 - The CTA is a guided demonstration, with the local login route available for existing customers.
@@ -61,7 +61,7 @@ What still needs product evidence:
 
 ### Dieter Rams
 
-**Verdict:** The redesign is more restrained and product-led. HAWKS BI is present as the maker, while the Smile Check product owns the visual hierarchy. The page uses one primary dashboard scene, one workflow rail, one bento proof section, and a concise audience section.
+**Verdict:** The redesign is more restrained and product-led. HAWKS BI is present as the maker, while the Visto product owns the visual hierarchy. The page uses one primary dashboard scene, one workflow rail, one bento proof section, and a concise audience section.
 
 The main restraint decisions are intentional:
 
@@ -73,7 +73,7 @@ The main restraint decisions are intentional:
 
 ## Where they agree
 
-1. Smile Check must be the subject; HAWKS BI should remain a quiet trust mark.
+1. Visto must be the subject; HAWKS BI should remain a quiet trust mark.
 2. The product scene should explain a buyer’s mental model, not decorate the page.
 3. Illustrative data is acceptable for explanation only when it is clearly marked as fictitious.
 4. The conversion path should end in a real, measurable demo experience.
@@ -85,4 +85,4 @@ Replace the default `mailto:` CTA with a measurable demo destination and replace
 
 ## Suggested next step
 
-Connect `VITE_SMILE_CHECK_DEMO_URL` to the real scheduling or lead-capture endpoint, instrument the hero and final CTA separately, and run the five-second comprehension test against the live product proof.
+Connect `VITE_VISTO_DEMO_URL` to the real scheduling or lead-capture endpoint, instrument the hero and final CTA separately, and run the five-second comprehension test against the live product proof.

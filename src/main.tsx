@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import { SmileCheckLanding } from "./App";
+import { VistoLanding } from "./App";
 
 const root = document.getElementById("root");
 
@@ -11,6 +11,6 @@ if (!root) {
 
 ReactDOM.createRoot(root).render(
   <React.StrictMode>
-    <SmileCheckLanding />
+    <VistoLanding />
   </React.StrictMode>,
 );

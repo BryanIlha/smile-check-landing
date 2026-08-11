@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
   <title id="title">Visto monochrome paper mark</title>
-  <desc id="desc">One-colour Visto mark in warm paper.</desc>
-  <path fill="#F5F0E7" d="M7 8h13l12 30L44 8h13L32 56 7 8Z"/>
+  <desc id="desc">Approved Visto mark in warm paper.</desc>
+  <path fill="#F5F0E7" d="M10 33h32l52 68 32-85h28l-52 124c-5 11-23 8-30-10L10 50Z"/>
 </svg>

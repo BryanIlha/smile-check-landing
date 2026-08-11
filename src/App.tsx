@@ -8,16 +8,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 function VistoWordmark({
   reversed = false,
+  surface,
   alt = "Visto",
   className,
 }: {
   reversed?: boolean;
+  surface?: "paper" | "ink" | "orange";
   alt?: string;
   className?: string;
 }) {
+  const source = {
+    paper: "/assets/visto/visto-wordmark.svg",
+    ink: "/assets/visto/visto-wordmark-reverse.svg",
+    orange: "/assets/visto/visto-wordmark-on-orange.svg",
+  }[surface ?? (reversed ? "ink" : "paper")];
+
   return (
     <img
-      src={`/assets/visto/visto-wordmark${reversed ? "-reverse" : ""}.svg`}
+      src={source}
       alt={alt}
       className={className}
       width="500"
@@ -26,8 +34,24 @@ function VistoWordmark({
   );
 }
 
-function VistoMark({ className, alt = "" }: { className?: string; alt?: string }) {
-  return <img src="/assets/visto/visto-mark.svg" alt={alt} className={className} width="160" height="160" />;
+type VistoSurface = "paper" | "ink" | "orange";
+
+function VistoMark({
+  className,
+  alt = "",
+  surface = "paper",
+}: {
+  className?: string;
+  alt?: string;
+  surface?: VistoSurface;
+}) {
+  const source = {
+    paper: "/assets/visto/visto-mark.svg",
+    ink: "/assets/visto/visto-mark-reverse.svg",
+    orange: "/assets/visto/visto-mark-on-orange.svg",
+  }[surface];
+
+  return <img src={source} alt={alt} className={className} width="160" height="160" />;
 }
 
 const DEMO_URL =
@@ -96,7 +120,7 @@ function ChecklistScene() {
             <div className="scene-board">
               <div className="scene-board__topbar">
                 <div className="scene-board__brand">
-                  <VistoMark className="scene-brand-mark" />
+                  <VistoMark className="scene-brand-mark" surface="orange" />
                   <strong>Visto</strong>
                 </div>
                 <div className="scene-board__topbar-right">
@@ -217,7 +241,7 @@ function ChecklistScene() {
         <div className="device-phone" data-depth="phone" aria-hidden="true">
           <div className="device-phone__screen">
             <div className="device-phone__status"><span>9:41</span><span className="device-phone__signal"><i /><i /><i /></span></div>
-            <div className="device-phone__brand"><VistoMark className="device-phone__mark" /><strong>Visto</strong></div>
+            <div className="device-phone__brand"><VistoMark className="device-phone__mark" surface="orange" /><strong>Visto</strong></div>
             <div className="device-phone__heading"><span>Rotina da manhã</span><strong>3/5</strong></div>
             <div className="device-phone__progress"><span /></div>
             <div className="device-phone__list">

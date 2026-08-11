@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
   <title id="title">Visto mark</title>
-  <desc id="desc">Geometric V mark with an orange signal wedge.</desc>
-  <path fill="#080808" d="M7 8h13l12 30L44 8h13L32 56 7 8Z"/>
-  <path fill="#F2610A" d="M27 30h10l-5 16-5-16Z"/>
+  <desc id="desc">Approved squared confirmation check that forms the V of Visto.</desc>
+  <path fill="#080707" d="M10 33h32l52 68-22 29L10 50Z"/>
+  <path fill="#FF7900" d="m72 130 54-114h28l-52 124c-5 11-23 8-30-10Z"/>
 </svg>

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 160" role="img" aria-labelledby="title desc">
-  <title id="title">Visto wordmark</title>
-  <desc id="desc">Approved Visto wordmark for light surfaces.</desc>
+  <title id="title">Visto for orange surfaces</title>
+  <desc id="desc">Approved Visto wordmark with a paper confirmation stroke for orange surfaces.</desc>
   <path fill="#080707" d="M12 32h30l54 69-21 27L12 49Z"/>
-  <path fill="#FF7900" d="m75 128 62-114h30l-64 124c-6 11-23 7-28-10Z"/>
+  <path fill="#F5F0E7" d="m75 128 62-114h30l-64 124c-6 11-23 7-28-10Z"/>
   <text x="177" y="120" fill="#080707" font-family="Instrument Sans, Arial, Helvetica, sans-serif" font-size="108" font-weight="700" letter-spacing="-7">isto</text>
 </svg>

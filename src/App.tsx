@@ -18,8 +18,8 @@ function VistoWordmark({
   className?: string;
 }) {
   const source = {
-    paper: "/assets/visto/visto-wordmark.svg",
-    ink: "/assets/visto/visto-wordmark-reverse.svg",
+    paper: "/assets/visto/visto_wordmark.svg",
+    ink: "/assets/visto/visto_wordmark_reverse.svg",
     orange: "/assets/visto/visto-wordmark-on-orange.svg",
   }[surface ?? (reversed ? "ink" : "paper")];
 
@@ -28,8 +28,28 @@ function VistoWordmark({
       src={source}
       alt={alt}
       className={className}
-      width="500"
-      height="160"
+      width="246.25"
+      height="91.125"
+    />
+  );
+}
+
+function HawksWordmark({
+  reversed = false,
+  alt = "HAWKS BI",
+  className,
+}: {
+  reversed?: boolean;
+  alt?: string;
+  className?: string;
+}) {
+  return (
+    <img
+      src={reversed ? "/assets/brand-kit/hawks-bi-wordmark-reverse.svg" : "/assets/brand-kit/hawks-bi-wordmark.svg"}
+      alt={alt}
+      className={className}
+      width="2111"
+      height="745"
     />
   );
 }
@@ -46,12 +66,12 @@ function VistoMark({
   surface?: VistoSurface;
 }) {
   const source = {
-    paper: "/assets/visto/visto-mark.svg",
+    paper: "/assets/visto/visto_icon.svg",
     ink: "/assets/visto/visto-mark-reverse.svg",
     orange: "/assets/visto/visto-mark-on-orange.svg",
   }[surface];
 
-  return <img src={source} alt={alt} className={className} width="160" height="160" />;
+  return <img src={source} alt={alt} className={className} width={surface === "paper" ? 199.25 : 160} height={surface === "paper" ? 129.75 : 160} />;
 }
 
 const DEMO_URL =
@@ -120,7 +140,7 @@ function ChecklistScene() {
             <div className="scene-board">
               <div className="scene-board__topbar">
                 <div className="scene-board__brand">
-                  <VistoMark className="scene-brand-mark" surface="orange" />
+                  <VistoMark className="scene-brand-mark" surface="paper" />
                   <strong>Visto</strong>
                 </div>
                 <div className="scene-board__topbar-right">
@@ -176,7 +196,7 @@ function ChecklistScene() {
                           <div className="scene-progress"><span className="scene-progress__fill" /></div>
                           <small>9 concluídas <b>·</b> 3 em atenção</small>
                         </div>
-                        <div className="scene-kpi"><span>Conformidade</span><strong>92<span>%</span></strong><small className="scene-positive">↑ 4,8% nesta semana</small></div>
+                        <div className="scene-kpi"><span>Em atenção</span><strong>03</strong><small>exigem ação hoje</small></div>
                         <div className="scene-kpi"><span>Setores ativos</span><strong>04</strong><small>todos com rotina hoje</small></div>
                       </div>
                       <div className="scene-main-grid">
@@ -241,7 +261,7 @@ function ChecklistScene() {
         <div className="device-phone" data-depth="phone" aria-hidden="true">
           <div className="device-phone__screen">
             <div className="device-phone__status"><span>9:41</span><span className="device-phone__signal"><i /><i /><i /></span></div>
-            <div className="device-phone__brand"><VistoMark className="device-phone__mark" surface="orange" /><strong>Visto</strong></div>
+            <div className="device-phone__brand"><VistoMark className="device-phone__mark" surface="paper" /><strong>Visto</strong></div>
             <div className="device-phone__heading"><span>Rotina da manhã</span><strong>3/5</strong></div>
             <div className="device-phone__progress"><span /></div>
             <div className="device-phone__list">
@@ -381,9 +401,10 @@ export function VistoLanding() {
 
       <header className="marketing-header">
         <div className="marketing-nav-island">
-          <a className="marketing-brand" href="#inicio" aria-label="Visto — início">
-            <VistoWordmark alt="Visto" />
-            <span>HAWKS BI</span>
+          <a className="marketing-brand" href="#inicio" aria-label="Visto — início · HAWKS BI">
+            <VistoWordmark className="marketing-brand__product" alt="Visto" />
+            <span className="marketing-brand__divider" aria-hidden="true" />
+            <HawksWordmark className="marketing-brand__maker" />
           </a>
           <nav className="marketing-nav-links" aria-label="Navegação principal">
             {navigation.map(([label, href]) => <a key={href} href={href}>{label}</a>)}
@@ -432,18 +453,18 @@ export function VistoLanding() {
       <section id="inicio" className="marketing-hero" aria-labelledby="hero-title">
         <div className="marketing-frame marketing-hero__layout">
           <div className="marketing-hero__copy">
-            <p className="marketing-eyebrow" data-hero-label><span className="eyebrow-dot" /> Visto · checklist operacional</p>
-            <h1 id="hero-title" data-hero-title>Checklist que <em>move</em> a operação.</h1>
+            <p className="marketing-eyebrow" data-hero-label><span className="eyebrow-dot" /> Visto · rotinas operacionais</p>
+            <h1 id="hero-title" data-hero-title>Rotinas claras. <em>Respostas no tempo certo.</em></h1>
             <p className="marketing-lede" data-hero-copy>
-              A rotina entra em ordem, a exceção aparece cedo e cada resposta deixa um registro. O Visto transforma checklist em clareza para quem executa e para quem decide.
+              Configure rotinas por setor, turno e dia. O time executa no local; a gestão acompanha pendências, temperaturas e correções.
             </p>
             <div className="marketing-hero__actions" data-hero-actions>
               <Action href={DEMO_URL}>Ver o Visto</Action>
               <a className="marketing-text-link" href="#como-funciona">Entender o fluxo <span aria-hidden="true">↓</span></a>
             </div>
             <div className="marketing-hero__meta" data-hero-copy>
-              <span><StatusDot tone="green" /> Feito para operações multi-setor</span>
-              <span>Interface simples · visão acionável</span>
+              <span><StatusDot tone="green" /> Feito para operações por setor</span>
+              <span>Execução, status e registro no mesmo fluxo</span>
             </div>
           </div>
           <ChecklistScene />
@@ -452,9 +473,9 @@ export function VistoLanding() {
 
       <section className="marketing-proof-strip" aria-label="Resumo do produto">
         <div className="marketing-frame marketing-proof-strip__grid">
-          <div data-gsap-reveal><strong>01</strong><span>Configure uma vez</span><p>Setores, turnos e faixas que refletem o seu dia.</p></div>
-          <div data-gsap-reveal><strong>02</strong><span>Execute sem ruído</span><p>O time sabe o que fazer e registra no momento.</p></div>
-          <div data-gsap-reveal><strong>03</strong><span>Aja por exceção</span><p>A gestão encontra o que merece atenção primeiro.</p></div>
+          <div data-gsap-reveal><strong>01</strong><span>Configure a rotina</span><p>Defina setores, turnos, dias, horários e itens.</p></div>
+          <div data-gsap-reveal><strong>02</strong><span>Execute no local</span><p>O operador responde item a item e registra a correção.</p></div>
+          <div data-gsap-reveal><strong>03</strong><span>Acompanhe o desvio</span><p>A gestão encontra pendências, temperaturas e status.</p></div>
         </div>
       </section>
 
@@ -462,27 +483,27 @@ export function VistoLanding() {
         <div className="marketing-frame">
           <div className="marketing-section-heading" data-gsap-reveal>
             <p className="marketing-eyebrow"><span className="eyebrow-dot" /> Como funciona</p>
-            <h2 id="flow-title">Do checklist à decisão em três movimentos.</h2>
-            <p>Um produto único para ligar o que a operação faz ao que a gestão precisa saber.</p>
+            <h2 id="flow-title">Do cadastro à resposta em três passos.</h2>
+            <p>O Visto conecta a rotina configurada à execução e ao acompanhamento da gestão.</p>
           </div>
           <div className="marketing-flow__rail">
             <article className="flow-card flow-card--featured" data-gsap-reveal>
               <div className="flow-card__number">01 <span>· configurar</span></div>
               <div className="flow-card__visual flow-visual--configure"><span className="flow-line" /><span className="flow-line flow-line--short" /><b>Rotina da manhã</b><small>Produção · 08:00</small></div>
-              <h3>Modele a rotina real.</h3>
-              <p>Cadastre setores, itens, subtarefas e faixas de temperatura sem adaptar o processo ao sistema.</p>
+              <h3>Configure cada rotina.</h3>
+              <p>Defina setor, turno, dias, horário, itens, limites de temperatura e exigência de foto.</p>
             </article>
             <article className="flow-card" data-gsap-reveal>
               <div className="flow-card__number">02 <span>· executar</span></div>
               <div className="flow-card__visual flow-visual--execute"><span className="flow-check">✓</span><b>6 de 8 itens</b><small>Registro em andamento</small></div>
-              <h3>Faça acontecer no local.</h3>
-              <p>O operador recebe a fila certa, responde em sequência e corrige quando algo sai do padrão.</p>
+              <h3>Execute no momento certo.</h3>
+              <p>O operador abre a rotina, responde item a item e registra a correção quando necessário.</p>
             </article>
             <article className="flow-card" data-gsap-reveal>
               <div className="flow-card__number">03 <span>· agir</span></div>
               <div className="flow-card__visual flow-visual--act"><StatusDot tone="orange" /><b>1 atenção agora</b><small>Câmara fria 02</small></div>
-              <h3>Decida com contexto.</h3>
-              <p>Exceção, evidência e histórico ficam próximos para a gestão agir sem investigar em vários lugares.</p>
+              <h3>Acompanhe a exceção.</h3>
+              <p>A gestão vê o status, recebe notificações de início e fim e age com contexto.</p>
             </article>
           </div>
         </div>
@@ -491,8 +512,8 @@ export function VistoLanding() {
       <section id="produto" className="marketing-product" aria-labelledby="product-title">
         <div className="marketing-frame">
           <div className="marketing-product__heading" data-gsap-reveal>
-            <div><p className="marketing-eyebrow marketing-eyebrow--light"><span className="eyebrow-dot" /> Dentro do produto</p><h2 id="product-title">Menos caça ao problema.<br /><em>Mais ação no momento certo.</em></h2></div>
-            <p>O Visto organiza a operação em uma leitura que cabe no ritmo do seu time — e na agenda de quem acompanha tudo.</p>
+            <div><p className="marketing-eyebrow marketing-eyebrow--light"><span className="eyebrow-dot" /> Dentro do Visto</p><h2 id="product-title">Tudo que importa fica ligado à rotina.</h2></div>
+            <p>Rotinas, respostas, temperaturas, correções e status ficam no mesmo lugar para o time executar e a gestão acompanhar.</p>
           </div>
           <div className="marketing-product__bento">
             <div className="bento-card bento-card--main" data-gsap-reveal>
@@ -505,19 +526,19 @@ export function VistoLanding() {
                   ["Temperatura da câmara", "Produção", "Agora", "attention"],
                 ].map(([title, sector, time, status]) => <div className="bento-check-item" key={title}><span className={`bento-checkbox bento-checkbox--${status}`}>{status === "done" ? "✓" : ""}</span><div><strong>{title}</strong><small>{sector}</small></div><time>{time}</time></div>)}
               </div>
-              <p>O operador começa pelo que precisa acontecer — não por uma planilha.</p>
+              <p>O operador começa pelo que precisa acontecer — sem procurar em planilhas.</p>
             </div>
             <div className="bento-card bento-card--attention" data-gsap-reveal>
               <div className="bento-card__label"><span>Gestão por exceção</span><b>Agora</b></div>
               <div className="bento-alert-icon"><StatusDot tone="orange" /></div>
               <strong>Temperatura fora da faixa</strong>
-              <p>O sistema sinaliza o desvio antes que ele vire retrabalho.</p>
+              <p>O desvio fica visível para a próxima ação.</p>
               <a href="#solicitar-demonstracao">Ver ocorrência <span>↗</span></a>
             </div>
             <div className="bento-card bento-card--evidence" data-gsap-reveal>
-              <div className="bento-card__label"><span>Evidência</span><b>Registro</b></div>
-              <div className="bento-evidence-row"><span className="bento-evidence-thumb">IMG</span><div><strong>Correção concluída</strong><small>Foto · resposta · horário</small></div><span>✓</span></div>
-              <p>Tudo que prova a execução permanece ligado ao item certo.</p>
+              <div className="bento-card__label"><span>Registro da execução</span><b>Histórico</b></div>
+              <div className="bento-evidence-row"><span className="bento-evidence-thumb">IMG</span><div><strong>Correção concluída</strong><small>Resposta · horário · foto quando exigida</small></div><span>✓</span></div>
+              <p>Cada resposta permanece ligada ao item e à rotina certa.</p>
             </div>
           </div>
           <p className="marketing-disclaimer">Interface ilustrativa para demonstração comercial · os dados exibidos são fictícios.</p>
@@ -526,21 +547,21 @@ export function VistoLanding() {
 
       <section id="para-quem" className="marketing-audience" aria-labelledby="audience-title">
         <div className="marketing-frame marketing-audience__layout">
-          <div className="marketing-audience__heading" data-gsap-reveal><p className="marketing-eyebrow"><span className="eyebrow-dot" /> Para quem é</p><h2 id="audience-title">Uma visão para cada pessoa que faz a operação acontecer.</h2><p>O mesmo dado muda de forma conforme a responsabilidade — sem criar mais uma camada de trabalho.</p></div>
+          <div className="marketing-audience__heading" data-gsap-reveal><p className="marketing-eyebrow"><span className="eyebrow-dot" /> Para quem é</p><h2 id="audience-title">Uma visão para quem executa e acompanha a rotina.</h2><p>Cada papel vê o que precisa fazer, revisar ou administrar.</p></div>
           <div className="audience-list">
-            <article data-gsap-reveal><span>01</span><div><h3>Operador</h3><p>Fila do dia, instrução clara e registro sem interromper o ritmo.</p></div><b>Executar <i>↗</i></b></article>
-            <article data-gsap-reveal><span>02</span><div><h3>Gestor</h3><p>Atenção, setor e histórico para escolher a próxima ação.</p></div><b>Priorizar <i>↗</i></b></article>
-            <article data-gsap-reveal><span>03</span><div><h3>Administrador</h3><p>Rotinas, permissões e configurações que acompanham o negócio.</p></div><b>Organizar <i>↗</i></b></article>
+            <article data-gsap-reveal><span>01</span><div><h3>Operador</h3><p>Itens da rotina, ordem e status para executar sem dúvida.</p></div><b>Executar <i>↗</i></b></article>
+            <article data-gsap-reveal><span>02</span><div><h3>Gestor</h3><p>Pendências, andamento, conclusão e correções para agir.</p></div><b>Acompanhar <i>↗</i></b></article>
+            <article data-gsap-reveal><span>03</span><div><h3>Administrador</h3><p>Setores, rotinas, grupos de acesso e configurações.</p></div><b>Organizar <i>↗</i></b></article>
           </div>
         </div>
       </section>
 
       <section id="solicitar-demonstracao" className="marketing-final-cta" aria-labelledby="cta-title">
         <div className="marketing-frame marketing-final-cta__layout" data-gsap-reveal>
-          <div><p className="marketing-eyebrow"><span className="eyebrow-dot" /> Visto · HAWKS BI</p><h2 id="cta-title">Sua operação já tem o processo.<br /><em>Agora dê visibilidade a ele.</em></h2></div>
+          <div><p className="marketing-eyebrow"><span className="eyebrow-dot" /> Visto · HAWKS BI</p><h2 id="cta-title">Veja a rotina funcionando.<br /><em>Decida com o registro certo.</em></h2></div>
           <div>
-            <p>Veja o Visto em uma demonstração guiada e descubra onde a rotina pode ganhar clareza, rastreio e velocidade de resposta.</p>
-            <p className="marketing-company-note">A HAWKS BI transforma complexidade em controle com dados, automação e tecnologia.</p>
+            <p>Agende uma demonstração guiada e veja como configurar, executar e acompanhar uma rotina no Visto.</p>
+            <p className="marketing-company-note">Visto é um produto da HAWKS BI.</p>
             <div className="marketing-final-cta__actions">
               <Action href={DEMO_URL}>Agendar demonstração</Action>
               <Action href={HAWKS_SITE_URL} external secondary>Conhecer a HAWKS BI</Action>
@@ -551,9 +572,9 @@ export function VistoLanding() {
 
       <footer className="marketing-footer">
         <div className="marketing-frame marketing-footer__layout">
-          <div className="marketing-footer__brand"><VistoWordmark reversed alt="Visto" /><span>HAWKS BI</span></div>
+          <div className="marketing-footer__brand"><VistoWordmark className="marketing-footer__product" reversed alt="Visto" /><span className="marketing-footer__divider" aria-hidden="true" /><HawksWordmark className="marketing-footer__maker" reversed /></div>
           <nav aria-label="Links do rodapé"><a href="#produto">Produto</a><a href={LOGIN_URL}>Entrar no sistema</a><a href={DEMO_URL}>Agendar demonstração</a><a href={HAWKS_SITE_URL} target="_blank" rel="noreferrer">HAWKS BI ↗</a></nav>
-          <p>HAWKS BI · Dados, Automação e Tecnologia para operações que precisam avançar.</p>
+          <p>Visto · Rotinas por setor, execução e acompanhamento.</p>
         </div>
       </footer>
     </main>

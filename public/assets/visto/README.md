@@ -6,6 +6,8 @@ Identidade do produto de rotina operacional da HAWKS BI. O check bicolor, com co
 
 | Arquivo | Uso |
 | --- | --- |
+| `visto_wordmark.svg` | Wordmark aprovado fornecido para a landing e assinaturas sobre papel |
+| `visto_icon.svg` | Ícone aprovado fornecido e favicon do Smile Check |
 | `visto-wordmark.svg` | Assinatura principal sobre papel e superfícies claras |
 | `visto-wordmark-reverse.svg` | Assinatura principal sobre superfícies escuras |
 | `visto-wordmark-on-orange.svg` | Assinatura para superfícies laranja |

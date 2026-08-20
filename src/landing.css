@@ -118,9 +118,24 @@ body {
   gap: 0.8rem;
 }
 
-.marketing-brand__product {
-  width: auto;
-  height: 2rem;
+.marketing-brand__visto {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.marketing-brand__icon {
+  width: 2.25rem;
+  height: 2.6rem;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+.marketing-brand__wordmark {
+  width: 6.6rem;
+  height: auto;
+  flex: 0 1 auto;
 }
 
 .marketing-brand__divider,
@@ -134,7 +149,7 @@ body {
 
 .marketing-brand__maker {
   width: auto;
-  height: 2.25rem;
+  height: 2.55rem;
 }
 
 .marketing-brand__product,
@@ -1896,7 +1911,7 @@ body {
 }
 
 .marketing-footer__maker {
-  width: 6rem;
+  width: 8rem;
   height: auto;
 }
 
@@ -2182,14 +2197,18 @@ body {
     padding-left: 0.8rem;
   }
 
-  .marketing-brand__product {
-    width: auto;
-    height: 1.55rem;
+  .marketing-brand__icon {
+    width: 1.85rem;
+    height: 2.25rem;
+  }
+
+  .marketing-brand__wordmark {
+    width: 5.4rem;
   }
 
   .marketing-brand__maker {
     width: auto;
-    height: 1.75rem;
+    height: 2rem;
   }
 
   .marketing-hero {
@@ -2600,6 +2619,10 @@ body {
   .marketing-footer nav {
     flex-wrap: wrap;
     gap: 0.8rem 1rem;
+  }
+
+  .marketing-footer__maker {
+    width: 7rem;
   }
 }
 

@@ -8,29 +8,44 @@ gsap.registerPlugin(ScrollTrigger);
 
 function VistoWordmark({
   reversed = false,
-  surface,
   alt = "Visto",
   className,
 }: {
   reversed?: boolean;
-  surface?: "paper" | "ink" | "orange";
   alt?: string;
   className?: string;
 }) {
-  const source = {
-    paper: "/assets/visto/visto-logo-texto.svg",
-    ink: "/assets/visto/visto-hex-logo-reverse.svg",
-    orange: "/assets/visto/visto-hex-logo-reverse.svg",
-  }[surface ?? (reversed ? "ink" : "paper")];
-  const isNewPaperLogo = !reversed && (surface === undefined || surface === "paper");
-
   return (
     <img
-      src={source}
+      src={reversed ? "/assets/visto/visto-wordmark-reverse.svg" : "/assets/visto/visto-logo-texto.svg"}
       alt={alt}
       className={className}
-      width={isNewPaperLogo ? 560 : 520}
-      height={isNewPaperLogo ? 180 : 150}
+      width="560"
+      height="180"
+    />
+  );
+}
+
+function VistoIcon({ alt = "Visto", className }: { alt?: string; className?: string }) {
+  return (
+    <img
+      src="/assets/visto/visto-logo-simbolo.svg"
+      alt={alt}
+      className={className}
+      width="550"
+      height="660"
+    />
+  );
+}
+
+function VistoLogoLockup({ reversed = false, alt = "Visto — precisão e controle", className }: { reversed?: boolean; alt?: string; className?: string }) {
+  return (
+    <img
+      src={reversed ? "/assets/visto/visto-logo-paleta-whatsapp-reverse.svg" : "/assets/visto/visto-logo-paleta-whatsapp.svg"}
+      alt={alt}
+      className={className}
+      width="1200"
+      height="1200"
     />
   );
 }
@@ -67,7 +82,7 @@ function VistoMark({
   surface?: VistoSurface;
 }) {
   const source = {
-    paper: "/assets/visto/visto-logo-simbolo.svg",
+    paper: "/assets/visto/visto-logo-paleta-whatsapp.svg",
     ink: "/assets/visto/visto-hex-mark-reverse.svg",
     orange: "/assets/visto/visto-hex-mark-reverse.svg",
   }[surface];
@@ -411,7 +426,10 @@ export function VistoLanding() {
       <header className="marketing-header">
         <div className="marketing-nav-island">
           <a className="marketing-brand" href="#inicio" aria-label="Visto — início · HAWKS BI">
-            <VistoWordmark className="marketing-brand__product" alt="Visto" />
+            <span className="marketing-brand__visto">
+              <VistoIcon className="marketing-brand__icon" />
+              <VistoWordmark className="marketing-brand__wordmark" alt="Visto" />
+            </span>
             <span className="marketing-brand__divider" aria-hidden="true" />
             <HawksWordmark className="marketing-brand__maker" />
           </a>
@@ -581,7 +599,7 @@ export function VistoLanding() {
 
       <footer className="marketing-footer">
         <div className="marketing-frame marketing-footer__layout">
-          <div className="marketing-footer__brand"><VistoWordmark className="marketing-footer__product" reversed alt="Visto" /><span className="marketing-footer__divider" aria-hidden="true" /><HawksWordmark className="marketing-footer__maker" reversed /></div>
+          <div className="marketing-footer__brand"><VistoLogoLockup className="marketing-footer__product" reversed /><span className="marketing-footer__divider" aria-hidden="true" /><HawksWordmark className="marketing-footer__maker" reversed /></div>
           <nav aria-label="Links do rodapé"><a href="#produto">Produto</a><a href={LOGIN_URL}>Entrar no sistema</a><a href={DEMO_URL}>Agendar demonstração</a><a href={HAWKS_SITE_URL} target="_blank" rel="noreferrer">HAWKS BI ↗</a></nav>
           <p>Visto · Rotinas por setor, execução e acompanhamento.</p>
         </div>

@@ -300,17 +300,47 @@ body {
 }
 
 .marketing-hero h1 {
-  max-width: 8.5ch;
+  max-width: 11.5ch;
   margin: 0;
-  font-size: clamp(3.65rem, 6.2vw, 6.35rem);
+  font-size: clamp(3.65rem, 5.25vw, 5.6rem);
   font-weight: 720;
-  letter-spacing: -0.095em;
+  letter-spacing: -0.075em;
   line-height: 0.91;
 }
 
 .marketing-hero h1 em {
   color: var(--marketing-green-deep);
   font-style: normal;
+}
+
+.hero-rotating-word {
+  display: inline-grid;
+  color: var(--marketing-green-deep);
+  vertical-align: baseline;
+}
+
+.hero-rotating-word__value {
+  grid-area: 1 / 1;
+  visibility: hidden;
+  opacity: 0;
+  white-space: nowrap;
+}
+
+.hero-rotating-word__value.is-active {
+  visibility: visible;
+  animation: hero-word-enter 420ms var(--marketing-ease) both;
+}
+
+@keyframes hero-word-enter {
+  from {
+    opacity: 0;
+    transform: translateY(0.18em);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .marketing-product h2 em {
@@ -1963,7 +1993,7 @@ body {
   }
 
   .marketing-hero h1 {
-    font-size: clamp(3.55rem, 6vw, 5.35rem);
+    font-size: clamp(3.45rem, 5.2vw, 5rem);
   }
 
   .scene-stage {
@@ -2110,8 +2140,8 @@ body {
   }
 
   .marketing-hero h1 {
-    max-width: 9ch;
-    font-size: clamp(3.7rem, 13vw, 5.8rem);
+    max-width: 11.5ch;
+    font-size: clamp(3.5rem, 10.5vw, 5.25rem);
   }
 
   .marketing-lede {
@@ -2221,7 +2251,7 @@ body {
   }
 
   .marketing-hero h1 {
-    font-size: clamp(3.35rem, 15vw, 4.75rem);
+    font-size: clamp(3.1rem, 13vw, 4.25rem);
   }
 
   .marketing-lede {

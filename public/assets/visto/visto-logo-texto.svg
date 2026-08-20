@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="180" viewBox="320 810 560 180" role="img" aria-labelledby="visto-text-title visto-text-desc">
+  <title id="visto-text-title">Texto da marca VISTO</title>
+  <desc id="visto-text-desc">Wordmark VISTO com um ponto laranja sobre a letra I.</desc>
+
+  <g id="wordmark" fill="#080808" text-anchor="middle" font-family="Montserrat, 'Avenir Next', Avenir, Arial, sans-serif" font-size="118" font-weight="700" letter-spacing="0" aria-label="VISTO">
+    <text id="letter-v" x="430" y="956">V</text>
+    <text id="letter-i" x="505" y="956">I</text>
+    <text id="letter-s" x="575" y="956">S</text>
+    <text id="letter-t" x="660" y="956">T</text>
+    <text id="letter-o" x="760" y="956">O</text>
+  </g>
+
+  <circle id="i-orange-dot" cx="505" cy="850" r="10" fill="#F2610A"/>
+</svg>

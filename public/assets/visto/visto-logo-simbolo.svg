@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="550" height="660" viewBox="330 160 550 660" role="img" aria-labelledby="visto-symbol-title visto-symbol-desc">
+  <title id="visto-symbol-title">Símbolo VISTO</title>
+  <desc id="visto-symbol-desc">Símbolo vetorial da marca VISTO, com prancheta, estrutura de processo, checklist e marca de conclusão.</desc>
+
+  <g id="brand-symbol" aria-label="Símbolo VISTO">
+    <g id="clipboard" fill="none" stroke="#080808" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M462 318H431C405 318 384 339 384 365V423"/>
+      <path d="M738 318H769C795 318 816 339 816 365V423"/>
+      <path d="M510 318V276C510 265 519 256 530 256H554C558 225 577 207 600 207C623 207 642 225 646 256H670C681 256 690 265 690 276V318Z" fill="#080808" stroke="none"/>
+      <circle cx="600" cy="254" r="14" fill="#F5F0E7" stroke="none"/>
+    </g>
+
+    <g id="process-structure" fill="none" stroke="#080808" stroke-width="34" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M770 451L621 360C608 352 592 352 579 360L430 451C418 458 411 471 411 485V650C411 665 419 678 432 686L578 774C592 782 608 782 622 774L768 686C781 678 789 665 789 650V621"/>
+    </g>
+
+    <g id="checklist" fill="#F2610A" stroke="#F2610A">
+      <circle cx="483" cy="509" r="14" stroke="none"/>
+      <circle cx="483" cy="574" r="14" stroke="none"/>
+      <circle cx="483" cy="639" r="14" stroke="none"/>
+      <path d="M531 509H607M531 574H607M531 639H607" fill="none" stroke-width="18" stroke-linecap="round"/>
+    </g>
+
+    <g id="approval-check" fill="none" stroke="#2E8B57" stroke-width="38" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M642 568L704 629L823 493"/>
+    </g>
+  </g>
+</svg>

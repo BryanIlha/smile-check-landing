@@ -18,18 +18,19 @@ function VistoWordmark({
   className?: string;
 }) {
   const source = {
-    paper: "/assets/visto/visto-hex-logo.svg",
+    paper: "/assets/visto/visto-logo-texto.svg",
     ink: "/assets/visto/visto-hex-logo-reverse.svg",
     orange: "/assets/visto/visto-hex-logo-reverse.svg",
   }[surface ?? (reversed ? "ink" : "paper")];
+  const isNewPaperLogo = !reversed && (surface === undefined || surface === "paper");
 
   return (
     <img
       src={source}
       alt={alt}
       className={className}
-      width="520"
-      height="150"
+      width={isNewPaperLogo ? 560 : 520}
+      height={isNewPaperLogo ? 180 : 150}
     />
   );
 }
@@ -66,12 +67,20 @@ function VistoMark({
   surface?: VistoSurface;
 }) {
   const source = {
-    paper: "/assets/visto/visto-hex-mark.svg",
+    paper: "/assets/visto/visto-logo-simbolo.svg",
     ink: "/assets/visto/visto-hex-mark-reverse.svg",
     orange: "/assets/visto/visto-hex-mark-reverse.svg",
   }[surface];
 
-  return <img src={source} alt={alt} className={className} width="128" height="128" />;
+  return (
+    <img
+      src={source}
+      alt={alt}
+      className={className}
+      width={surface === "paper" ? 550 : 128}
+      height={surface === "paper" ? 660 : 128}
+    />
+  );
 }
 
 const DEMO_URL =

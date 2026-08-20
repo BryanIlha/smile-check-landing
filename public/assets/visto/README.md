@@ -1,13 +1,16 @@
 # Visto — sistema de marca
 
-Família vetorial atual do Visto. O símbolo une checklist, conclusão e operação em um hexágono duotone verde; o ponto do **i** é laranja.
+Família vetorial do Visto. A assinatura VISTO une texto, checklist, conclusão e operação; o ponto do **I** é laranja.
 
 | Arquivo | Uso |
 | --- | --- |
+| `visto-logo-texto.svg` | Wordmark VISTO com ponto laranja no I |
+| `visto-logo-simbolo.svg` | Símbolo VISTO com prancheta, checklist e aprovação |
+| `visto-logo-paleta-whatsapp.svg` | Lockup vertical completo com símbolo, wordmark e assinatura |
 | `visto-hex-logo.svg` | Lockup principal em fundo claro |
 | `visto-hex-logo-reverse.svg` | Lockup para fundo escuro |
 | `visto-hex-mark.svg` | Símbolo isolado em fundo claro |
 | `visto-hex-mark-reverse.svg` | Símbolo isolado em fundo escuro |
 | `visto-hex-app-icon.svg` | Ícone de app e favicon |
 
-Paleta: verde `#16A34A`, verde profundo `#0B6B3A`, laranja `#FF7900`, grafite `#111111`, papel `#F7F7F4`.
+Paleta VISTO: verde `#2E8B57`, laranja `#F2610A`, grafite `#080808`, papel `#F5F0E7`.

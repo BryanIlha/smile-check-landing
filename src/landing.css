@@ -127,6 +127,7 @@ body {
 .marketing-footer__divider {
   display: block;
   width: 1px;
+  flex: 0 0 1px;
   height: 1.5rem;
   background: var(--marketing-line-light);
 }

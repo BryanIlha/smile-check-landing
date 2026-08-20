@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 160" role="img" aria-labelledby="title desc">
-  <title id="title">Visto — opção 02</title>
-  <desc id="desc">A compact two-tone confirmation check forming the V in Visto.</desc>
-  <path fill="#080707" d="M18 48h39l64 91c-6 13-25 14-33 1L18 48Z"/>
-  <path fill="#FF7900" d="m89 140 59-118h40l-66 129c-7 13-26 6-33-11Z"/>
-  <text x="204" y="120" fill="#080707" font-family="Instrument Sans, Arial, Helvetica, sans-serif" font-size="108" font-weight="700" letter-spacing="-7">isto</text>
-</svg>

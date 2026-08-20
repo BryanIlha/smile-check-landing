@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 234 254" role="img" aria-labelledby="visto-icon-title visto-icon-desc">
+  <title id="visto-icon-title">Ícone Visto</title>
+  <desc id="visto-icon-desc">Símbolo hexagonal de checklist em verde com lista e check laranja.</desc>
+  <path d="M102 14.5 15 63v130l89 46.5" fill="none" stroke="#0B6B3A" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="29"/>
+  <path d="M112 14.5 197.5 63v23" fill="none" stroke="#16A34A" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="29"/>
+  <path d="M197.5 150v43L112 239.5" fill="none" stroke="#16A34A" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="29"/>
+  <g fill="#FF7900">
+    <circle cx="59" cy="96" r="9"/>
+    <circle cx="59" cy="129" r="9"/>
+    <circle cx="59" cy="163" r="9"/>
+  </g>
+  <g fill="none" stroke="#16A34A" stroke-linecap="round" stroke-width="10">
+    <path d="M82 96h49"/>
+    <path d="M82 129h49"/>
+    <path d="M82 163h49"/>
+  </g>
+  <path d="m146 126 30 28 52-65" fill="none" stroke="#FF7900" stroke-linecap="round" stroke-linejoin="round" stroke-width="17"/>
+</svg>

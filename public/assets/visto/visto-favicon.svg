@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
-  <title id="title">Visto favicon</title>
-  <desc id="desc">The compact Visto confirmation check used on browser tabs.</desc>
-  <rect width="64" height="64" rx="14" fill="#080707"/>
-  <path fill="#F5F0E7" d="M4 18h15l23 34c-3 6-10 6-14 0L4 18Z"/>
-  <path fill="#FF7900" d="m28 52 20-43h14L39 56c-3 6-10 2-11-4Z"/>
-</svg>

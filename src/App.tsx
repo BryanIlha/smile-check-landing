@@ -18,9 +18,9 @@ function VistoWordmark({
   className?: string;
 }) {
   const source = {
-    paper: "/assets/visto/visto_wordmark.svg",
-    ink: "/assets/visto/visto_wordmark_reverse.svg",
-    orange: "/assets/visto/visto-wordmark-on-orange.svg",
+    paper: "/assets/visto/visto-hex-logo.svg",
+    ink: "/assets/visto/visto-hex-logo-reverse.svg",
+    orange: "/assets/visto/visto-hex-logo-reverse.svg",
   }[surface ?? (reversed ? "ink" : "paper")];
 
   return (
@@ -28,8 +28,8 @@ function VistoWordmark({
       src={source}
       alt={alt}
       className={className}
-      width="246.25"
-      height="91.125"
+      width="520"
+      height="150"
     />
   );
 }
@@ -66,12 +66,12 @@ function VistoMark({
   surface?: VistoSurface;
 }) {
   const source = {
-    paper: "/assets/visto/visto_icon.svg",
-    ink: "/assets/visto/visto-mark-reverse.svg",
-    orange: "/assets/visto/visto-mark-on-orange.svg",
+    paper: "/assets/visto/visto-hex-mark.svg",
+    ink: "/assets/visto/visto-hex-mark-reverse.svg",
+    orange: "/assets/visto/visto-hex-mark-reverse.svg",
   }[surface];
 
-  return <img src={source} alt={alt} className={className} width={surface === "paper" ? 199.25 : 160} height={surface === "paper" ? 129.75 : 160} />;
+  return <img src={source} alt={alt} className={className} width="128" height="128" />;
 }
 
 const DEMO_URL =

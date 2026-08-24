@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-export default defineConfig({
-  base: "/smile-check-landing/",
+export default defineConfig(({ mode }) => ({
+  base: mode === "github-pages" ? "/smile-check-landing/" : "/",
   plugins: [react()],
-});
+}));

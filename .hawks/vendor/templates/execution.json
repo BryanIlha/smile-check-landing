@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "issueId": "INF-123",
+  "phase": "implement",
+  "policyVersion": "hawks-routing-1.0.0",
+  "contextVersion": null,
+  "requestedModel": null,
+  "actualModel": null,
+  "requestedEffort": null,
+  "effortEvidence": null,
+  "interface": null,
+  "applied": false,
+  "usage": null,
+  "costUsd": null,
+  "budget": null,
+  "escalations": 0,
+  "rework": 0,
+  "result": "prepared",
+  "evidence": [],
+  "toolkitVersion": "1.1.0",
+  "capabilities": [],
+  "worktree": {
+    "branch": null,
+    "path": null,
+    "resumed": false,
+    "cleanup": "pending",
+    "retentionReason": null,
+    "removalCondition": null
+  }
+}

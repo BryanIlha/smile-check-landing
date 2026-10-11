@@ -1,5 +1,12 @@
-# Instruções do projeto
+# Instruções — smile-check-landing
 
-## Workflow Hawks obrigatório
+<!-- hawks:generated; editar o template central e propagar com tools/adopt.py -->
 
-Ler [manifesto](.hawks/workflow.json) e [contrato](docs/project-workflow.md). O catálogo comum e o ciclo de worktrees fixados são obrigatórios antes de cada fase: skills aplicáveis, MCP suficiente, retomada sem duplicação e edição somente em worktree/branch próprias. Limpeza pelo Git após os gates; retenção precisa de motivo e condição no Linear/relatório. Preservar regras específicas abaixo.
+1. Leia o [manifesto](.hawks/workflow.json) e os padrões fixados: [governança](.hawks/vendor/standards/governance.md), [qualidade](.hawks/vendor/standards/quality.md), [entrega](.hawks/vendor/standards/delivery.md) e [worktrees](.hawks/vendor/standards/worktrees.md).
+2. Consulte a história e comentários atuais no Linear. Procure a execução existente antes de criar branch/worktree; toda edição versionada acontece na worktree da tarefa.
+3. Leia [PRODUCT](PRODUCT.md), [DESIGN](DESIGN.md), [contrato local](docs/project-workflow.md) e os anexos pertinentes. O [estado](docs/status.md) é datado.
+4. Antes de cada fase, consulte o [catálogo](.hawks/vendor/standards/toolkit.md), leia as skills aplicáveis e verifique a capacidade real. Use MCP suficiente e registre limitação/fallback.
+5. Execute os gates comuns pelos comandos/ambientes locais; registre evidências do SHA atual, revisão, integração e aceite aplicáveis.
+6. Conclua a limpeza segura da própria worktree, ou registre razão e condição de remoção. Preserve recursos, dados e sessões alheios.
+
+Mudanças no processo comum são feitas na fonte central e propagadas globalmente. Produto, design e parâmetros locais não redefinem nem reduzem os gates Hawks. Consulte o [índice documental](docs/documentation-map.md) para autoridade, anexos e histórico.

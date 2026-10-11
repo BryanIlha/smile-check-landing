@@ -1,5 +1,7 @@
 # implement — smile-check-landing
 
-Ler [manifesto](../.hawks/workflow.json) e carregar `prompts/implement.md`, `toolkit` e `worktreePolicy` da fonte exatamente no commit adotado. Consultar [contrato local](../docs/project-workflow.md), [produto](../README.md) e [identidade](../README.md).
+<!-- hawks:generated; não editar manualmente -->
 
-Antes da fase, ler skills aplicáveis, verificar MCPs suficientes e registrar fallback. Retomar execução existente; editar somente na worktree/branch próprias. Ao concluir, limpar pelo Git após remoto/integração/aceite e preservação dos arquivos; registrar retenção justificada quando necessário. Markdown não instala comando de barra nem troca modelo.
+Leia [AGENTS](../AGENTS.md), o [manifesto](../.hawks/workflow.json) e execute o [prompt comum desta fase](../.hawks/vendor/prompts/implement.md). Consulte [produto](../PRODUCT.md), [design](../DESIGN.md) e [contrato local](../docs/project-workflow.md).
+
+A versão local é fixada e verificável com `python3 .hawks/check.py`. Antes da fase, carregue catálogo/skills e confira MCPs; retome a execução correta e siga o ciclo da worktree até limpeza ou retenção justificada. Se a tarefa mudar processo compartilhado, aplique a governança central e a propagação global.

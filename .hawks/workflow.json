@@ -1,21 +1,34 @@
 {
-  "schemaVersion": 1,
-  "version": "1.1.0",
-  "sourceRepository": "BZuller/hawks-cockpit",
-  "sourcePath": "tooling/hawks-workflow",
-  "sourceCommit": "b9e2c220b50e07096101f5c8fa4109357a6046b0",
+  "schemaVersion": 2,
+  "version": "1.2.0",
+  "sourceRepository": "BZuller/hawks-standards",
+  "sourcePath": ".",
+  "sourceCommit": "860e22b2cfb37c063628c8feb754f6099bf32417",
   "profile": "landing",
   "project": "smile-check-landing",
   "repository": "BryanIlha/smile-check-landing",
   "integrationBranch": "main",
   "contract": "docs/project-workflow.md",
-  "product": "README.md",
-  "design": "README.md",
+  "product": "PRODUCT.md",
+  "design": "DESIGN.md",
   "status": "docs/status.md",
-  "linearProject": "A definir pelo domínio; INF-392 coordena adoção",
+  "linearProject": "P-INF-8",
   "toolkit": "standards/toolkit.md",
   "worktreePolicy": "standards/worktrees.md",
   "worktreeRootEnv": "HAWKS_WORKTREE_ROOT",
   "worktreePathTemplate": "<root>/<repo>/inf-<number>",
-  "branchTemplate": "codex/inf-<number>-<slug>"
+  "branchTemplate": "codex/inf-<number>-<slug>",
+  "validation": {
+    "documentation": [
+      "python3 .hawks/check.py",
+      "git diff --check"
+    ],
+    "functional": [
+      "npm run build"
+    ],
+    "scope": [
+      "Aplicar matriz de qualidade e requisitos do contrato conforme a mudança."
+    ]
+  },
+  "exceptions": []
 }

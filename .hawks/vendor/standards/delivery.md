@@ -1,4 +1,4 @@
-# Ciclo de entrega — 1.2.0
+# Ciclo de entrega — 1.2.1
 
 Backlog → história preparada e revisada → Todo → In Progress → In Review → entrega/aceite → Done.
 
@@ -8,9 +8,9 @@ Preparação/revisão da história e build/publicação são etapas registradas 
 | --- | --- |
 | Backlog → Todo | Problema, resultado, escopo, aceite verificável, dependências e contexto suficientes; revisão da história registrada com autor/data. |
 | Todo → In Progress | Responsável/executor explícito, branch e worktree próprias, catálogo/skills aplicáveis lidos e ambiente. Pessoa desconhecida fica a definir; não atribuir por suposição. |
-| In Progress → In Review | PR, SHA atual, prova de worktree, capacidades usadas, checks proporcionais, limitações e riscos documentados. Nova revisão exige revalidar evidências afetadas. |
+| In Progress → In Review | Matriz de sincronização de fontes/referências conferida, PR, SHA atual, prova de worktree, capacidades usadas, checks proporcionais, limitações e riscos documentados. Nova revisão exige revalidar evidências afetadas. |
 | In Review → entrega/aceite | Review de código confirma implementação e critérios. Build/deploy continuam registrados nesta etapa; merge segue autorização local. |
-| → Done | Critérios cumpridos, docs atualizados, integração comprovada e publicação validada quando exigida; limpeza da própria worktree comprovada ou retenção justificada com condição de remoção; exceção sem código justificada. |
+| → Done | Critérios cumpridos, fontes/referências afetadas sincronizadas conforme governança, docs atualizados, integração comprovada e publicação validada quando exigida; limpeza da própria worktree comprovada ou retenção justificada com condição de remoção; exceção sem código justificada. |
 
 Revisão da história avalia prontidão; revisão do código avalia PR/aceite. Nenhuma substitui a outra. Build verde não prova versão servida. PR integrada não encerra épico; verificar filhos e critérios próprios. Datas vencidas são histórico a replanejar com responsável, não permissão para inventar prazo novo.
 

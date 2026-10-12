@@ -1,9 +1,9 @@
 {
   "schemaVersion": 2,
-  "version": "1.2.0",
+  "version": "1.2.1",
   "sourceRepository": "BZuller/hawks-standards",
   "sourcePath": ".",
-  "sourceCommit": "860e22b2cfb37c063628c8feb754f6099bf32417",
+  "sourceCommit": "75710d621022e3333ab632e3fa2c3423b09fcc74",
   "profile": "landing",
   "project": "smile-check-landing",
   "repository": "BryanIlha/smile-check-landing",

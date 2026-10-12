@@ -18,3 +18,7 @@ Usar assets/logos/tokens oficiais presentes na árvore e perfis/landing.md do n�
 ## Padrão comum
 
 Processo, qualidade, catálogo, templates e ciclo de worktrees são definidos no [núcleo fixado](../.hawks/vendor/standards/governance.md). Este contrato fornece apenas parâmetros e requisitos locais. Mudança de regra comum exige fonte central e propagação.
+
+## Sincronização após mudanças
+
+Aplicar a [sincronização obrigatória de fontes e referências](../.hawks/vendor/standards/governance.md#sincronização-obrigatória-após-mudanças): avaliar Linear, fonte central Hawks, documentos locais e derivados afetados; registrar ações/evidências ou não aplicabilidade justificada. Revisão e encerramento conferem a matriz.

@@ -5,3 +5,5 @@
 Leia [AGENTS](../AGENTS.md), o [manifesto](../.hawks/workflow.json) e execute o [prompt comum desta fase](../.hawks/vendor/prompts/create-app.md). Consulte [produto](../PRODUCT.md), [design](../DESIGN.md) e [contrato local](../docs/project-workflow.md).
 
 A versão local é fixada e verificável com `python3 .hawks/check.py`. Antes da fase, carregue catálogo/skills e confira MCPs; retome a execução correta e siga o ciclo da worktree até limpeza ou retenção justificada. Se a tarefa mudar processo compartilhado, aplique a governança central e a propagação global.
+
+A fase deve conferir a sincronização de Linear, fonte central, documentos locais e referências afetadas prevista na governança; a saída registra evidências, não aplicabilidade justificada e pendências.

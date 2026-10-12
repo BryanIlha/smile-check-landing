@@ -32,3 +32,17 @@ O controle detecta deriva acidental. Ele não substitui revisão semântica nem 
 Atualizar domínio, DESIGN, comandos ou runbooks locais é permitido na história do produto. Se a atualização alterar critérios de qualidade/entrega compartilhados, exige também mudança central e propagação. Exceções ficam no manifesto com regra, razão, referência e condição de revisão; não há dispensa tácita. Preserve requisitos locais mais fortes enquanto a norma comum os incorpora por risco/capacidade.
 
 Não usar `latest` como contrato. Cada história registra a versão usada; adoção de nova versão ocorre por diff revisado, sem mudar instruções no meio da execução por atualização remota automática.
+
+## Sincronização obrigatória após mudanças
+
+Toda mudança, inclusive código, configuração, infraestrutura, documentação e assets, exige avaliar suas referências na triagem, revisar o impacto durante a execução e reconciliar as fontes antes do encerramento. Atualizar somente o Linear não basta quando outra fonte ficou desatualizada. Esta avaliação é responsabilidade do agente; a pessoa não precisa listar todos os documentos na história.
+
+- Linear: registrar decisões, estado real, evidências, dependências, links de entrega e pendências na história pertinente.
+- Repositório do produto: atualizar PRODUCT, DESIGN, contratos, runbooks, README, índices e demais referências efetivamente afetadas. Preservar particularidades do produto e evitar cópias concorrentes.
+- BZuller/hawks-standards: atualizar padrões, catálogo de capacidades, registro dos projetos, biblioteca/manifestos de assets e guias quando a mudança afetar informação compartilhada. Mudanças de norma exigem versão e propagação global; mudança de produto não exige alterar norma sem impacto comum.
+- Consumidores e referências derivadas: localizar links, versões fixadas, manifests, prompts gerados e contratos dependentes; atualizar a partir da fonte canônica e verificar a compatibilidade. Registrar repo, caminho e commit/versão utilizados; não usar latest nem substituir silenciosamente versões em tarefas em andamento.
+- Galáxia e manuais: se a mudança afetar a estrutura, infraestrutura, documentos ou orientações representadas, atualizar a captura correspondente com origem/data e reconstruir os artefatos derivados. Se não houver evidência suficiente ou acesso, registrar explicitamente que a fotografia está desatualizada e a pendência de atualização; não apresentar dado antigo como estado atual. Históricos imutáveis mantêm sua data e recebem referência à nova decisão, sem reescrever a evidência antiga.
+
+A história e a PR devem trazer uma matriz curta: fonte/referência, impacto, ação, evidência (commit/versão/link) e pendência. Para fontes sem impacto, registrar “não se aplica” com razão concreta; não editar todos os documentos por rotina nem afirmar que foram sincronizados sem conferir. Não copiar segredos ou documentação privada para artefatos públicos.
+
+A revisão confere essa matriz contra o diff e as dependências conhecidas. Done exige referências afetadas atualizadas e verificadas; impedimento concreto fica como bloqueio ou exceção explicitamente aceita conforme o contrato local, com ação, responsável conhecido e condição de resolução. Falta de acesso não autoriza inventar evidência, ampliar permissões, publicar ou fazer merge. Aplicam-se as autorizações e worktrees de cada repositório.

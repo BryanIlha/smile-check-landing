@@ -1,4 +1,4 @@
-# Revise a implementação — Hawks 1.2.0
+# Revise a implementação — Hawks 1.2.1
 
 ## Entradas
 Issue completa e comentários atuais; `.hawks/workflow.json`; AGENTS, PRODUCT, DESIGN e contrato técnico local. Ler somente referências adjacentes necessárias. Usar fonte/commit fixados no manifesto; se inacessíveis, registrar bloqueio sem presumir conteúdo.
@@ -28,3 +28,7 @@ Saída da fase inclui capacidades consultadas/usadas, worktree e branch, SHA e p
 ## Manutenção dos padrões
 
 Consultar [governança](../standards/governance.md) e [qualidade](../standards/quality.md). Mudança comum exige atualização central, versão e propagação; especificações do produto ficam nas fontes locais. Conferir `python3 .hawks/check.py` antes da revisão.
+
+## Sincronização das fontes
+
+Aplicar a seção “Sincronização obrigatória após mudanças” da [governança](../standards/governance.md): mapear impacto nesta fase, atualizar Linear, fonte central, documentos locais e referências/derivados pertinentes. Registrar matriz fonte/impacto/ação/evidência/pendência ou não aplicabilidade justificada. Revisão confere o diff; encerramento exige reconciliação ou exceção aceita, sem presumir acesso, publicação ou merge.

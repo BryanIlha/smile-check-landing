@@ -2703,3 +2703,24 @@ body {
     transform: none !important;
   }
 }
+
+.product-news{background:var(--marketing-paper);color:var(--marketing-ink);padding:88px 32px;scroll-margin-top:110px}
+.product-news__inner{max-width:1180px;margin:0 auto}
+.product-news__heading{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:40px}
+.product-news__heading h2{font-size:clamp(36px,4.3vw,58px);line-height:1.06;letter-spacing:-.03em;margin:0;text-wrap:balance}
+.product-news__heading>p{font-size:17px;line-height:1.6;max-width:35ch;margin:0;color:#52544c}
+.product-news__list article{display:grid;grid-template-columns:200px minmax(0,1fr);gap:40px;padding:32px 0;border-top:1px solid var(--marketing-line-light)}
+.product-news__meta{display:flex;flex-direction:column;gap:8px;font-size:13px;line-height:1.6;color:#52544c;font-variant-numeric:tabular-nums}
+.product-news__story h3{font-size:clamp(23px,2.2vw,30px);line-height:1.25;letter-spacing:-.02em;margin:0 0 12px;text-wrap:balance}
+.product-news__story h3 a{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;color:inherit;text-decoration:none}
+.product-news svg{width:24px;height:24px;flex-shrink:0}
+.product-news__story h3 a:hover{text-decoration:underline;text-underline-offset:.15em}
+.product-news__story>p{font-size:16px;line-height:1.6;max-width:70ch;margin:0 0 14px;color:#52544c}
+.product-news__story .product-news__availability{font-size:13px;line-height:1.6;margin-bottom:0}
+.product-news__availability strong{font-weight:600;color:var(--marketing-ink)}
+.product-news__all{display:inline-flex;align-items:center;gap:16px;min-height:48px;margin-top:28px;font-size:15px;font-weight:600;text-decoration:underline;text-underline-offset:.25em}
+.product-news__message{min-height:110px;padding:24px 0;font-size:16px;line-height:1.6;max-width:65ch;color:#52544c}
+.product-news__message p{margin:0}
+.product-news__message button{display:block;min-height:48px;margin-top:12px;padding:8px 16px;background:var(--marketing-ink);color:var(--marketing-paper);border:0;border-radius:8px;font:inherit;cursor:pointer}
+.product-news a:focus-visible,.product-news button:focus-visible{outline:3px solid var(--marketing-ink);outline-offset:5px}
+@media(max-width:640px){.product-news{padding:56px 20px}.product-news__heading{display:block;margin-bottom:28px}.product-news__heading>p{margin-top:20px;font-size:16px}.product-news__list article{grid-template-columns:1fr;gap:14px;padding:28px 0}.product-news__meta{flex-direction:row;flex-wrap:wrap;gap:12px}.product-news__story h3 a{gap:16px}.product-news__all{font-size:14px}.product-news__story>p{font-size:15px}}

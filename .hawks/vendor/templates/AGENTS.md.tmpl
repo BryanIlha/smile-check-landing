@@ -8,6 +8,7 @@
 4. Antes de cada fase, consulte o [catálogo](.hawks/vendor/standards/toolkit.md), leia as skills aplicáveis e verifique a capacidade real. Use MCP suficiente e registre limitação/fallback.
 5. Execute os gates comuns pelos comandos/ambientes locais; registre evidências do SHA atual, revisão, integração e aceite aplicáveis.
 6. A cada mudança, avalie e sincronize Linear, fonte central Hawks, documentos locais e referências/derivados afetados conforme a governança. Registre evidências ou não aplicabilidade justificada; revisão e encerramento conferem essa matriz.
-7. Conclua a limpeza segura da própria worktree, ou registre razão e condição de remoção. Preserve recursos, dados e sessões alheios.
+7. Toda feature, melhoria ou fix deve criar/atualizar um registro em `docs/releases/entries/` para os patch notes semanais. Siga [blog e notas de versão](.hawks/vendor/standards/blog-and-release-notes.md): produto, benefício, evidências, disponibilidade e estado editorial separados; revisão confere o registro. O blog Hawks agrega tudo e cada landing exibe somente os posts do seu produto.
+8. Conclua a limpeza segura da própria worktree, ou registre razão e condição de remoção. Preserve recursos, dados e sessões alheios.
 
 Mudanças no processo comum são feitas na fonte central e propagadas globalmente. Produto, design e parâmetros locais não redefinem nem reduzem os gates Hawks. Consulte o [índice documental](docs/documentation-map.md) para autoridade, anexos e histórico.

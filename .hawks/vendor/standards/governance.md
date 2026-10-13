@@ -46,3 +46,7 @@ Toda mudança, inclusive código, configuração, infraestrutura, documentação
 A história e a PR devem trazer uma matriz curta: fonte/referência, impacto, ação, evidência (commit/versão/link) e pendência. Para fontes sem impacto, registrar “não se aplica” com razão concreta; não editar todos os documentos por rotina nem afirmar que foram sincronizados sem conferir. Não copiar segredos ou documentação privada para artefatos públicos.
 
 A revisão confere essa matriz contra o diff e as dependências conhecidas. Done exige referências afetadas atualizadas e verificadas; impedimento concreto fica como bloqueio ou exceção explicitamente aceita conforme o contrato local, com ação, responsável conhecido e condição de resolução. Falta de acesso não autoriza inventar evidência, ampliar permissões, publicar ou fazer merge. Aplicam-se as autorizações e worktrees de cada repositório.
+
+## Registro editorial de features/fixes
+
+Aplicar [blog e patch notes semanais](blog-and-release-notes.md) em todos os projetos. A norma é central; registros e evidências ficam com o produto; conteúdo público é mantido pelo site Hawks e distribuído às landings por feed filtrado. A exclusão do Radar registrada na rodada INF-392 não se estende ao pedido de todos os projetos na INF-413.

@@ -1,3 +1,4 @@
+import { ProductNews } from './ProductNews';
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -105,6 +106,7 @@ const LOGIN_URL = import.meta.env.VITE_VISTO_LOGIN_URL ?? "http://localhost:5174
 const HAWKS_SITE_URL = "https://hawksbi.com.br";
 
 const navigation = [
+  ["Novidades", "#novidades"],
   ["Produto", "#produto"],
   ["Como funciona", "#como-funciona"],
   ["Para quem é", "#para-quem"],
@@ -611,6 +613,8 @@ export function VistoLanding() {
         </div>
       </section>
 
+      <ProductNews />
+
       <section id="solicitar-demonstracao" className="marketing-final-cta" aria-labelledby="cta-title">
         <div className="marketing-frame marketing-final-cta__layout" data-gsap-reveal>
           <div><p className="marketing-eyebrow"><span className="eyebrow-dot" /> Visto · HAWKS BI</p><h2 id="cta-title">Veja a rotina funcionando.<br /><em>Decida com o registro certo.</em></h2></div>
@@ -628,7 +632,7 @@ export function VistoLanding() {
       <footer className="marketing-footer">
         <div className="marketing-frame marketing-footer__layout">
           <div className="marketing-footer__brand"><VistoLogoLockup className="marketing-footer__product" reversed /><span className="marketing-footer__divider" aria-hidden="true" /><HawksWordmark className="marketing-footer__maker" reversed /></div>
-          <nav aria-label="Links do rodapé"><a href="#produto">Produto</a><a href={LOGIN_URL}>Entrar no sistema</a><a href={DEMO_URL}>Agendar demonstração</a><a href={HAWKS_SITE_URL} target="_blank" rel="noreferrer">HAWKS BI ↗</a></nav>
+          <nav aria-label="Links do rodapé"><a href="#produto">Produto</a><a href="#novidades">Novidades</a><a href={LOGIN_URL}>Entrar no sistema</a><a href={DEMO_URL}>Agendar demonstração</a><a href={HAWKS_SITE_URL} target="_blank" rel="noreferrer">HAWKS BI ↗</a></nav>
           <p>Visto · Rotinas por setor, execução e acompanhamento.</p>
         </div>
       </footer>

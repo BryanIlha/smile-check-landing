@@ -27,6 +27,6 @@ The design audit is saved at `design/audits/visto-landing.md`. Playwright QA cap
 
 The product app currently running on port `5174` is the integrated Visto project. Its public marketing route is `/landing`; the authenticated product starts at `/` and redirects to `/login` without a session. Keep that implementation distinction explicit when promoting changes.
 
-## Adoção Hawks 1.1.0
+## Adoção Hawks 1.2.1
 
 [AGENTS](AGENTS.md), [manifesto fixado](.hawks/workflow.json), [contrato](docs/project-workflow.md), [estado da adoção](docs/status.md). As instruções Hawks governam edição versionada: métodos antigos de edição direta/publicação não dispensam worktree nem os gates atuais. Estado de produto descrito anteriormente deve ser revalidado na fonte antes de operar.

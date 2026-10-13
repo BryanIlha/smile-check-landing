@@ -1,0 +1,30 @@
+{
+  "version": "1.2.1",
+  "sourceRepository": "BZuller/hawks-standards",
+  "sourceCommit": "75710d621022e3333ab632e3fa2c3423b09fcc74",
+  "files": {
+    ".hawks/vendor/standards/delivery.md": "0c9a758f7257894532b499e53ad5daa2bf9b390b605dd39337199d7943039b84",
+    ".hawks/vendor/standards/governance.md": "cefa7dc2afe3c39089586e275b06935c217b08a5543c466690a222e3c7795749",
+    ".hawks/vendor/standards/hawks.md": "d0501d4f61f994877d69f623ee11b5ca848320df0175f8ac2220a37570e8b7e2",
+    ".hawks/vendor/standards/quality.md": "84c40d53339eb9a8ceeee0e590a7e595535d5423e38d21005a48622dabdee395",
+    ".hawks/vendor/standards/toolkit.md": "ee27cd7cf91b4fd385bf13eee91b2b20364f799566ba61fc0eeb4a4c646e89df",
+    ".hawks/vendor/standards/worktrees.md": "bf1b60f9309505cd8b49a6068fa03cf747bbf811b10a1256e18536ba4747836d",
+    ".hawks/vendor/profiles/app.md": "31b3e32cf549113cf1e4a2d606c50faaea03394255ce0981f23a74f6bbf56e31",
+    ".hawks/vendor/profiles/landing.md": "46412d0dc8bdda470ce672be103e05710c2d28b9a59b1e32b4017f2f63b22937",
+    ".hawks/vendor/prompts/build-deploy.md": "bb2e91f70977ba7df406c4e211681466c44eb7df308fab093a403c4417b80199",
+    ".hawks/vendor/prompts/create-app.md": "b613708f81b8a45f06171576d451b8ea455a88a58ec348fc5f360949395944cd",
+    ".hawks/vendor/prompts/create-landing.md": "4446ef742fb00028593581a08ba1348326323a9379534a5d88454ac12bcf2bdd",
+    ".hawks/vendor/prompts/implement.md": "ab546368818c7916ea95c797174bd7bf7206dcee339b30e8bb75335a404f842c",
+    ".hawks/vendor/prompts/review.md": "27db1e1e2b55b5ed555a25bbf594e83a07c04be8dd16ca294e189fad37e5e971",
+    ".hawks/vendor/prompts/triage.md": "9ea5ed2e1021d0bea35617cfafde781ad63db1aa81c9b49e6fa9b51308da9a4b",
+    ".hawks/vendor/templates/AGENTS.md.tmpl": "d4cba10206f488b4084d70e09a628f3a8fbfc782e0f46d14bd6c391b98e4ab6c",
+    ".hawks/vendor/templates/bug.md": "5d35eb41ddaa3d0be3824cef73a5866d9da86cd3b598363906db382f3e0c9495",
+    ".hawks/vendor/templates/consumer-ci.yml": "aeed0b3528295e4988f044cdf9ba79b3b945dafb9f91e33e698a626c4daa36e2",
+    ".hawks/vendor/templates/execution.json": "fd5768fb61e44611ea63f6b9776044407f24212c90b469308ad335696dc0a2f8",
+    ".hawks/vendor/templates/prompt.md.tmpl": "4be6b1aa3e934c1fcbda78a579ad65c7eade57baa00f7fdce5b1ff6cf6e95730",
+    ".hawks/vendor/templates/pull_request.md": "760f9842f1ab8cc7b0a045d3fea5e7772ee76253f03d7263e069333a1ab1c804",
+    ".hawks/vendor/templates/story.md": "2a4a2c4a8da23d1964c3e7e430ad166e10d05ba3ad7ee04a287670179fcf7706",
+    ".hawks/check.py": "98d84f83b6c7418b76574474caec3fe5f6370bbfbdc8dff8b39701c2cc3d2fdf",
+    ".github/workflows/hawks-standards.yml": "aeed0b3528295e4988f044cdf9ba79b3b945dafb9f91e33e698a626c4daa36e2"
+  }
+}

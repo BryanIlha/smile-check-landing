@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 2,
+  "version": "1.2.1",
+  "sourceRepository": "BZuller/hawks-standards",
+  "sourcePath": ".",
+  "sourceCommit": "75710d621022e3333ab632e3fa2c3423b09fcc74",
+  "profile": "landing",
+  "project": "smile-check-landing",
+  "repository": "BryanIlha/smile-check-landing",
+  "integrationBranch": "main",
+  "contract": "docs/project-workflow.md",
+  "product": "PRODUCT.md",
+  "design": "DESIGN.md",
+  "status": "docs/status.md",
+  "linearProject": "P-INF-8",
+  "toolkit": "standards/toolkit.md",
+  "worktreePolicy": "standards/worktrees.md",
+  "worktreeRootEnv": "HAWKS_WORKTREE_ROOT",
+  "worktreePathTemplate": "<root>/<repo>/inf-<number>",
+  "branchTemplate": "codex/inf-<number>-<slug>",
+  "validation": {
+    "documentation": [
+      "python3 .hawks/check.py",
+      "git diff --check"
+    ],
+    "functional": [
+      "npm run build"
+    ],
+    "scope": [
+      "Aplicar matriz de qualidade e requisitos do contrato conforme a mudança."
+    ]
+  },
+  "exceptions": []
+}

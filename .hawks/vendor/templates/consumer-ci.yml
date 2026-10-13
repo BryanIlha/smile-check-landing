@@ -1,0 +1,14 @@
+name: Hawks standards
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify pinned standards and generated entries
+        run: python3 .hawks/check.py

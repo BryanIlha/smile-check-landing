@@ -1,3 +1,4 @@
+@font-face { font-family: "Instrument Sans"; font-style: normal; font-weight: 400 700; font-stretch: 75% 100%; font-display: swap; src: url("/fonts/instrument-sans-latin-variable.woff2") format("woff2"); }
 :root {
   --marketing-ink: #111111;
   --marketing-ink-soft: #22231f;
@@ -11,7 +12,7 @@
   --marketing-green: #16a34a;
   --marketing-green-deep: #0b6b3a;
   --marketing-green-soft: #ddf4e4;
-  --marketing-muted: #777970;
+  --marketing-muted: #686b62;
   --marketing-muted-light: #a7aaa1;
   --marketing-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -328,12 +329,13 @@ body {
 
 .hero-rotating-word__value.is-active {
   visibility: visible;
+  opacity: 1;
   animation: hero-word-enter 420ms var(--marketing-ease) both;
 }
 
 @keyframes hero-word-enter {
   from {
-    opacity: 0;
+    opacity: 1;
     transform: translateY(0.18em);
   }
 
@@ -873,7 +875,7 @@ body {
   justify-content: space-between;
 }
 
-.scene-dashboard__heading h3 {
+.scene-dashboard__title {
   margin: 0.36rem 0 0;
   font-size: 1.28rem;
   letter-spacing: -0.055em;
@@ -2424,7 +2426,7 @@ body {
     padding: 0.75rem;
   }
 
-  .scene-dashboard__heading h3 {
+  .scene-dashboard__title {
     margin-top: 0.25rem;
     font-size: 0.95rem;
   }

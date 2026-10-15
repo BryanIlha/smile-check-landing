@@ -4,12 +4,12 @@
 - products: [visto]
 - type: improvement
 - editorial_status: pendente
-- availability: implementado
-- integrated_at: pendente
-- released_at: pendente
+- availability: producao
+- integrated_at: 2026-10-15
+- released_at: 2026-10-15T13:46:09.15536Z
 - issue: https://linear.app/infra-hawks/issue/INF-437
-- pull_request: pendente
-- commit: consultar histórico desta entrada
+- pull_request: https://github.com/BryanIlha/smile-check-landing/pull/3
+- commit: a26dc621d4583fcfc61ba89f251296baf514fc27
 - published_url: pendente
 - published_at: pendente
 - weekly_post: pendente
@@ -22,3 +22,5 @@ Facilita a leitura da proposta do produto, o rastreamento da página oficial e a
 
 ## Evidências e limites
 Builds, checks de SEO, browser mobile/desktop, leitura sem JS e hidratação validados. Simulador Cloudflare Pages comprovou 404 real e arquivos robots/sitemap válidos. Auditoria e próximas ações em [INF-437](../../validation/INF-437-seo.md). Produção depende de autenticação de deploy e integração; Search Console não verificado. Registro para o próximo patch notes, sem publicação editorial automática.
+
+Disponibilidade conferida em [produção](../../validation/INF-437-production.md). Estado editorial permanece pendente.

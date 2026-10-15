@@ -1,6 +1,6 @@
 # INF-437 — SEO das landings Visto e Agendo
 
-Auditoria e implementação em 15/10/2026. Disponibilidade: implementado e validado localmente; integração e produção pendentes. Issue: https://linear.app/infra-hawks/issue/INF-437. A base inclui as novidades por produto da INF-413, ainda pendentes de publicação conjunta.
+Auditoria e implementação em 15/10/2026. Disponibilidade: produção, com prova posterior em [INF-437-production](INF-437-production.md). Issue: https://linear.app/infra-hawks/issue/INF-437. A base inclui as novidades por produto da INF-413, ainda pendentes de publicação conjunta.
 
 ## Avaliação e prioridades
 

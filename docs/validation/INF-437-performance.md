@@ -16,3 +16,14 @@ As rodadas intermediárias revelaram regressão local do Agendo (LCP próximo de
 Limites: laboratório local sem compressão/CDN de produção, variação de CPU da máquina e prévia de desenvolvimento. O servidor da prévia foi ajustado para HTTP persistente durante a validação funcional, portanto diferenças entre antes/depois são indicativas e não isolam causalidade. Não há alegação de melhora percentual, medição real de INP ou aprovação de Core Web Vitals. Ambos os LCP locais ainda excedem 2,5 s. Após publicar, medir no domínio oficial e consultar dados de campo do Search Console/CrUX quando houver amostra. TBT não substitui INP.
 
 Economia verificável em bytes: Agendo, logo 355.784 → 31.098 bytes; favicon 2.644 bytes. PNG original preservado. Visto, fonte Instrument Sans variável servida localmente com preload, eliminando a dependência do CSS Google Fonts da cadeia inicial.
+
+## Laboratório no domínio publicado — 15/10/2026
+
+Mesma configuração mobile e três execuções, desta vez servidas pelos domínios oficiais com CDN/compressão. Mediana (mínimo–máximo). Não comparar diretamente esses valores com a prévia local para alegar ganho causal.
+
+| Site | Performance | LCP, s | CLS | SEO | Acessibilidade | Boas práticas |
+| --- | --- | --- | --- | --- | --- | --- |
+| Visto | 99 (96–99) | 1.91 (1.89–2.42) | 0.00000 | 100 | 100 | 100 |
+| Agendo | 98 (94–99) | 1.96 (1.91–2.56) | 0.00062 | 100 | 100 | 100 |
+
+São métricas de laboratório após o deploy. O LCP mediano fica abaixo de2,5s nos dois sites; o Agendo variou até2,56s na primeira execução. A amostra não mede INP real, não garante a experiência de todos os usuários e não confirma indexação/ranking. Search Console/CrUX continuam pendentes.

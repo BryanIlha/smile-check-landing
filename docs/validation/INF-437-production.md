@@ -6,7 +6,7 @@ Verificado em 15/10/2026 no domínio https://visto.hawksbi.com.br/.
 - Commit servido: `a26dc621d4583fcfc61ba89f251296baf514fc27`
 - Projeto: `visto-landing`, branch `main`, ambiente `production`
 - Deployment: `0d4c8425-866d-4cd0-9fbe-d5c1809aa857`, estado `success`, conclusão `2026-10-15T13:46:09.15536Z`
-- Artefato de recuperação: https://visto-landing.pages.dev/ (selecionar o deployment anterior no projeto Cloudflare, sem alterar DNS ou variáveis).
+- Recuperação: promover o deployment anterior no mesmo projeto Cloudflare; versão anterior verificada: https://4b91bb86.visto-landing-8av.pages.dev. Preservar DNS e variáveis.
 
 Prova pública em Chromium e DOM: homepage200, H1 no HTML inicial, título descritivo, canonical HTTPS oficial, grafo JSON-LD coerente, dois artigos exclusivos do produto, ausência de localhost e de erros de hidratação. Robots200 text/plain, sitemap200 application/xml; caminho inexistente404/noindex. Feeds Visto/Agendo/Conexo200 e CORS*, contagens2/2/0. Nenhuma restrição de segurança da hospedagem foi alterada; cliente Python sem identificação recebeu403/1010, enquanto browsers reais completaram a validação.
 

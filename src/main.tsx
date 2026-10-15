@@ -9,8 +9,11 @@ if (!root) {
   throw new Error("Root element #root not found.");
 }
 
-ReactDOM.createRoot(root).render(
+const app = (
   <React.StrictMode>
     <VistoLanding />
-  </React.StrictMode>,
+  </React.StrictMode>
 );
+
+if (root.hasChildNodes()) ReactDOM.hydrateRoot(root, app);
+else ReactDOM.createRoot(root).render(app);

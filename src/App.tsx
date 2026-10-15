@@ -1,3 +1,4 @@
+import { ProductNews } from './ProductNews';
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -101,10 +102,11 @@ function VistoMark({
 const DEMO_URL =
   import.meta.env.VITE_VISTO_DEMO_URL ??
   "mailto:contato@hawksbi.com.br?subject=Agendar%20demonstra%C3%A7%C3%A3o%20%E2%80%94%20Visto";
-const LOGIN_URL = import.meta.env.VITE_VISTO_LOGIN_URL ?? "http://localhost:5174/login";
+const LOGIN_URL = import.meta.env.VITE_VISTO_LOGIN_URL ?? "https://app.visto.hawksbi.com.br/login";
 const HAWKS_SITE_URL = "https://hawksbi.com.br";
 
 const navigation = [
+  ["Novidades", "#novidades"],
   ["Produto", "#produto"],
   ["Como funciona", "#como-funciona"],
   ["Para quem é", "#para-quem"],
@@ -214,7 +216,7 @@ function ChecklistScene() {
                   <div className="scene-dashboard__heading">
                     <div>
                       <span className="scene-overline">SEG · 18 AGO · MANHÃ</span>
-                      <h3>Visão da operação</h3>
+                      <p className="scene-dashboard__title">Visão da operação</p>
                     </div>
                     <span className="scene-filter" aria-hidden="true">Todos os setores <span>⌄</span></span>
                   </div>
@@ -361,10 +363,10 @@ function useSaaSMotion(rootRef: React.RefObject<HTMLElement | null>) {
     const context = gsap.context(() => {
       const intro = gsap.timeline({ defaults: { ease: "power3.out" } });
       intro
-        .from("[data-hero-label]", { opacity: 0, y: 14, duration: 0.45 })
-        .from("[data-hero-title]", { opacity: 0, y: 26, duration: 0.7 }, "-=0.22")
-        .from("[data-hero-copy]", { opacity: 0, y: 18, duration: 0.55 }, "-=0.3")
-        .from("[data-hero-actions]", { opacity: 0, y: 16, duration: 0.5 }, "-=0.25")
+        .from("[data-hero-label]", { y: 14, duration: 0.45 })
+        .from("[data-hero-title]", { y: 26, duration: 0.7 }, "-=0.22")
+        .from("[data-hero-copy]", { y: 18, duration: 0.55 }, "-=0.3")
+        .from("[data-hero-actions]", { y: 16, duration: 0.5 }, "-=0.25")
         .from("[data-hero-scene]", { opacity: 0, y: 28, rotateX: 5, duration: 0.9 }, "-=0.3")
         .from("[data-depth]", { opacity: 0, y: 18, duration: 0.55, stagger: 0.08 }, "-=0.48")
         .fromTo(".scene-progress__fill", { scaleX: 0 }, { scaleX: 1, duration: 0.9 }, "-=0.48");
@@ -511,7 +513,7 @@ export function VistoLanding() {
             <p className="marketing-eyebrow" data-hero-label><span className="eyebrow-dot" /> Visto · rotinas operacionais</p>
             <h1 id="hero-title" data-hero-title>Rotinas sob controle em qualquer <HeroRotatingLabel /></h1>
             <p className="marketing-lede" data-hero-copy>
-              Configure rotinas por setor, turno e dia. O time executa no local; a gestão acompanha pendências, temperaturas e correções.
+              Checklists digitais por setor, turno e dia. O time executa as rotinas no local; a gestão acompanha pendências, temperaturas e correções.
             </p>
             <div className="marketing-hero__actions" data-hero-actions>
               <Action href={DEMO_URL}>Ver o Visto</Action>
@@ -611,6 +613,8 @@ export function VistoLanding() {
         </div>
       </section>
 
+      <ProductNews />
+
       <section id="solicitar-demonstracao" className="marketing-final-cta" aria-labelledby="cta-title">
         <div className="marketing-frame marketing-final-cta__layout" data-gsap-reveal>
           <div><p className="marketing-eyebrow"><span className="eyebrow-dot" /> Visto · HAWKS BI</p><h2 id="cta-title">Veja a rotina funcionando.<br /><em>Decida com o registro certo.</em></h2></div>
@@ -628,7 +632,7 @@ export function VistoLanding() {
       <footer className="marketing-footer">
         <div className="marketing-frame marketing-footer__layout">
           <div className="marketing-footer__brand"><VistoLogoLockup className="marketing-footer__product" reversed /><span className="marketing-footer__divider" aria-hidden="true" /><HawksWordmark className="marketing-footer__maker" reversed /></div>
-          <nav aria-label="Links do rodapé"><a href="#produto">Produto</a><a href={LOGIN_URL}>Entrar no sistema</a><a href={DEMO_URL}>Agendar demonstração</a><a href={HAWKS_SITE_URL} target="_blank" rel="noreferrer">HAWKS BI ↗</a></nav>
+          <nav aria-label="Links do rodapé"><a href="#produto">Produto</a><a href="#novidades">Novidades</a><a href={LOGIN_URL}>Entrar no sistema</a><a href={DEMO_URL}>Agendar demonstração</a><a href={HAWKS_SITE_URL} target="_blank" rel="noreferrer">HAWKS BI ↗</a></nav>
           <p>Visto · Rotinas por setor, execução e acompanhamento.</p>
         </div>
       </footer>

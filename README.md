@@ -15,7 +15,7 @@ npm install
 npm run dev
 ```
 
-The optional `VITE_VISTO_DEMO_URL` environment variable overrides the demonstration CTA. Without it, the page uses the HAWKS BI contact email. Set `VITE_VISTO_LOGIN_URL` to the authenticated product URL when the landing page is deployed separately; local development defaults to `http://localhost:5174/login`.
+The optional `VITE_VISTO_DEMO_URL` environment variable overrides the demonstration CTA. Without it, the page uses the HAWKS BI contact email. The login CTA defaults to `https://app.visto.hawksbi.com.br/login`; `VITE_VISTO_LOGIN_URL` can override it for an explicitly configured environment.
 
 The page includes the Visto logo system and the official HAWKS BI maker mark under `public/assets/brand-kit`, and does not import code, routes, styles, or dependencies from the Visto application. The commercial layer uses GSAP for the staged hero, scroll reveals, progress fill, and pointer-driven 3D tilt; the product scene itself is CSS 3D so it stays lightweight.
 
@@ -30,3 +30,7 @@ The product app currently running on port `5174` is the integrated Visto project
 ## Adoção Hawks 1.2.1
 
 [AGENTS](AGENTS.md), [manifesto fixado](.hawks/workflow.json), [contrato](docs/project-workflow.md), [estado da adoção](docs/status.md). As instruções Hawks governam edição versionada: métodos antigos de edição direta/publicação não dispensam worktree nem os gates atuais. Estado de produto descrito anteriormente deve ser revalidado na fonte antes de operar.
+
+## SEO — INF-437
+
+Após o build, execute `npm run check:seo` nesta pasta. A validação verifica o HTML que será servido, incluindo conteúdo pré-renderizado, canonical, assets, schema e arquivos de descoberta. `public/404.html` desativa o fallback SPA do Cloudflare Pages; preserve esse arquivo no deploy. URLs inexistentes devem retornar 404, e a homepage deve permanecer 200. Confira o relatório em `docs/validation/INF-437-seo.md` e valide os domínios oficiais após publicar. A implementação desta rodada ainda aguarda integração e deploy; registro editorial independente em docs/releases/entries/ na raiz do repositório.

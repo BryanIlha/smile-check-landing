@@ -32,3 +32,6 @@ Consultar [governança](../standards/governance.md) e [qualidade](../standards/q
 ## Sincronização das fontes
 
 Aplicar a seção “Sincronização obrigatória após mudanças” da [governança](../standards/governance.md): mapear impacto nesta fase, atualizar Linear, fonte central, documentos locais e referências/derivados pertinentes. Registrar matriz fonte/impacto/ação/evidência/pendência ou não aplicabilidade justificada. Revisão confere o diff; encerramento exige reconciliação ou exceção aceita, sem presumir acesso, publicação ou merge.
+
+## Registro para o blog
+Toda feature/fix segue [blog e patch notes](../standards/blog-and-release-notes.md): registrar em `docs/releases/entries/`, conferir na revisão e atualizar disponibilidade após integração/publicação comprovadas. Preparar edição semanal por produto, mantendo notícias e notas na fonte central e listas filtradas nas landings.

@@ -22,3 +22,7 @@ Processo, qualidade, catálogo, templates e ciclo de worktrees são definidos no
 ## Sincronização após mudanças
 
 Aplicar a [sincronização obrigatória de fontes e referências](../.hawks/vendor/standards/governance.md#sincronização-obrigatória-após-mudanças): avaliar Linear, fonte central Hawks, documentos locais e derivados afetados; registrar ações/evidências ou não aplicabilidade justificada. Revisão e encerramento conferem a matriz.
+
+## Blog e patch notes semanais
+
+Toda feature/fix segue a [norma central](../.hawks/vendor/standards/blog-and-release-notes.md) e deixa [registro durável](releases/README.md) para a edição semanal. Disponibilidade deve ter evidência; não inferir lançamento do merge.

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://visto.hawksbi.com.br/sitemap.xml

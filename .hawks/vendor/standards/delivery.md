@@ -17,3 +17,5 @@ Revisão da história avalia prontidão; revisão do código avalia PR/aceite. N
 Em bloqueio, registrar causa, evidência, próxima ação e responsável conhecido. Continuar partes independentes. Não duplicar histórias Done; regressão nova deve citar entrega anterior e comportamento novo. Após entrega, encerrar apenas recursos próprios pelo mecanismo seguro local; trabalho alheio permanece preservado.
 
 Normas canônicas: [worktrees](worktrees.md) e [catálogo de capacidades](toolkit.md). A revisão confere ambas antes de aceitar a fase.
+
+Features/fixes exigem [registro para os patch notes](blog-and-release-notes.md) antes da revisão/encerramento. Disponibilidade e estado editorial são independentes; publicação do blog não é requisito para encerrar o fix já registrado.

@@ -47,7 +47,7 @@ def check(root):
             if not target.is_file() or digest(target.read_bytes()) != h: errors.append('Generated/shared file changed: ' + p)
         required = {'.hawks/check.py', '.github/workflows/hawks-standards.yml'}
         required |= {'.hawks/vendor/templates/' + p for p in ('AGENTS.md.tmpl','prompt.md.tmpl')}
-        required |= {'.hawks/vendor/standards/' + p + '.md' for p in ('hawks','governance','quality','delivery','toolkit','worktrees')}
+        required |= {'.hawks/vendor/standards/' + p + '.md' for p in ('hawks','governance','quality','delivery','toolkit','worktrees','blog-and-release-notes')}
         required |= {'.hawks/vendor/prompts/' + p + '.md' for p in PHASES}
         missing = required - set(lock.get('files',{}))
         if missing: errors.append('Incomplete lock: ' + ', '.join(sorted(missing)))

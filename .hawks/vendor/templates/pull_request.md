@@ -28,3 +28,7 @@ Impacto, dados/ambientes, rollout/reversão aplicável e dependências.
 | Galáxia, manuais e derivados | | | |
 
 Conferir a matriz contra o diff e a governança antes do encerramento.
+
+## Conferência e obrigações
+
+Usar o [registro de entrega](delivery-evidence.md) e o [checklist](../standards/task-checklist.md) nos três momentos. Identificar origem/pacote/contratos lidos, base versus operação, concorrência preservada e validade da prova. Critério → evidência → estado (atendida, pendente, não aplicável com motivo ou exceção admissível explicitamente aceita). Abrir outra tarefa não elimina compromisso do pedido; aceite não decorre de silêncio.

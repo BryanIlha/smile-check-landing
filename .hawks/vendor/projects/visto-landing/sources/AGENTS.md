@@ -1,0 +1,16 @@
+<!-- Hawks INF-464: imported complete text; origin BryanIlha/smile-check-landing@6eff244143d155389904c4356ac0389f1ebee167 / AGENTS.md; collected 2026-10-20; scoped_reference; not a live-operation assertion. -->
+
+# Instruções — smile-check-landing
+
+<!-- hawks:generated; editar o template central e propagar com tools/adopt.py -->
+
+1. Leia o [manifesto](https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/.hawks/workflow.json) e os padrões fixados: [governança](https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/.hawks/vendor/standards/governance.md), [qualidade](https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/.hawks/vendor/standards/quality.md), [entrega](https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/.hawks/vendor/standards/delivery.md) e [worktrees](https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/.hawks/vendor/standards/worktrees.md).
+2. Consulte a história e comentários atuais no Linear. Procure a execução existente antes de criar branch/worktree; toda edição versionada acontece na worktree da tarefa.
+3. Leia [PRODUCT](PRODUCT.md), [DESIGN](DESIGN.md), [contrato local](docs/project-workflow.md) e os anexos pertinentes. O [estado](docs/status.md) é datado.
+4. Antes de cada fase, consulte o [catálogo](https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/.hawks/vendor/standards/toolkit.md), leia as skills aplicáveis e verifique a capacidade real. Use MCP suficiente e registre limitação/fallback.
+5. Execute os gates comuns pelos comandos/ambientes locais; registre evidências do SHA atual, revisão, integração e aceite aplicáveis.
+6. A cada mudança, avalie e sincronize Linear, fonte central Hawks, documentos locais e referências/derivados afetados conforme a governança. Registre evidências ou não aplicabilidade justificada; revisão e encerramento conferem essa matriz.
+7. Toda feature, melhoria ou fix deve criar/atualizar um registro em `docs/releases/entries/` para os patch notes semanais. Siga [blog e notas de versão](https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/.hawks/vendor/standards/blog-and-release-notes.md): produto, benefício, evidências, disponibilidade e estado editorial separados; revisão confere o registro. O blog Hawks agrega tudo e cada landing exibe somente os posts do seu produto.
+8. Conclua a limpeza segura da própria worktree, ou registre razão e condição de remoção. Preserve recursos, dados e sessões alheios.
+
+Mudanças no processo comum são feitas na fonte central e propagadas globalmente. Produto, design e parâmetros locais não redefinem nem reduzem os gates Hawks. Consulte o [índice documental](docs/documentation-map.md) para autoridade, anexos e histórico.

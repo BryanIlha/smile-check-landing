@@ -1,4 +1,4 @@
-# Ciclo de entrega — 1.2.1
+# Ciclo de entrega
 
 Backlog → história preparada e revisada → Todo → In Progress → In Review → entrega/aceite → Done.
 
@@ -19,3 +19,23 @@ Em bloqueio, registrar causa, evidência, próxima ação e responsável conheci
 Normas canônicas: [worktrees](worktrees.md) e [catálogo de capacidades](toolkit.md). A revisão confere ambas antes de aceitar a fase.
 
 Features/fixes exigem [registro para os patch notes](blog-and-release-notes.md) antes da revisão/encerramento. Disponibilidade e estado editorial são independentes; publicação do blog não é requisito para encerrar o fix já registrado.
+
+## Resultado contratado e obrigações
+
+Antes de executar, relacionar cada critério ao resultado pedido, prova, ambiente e autorização pertinentes. Identificar dependências e partes independentes. Investigar requisitos técnicos sem exigir que Bruno/Bryan editem código ou listem os documentos afetados. Respeitar autorização já dada; solicitar decisão somente quando faltar autoridade, houver conflito de intenção ou uma regra específica exigir confirmação.
+
+- Pesquisa/diagnóstico: responder ao objetivo com fontes, data, limites e artefato no destino pedido; cobertura insuficiente permanece resultado parcial.
+- Proposta/documento: entregar texto revisável, consistente e distinto da norma vigente; implementação futura não é requisito artificial.
+- Código até integração: comprovar critérios técnicos, revisão/validação, integração, fontes e encerramento; publicação pode ser não aplicável conforme o pedido.
+- Disponibilização/automação: além dos gates anteriores aplicáveis, comprovar publicação/ativação autorizada, identidade e efeito no destino, recuperação e aceite exigidos. PR, rascunho ou build não encerram promessa de produção.
+- Padrão comum: separar integração da fonte central e adoção global conforme [governança](governance.md); etapa central autorizada não atualiza consumidores por inferência.
+
+Usar [checklist nos três momentos](task-checklist.md) e [registro de entrega](../templates/delivery-evidence.md) no registro existente da tarefa/PR, sem outro board. Por obrigação, declarar atendida, pendente, não aplicável com motivo ou exceção aceita com referência. “Não aplicável” não remove compromisso explícito. Redução de escopo exige decisão rastreável de quem tem autoridade; abrir outra issue não elimina obrigação do pedido original.
+
+Antes de Done, verificar se falta critério, coerência de fonte crítica, integração, disponibilidade ou aceite exigido. Obrigação essencial pendente mantém a tarefa aberta. Exceção deve ser admissível, explicitamente aceita, com regra, razão, autoridade, referência, controle compensatório e condição de resolução. Separar implementado, validado, integrado, publicado e aceito; desconhecido permanece desconhecido. Silêncio não é aceite. Épicos/transversais têm critérios próprios, além dos filhos concluídos. Conferir o estado realmente gravado no Linear.
+
+## Controles existentes e automação futura
+
+`tools/check.py` verifica integridade/entradas/manifesto; `scripts/check-worktree.mjs` verifica identidade local. Eles não comprovam operação, concorrência global, validade semântica da evidência, proteção administrativa nem impedimento nativo de Done. O checklist desta versão é um reforço documental usado pelo agente e pela revisão. A leitura de serviços, associação obrigatória candidato/base, serialização da integração, validação automática das obrigações e detecção de referências vencidas exigem implementação/adaptadores futuros e autorização própria.
+
+Detector opcional não equivale a enforcement. Só declarar bloqueio obrigatório quando o caminho real de integração/publicação/conclusão consumir o controle e houver prova da cobertura e do bypass. Plataformas indisponíveis deixam a verificação afetada desconhecida; não autorizam aprovação automática. As regras não criam deploy ou transição automática após checks verdes.

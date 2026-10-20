@@ -3,8 +3,10 @@
 import hashlib
 import json
 import re
+import posixpath
 import sys
 from pathlib import Path
+from urllib.parse import unquote, quote, urlsplit
 
 PHASES = ('triage', 'implement', 'review', 'build-deploy', 'create-app', 'create-landing')
 FRAMEWORK = re.compile(r'<!-- BEGIN:nextjs-agent-rules -->.*?<!-- END:nextjs-agent-rules -->', re.S)
@@ -16,6 +18,19 @@ def render(template, values):
     for key, value in values.items():
         template = template.replace('{{' + key + '}}', str(value))
     return template
+
+def render_mirror(text, canonical, local):
+    """Keep canonical Markdown links usable from a tool-required local mirror."""
+    def link(match):
+        image,label,target=match.groups()
+        if re.match(r'[a-zA-Z][\w+.-]*:|#|//',target):return match.group(0)
+        parts=urlsplit(target);raw=unquote(parts.path)
+        dest=posixpath.normpath(posixpath.join(posixpath.dirname(canonical),raw))
+        if dest=='..' or dest.startswith(('../','/')):raise ValueError('Mirror link escapes canonical root')
+        target=posixpath.relpath('.hawks/vendor/'+dest,posixpath.dirname(local) or '.')
+        target=quote(target,safe='/.-_~')+('?' + parts.query if parts.query else '')+('#'+parts.fragment if parts.fragment else '')
+        return image+'['+label+']('+target+')'
+    return re.sub(r'(!?)\[([^\]]+)\]\(([^\s)]+)\)',link,text)
 
 def safe(root, relative):
     path = root / relative
@@ -45,9 +60,27 @@ def check(root):
         for p, h in lock['files'].items():
             target = safe(root, p)
             if not target.is_file() or digest(target.read_bytes()) != h: errors.append('Generated/shared file changed: ' + p)
-        required = {'.hawks/check.py', '.github/workflows/hawks-standards.yml'}
-        required |= {'.hawks/vendor/templates/' + p for p in ('AGENTS.md.tmpl','prompt.md.tmpl')}
-        required |= {'.hawks/vendor/standards/' + p + '.md' for p in ('hawks','governance','quality','delivery','toolkit','worktrees','blog-and-release-notes')}
+        required = {'.hawks/check.py', '.hawks/read.py', '.github/workflows/hawks-standards.yml'}
+        if m.get('manual'):
+            manual=m['manual']
+            required.add('.hawks/vendor/projects/RECONCILIATION.md')
+            if manual.get('sourceCommit')!=m['sourceCommit']: errors.append('Manual pin differs from standards')
+            prefix='projects/'+str(manual.get('project'))+'/'
+            if not manual.get('entrypoints') or not manual.get('documents'): errors.append('Manual entries/documents required')
+            for p in manual.get('documents',[])+manual.get('entrypoints',[]):
+                if not p.startswith(prefix) or '..' in Path(p).parts: errors.append('Unsafe manual path: '+p)
+                required.add('.hawks/vendor/'+p)
+            for p in manual.get('supportingDocuments',[]):
+                if not re.fullmatch(r'operations/observations/\d{4}-\d{2}-\d{2}\.md',p):errors.append('Unsafe supporting document: '+p)
+                required.add('.hawks/vendor/'+p)
+            for local,central in manual.get('rootMirrors',{}).items():
+                if local not in ('PRODUCT.md','DESIGN.md','docs/project-workflow.md'):errors.append('Unexpected tool mirror: '+local)
+                required.add(local)
+                if central not in manual.get('documents',[]):errors.append('Tool mirror absent from canonical manual: '+central)
+                source=safe(root,'.hawks/vendor/'+central)
+                if source.is_file() and safe(root,local).is_file() and render_mirror(source.read_text(),central,local)!=safe(root,local).read_text():errors.append('Tool mirror diverges from canonical manual: '+local)
+        required |= {'.hawks/vendor/templates/' + p for p in ('AGENTS.md.tmpl','prompt.md.tmpl','delivery-evidence.md')}
+        required |= {'.hawks/vendor/standards/' + p + '.md' for p in ('hawks','governance','quality','delivery','toolkit','worktrees','blog-and-release-notes','task-checklist','manual-and-discovery')}
         required |= {'.hawks/vendor/prompts/' + p + '.md' for p in PHASES}
         missing = required - set(lock.get('files',{}))
         if missing: errors.append('Incomplete lock: ' + ', '.join(sorted(missing)))

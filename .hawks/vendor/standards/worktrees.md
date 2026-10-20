@@ -1,4 +1,4 @@
-# Worktrees e encerramento — Hawks 1.2.0
+# Worktrees e encerramento
 
 Obrigatório em aplicativos, landing pages, hubs e ferramentas. Toda implementação ou edição versionada usa branch e worktree próprias da história. O checkout principal é referência/integração e permanece sem desenvolvimento. Clone separado, branch isolada ou snapshot sozinho não substituem uma worktree Git.
 
@@ -13,9 +13,15 @@ Obrigatório em aplicativos, landing pages, hubs e ferramentas. Toda implementa�
 
 Uma história transversal pode ter uma worktree/PR por repositório. Subagentes que editam usam áreas exclusivas e seguem as regras de delegação da skill/cliente; pareceres somente leitura não exigem cópia de implementação. Preservar helpers locais suportados, como os scripts de worktree do Conexo, quando aplicáveis.
 
+Antes de sincronizar, inspecionar alterações rastreadas, não rastreadas e ignoradas relevantes, branches, worktrees, PRs e trabalho simultâneo observável. Preservar o que ainda não estiver persistido e escolher reconciliação compatível com o contrato; `git pull` isolado não é prova dessa conferência. Não usar reset/limpeza generalizados para obter uma base aparentemente limpa.
+
+Conferir separadamente branch padrão, linha de integração e linha/artefato operacional pertinente. Registrar pontas consultadas e horário; comparar as diferenças antes de escolher a base, preservando entregas já operacionais. Não escolher automaticamente `main` nem a branch aparentemente mais nova. Destino/base incertos bloqueiam a ação dependente; investigação independente pode continuar. Consulta sem edição não exige criar worktree.
+
 ## Conferir durante execução
 
 Antes da primeira edição e na revisão: verificar `git rev-parse --show-toplevel`, branch e registro em `git worktree list`. Confirmar que o caminho não é o checkout principal. Carregar configurações locais sem copiá-las para Git. Registrar em qual worktree foi validado o SHA. Arquivos de ambiente, caches e resultados locais não são descartáveis por estarem ignorados.
+
+Na retomada, troca de máquina/worktree ou mudança relevante, repetir as conferências afetadas do [checklist](task-checklist.md). Antes de integrar e novamente antes de publicar, reconsultar pontas, PRs, regras e estado do destino pertinente. Reconciliar entregas concorrentes segundo o contrato local; mudança de base/candidato/ambiente invalida as provas afetadas conforme [qualidade](quality.md). Identificar contratos, migrations, manifests e serviços compartilhados; reserva local não prova exclusividade global. Não inferir trabalho não publicado em outro computador nem contatar pessoas/chats sem autorização. Disputa de intenção ou risco de perder trabalho exige bloqueio específico, não sobrescrita.
 
 ## Encerramento obrigatório
 
@@ -30,6 +36,8 @@ A tarefa inclui remover sua worktree quando a entrega estiver concluída e prese
 Se um gate impedir encerramento, manter o recurso e registrar issue, repositório, branch, caminho local, motivo concreto, evidência, próxima ação e condição exata para remoção. Responsável humano desconhecido permanece a definir. A pendência precisa aparecer no relatório final e no Linear; não declarar limpeza concluída. Agendamento de limpeza futura exige solicitação, sem monitor automático implícito.
 
 Critério de conclusão: limpeza comprovada **ou** retenção justificada com condição de remoção; integração e aceite continuam obrigatórios para Done. Nunca remover worktree de entrega não integrada só para satisfazer um indicador de limpeza.
+
+Retenção não equivale a limpeza concluída e só satisfaz o encerramento quando o contrato local a admitir. Requisito local mais forte pode exigir remoção efetiva antes de Done; registrar esse bloqueio sem inventar aceite ou responsável.
 
 ## Verificação executável
 

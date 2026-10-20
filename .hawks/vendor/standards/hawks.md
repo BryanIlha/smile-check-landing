@@ -1,4 +1,4 @@
-# Padrões Hawks — 1.2.0
+# Padrões Hawks
 
 ## Camadas e precedência
 

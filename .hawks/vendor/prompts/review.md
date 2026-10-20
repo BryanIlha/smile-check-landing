@@ -1,4 +1,4 @@
-# Revise a implementação — Hawks 1.2.1
+# Revise a implementação — Hawks
 
 ## Entradas
 Issue completa e comentários atuais; `.hawks/workflow.json`; AGENTS, PRODUCT, DESIGN e contrato técnico local. Ler somente referências adjacentes necessárias. Usar fonte/commit fixados no manifesto; se inacessíveis, registrar bloqueio sem presumir conteúdo.
@@ -35,3 +35,7 @@ Aplicar a seção “Sincronização obrigatória após mudanças” da [governa
 
 ## Registro para o blog
 Toda feature/fix segue [blog e patch notes](../standards/blog-and-release-notes.md): registrar em `docs/releases/entries/`, conferir na revisão e atualizar disponibilidade após integração/publicação comprovadas. Preparar edição semanal por produto, mantendo notícias e notas na fonte central e listas filtradas nas landings.
+
+## Conferência nos três momentos
+
+Aplicar o [checklist](../standards/task-checklist.md) e o [registro de entrega](../templates/delivery-evidence.md) no início/retomada, antes de integrar/publicar e no encerramento, conforme a fase. Confirmar origem, regras efetivamente lidas, integração versus operação e concorrência antes de sincronizar. Revalidar as provas afetadas por mudança de candidato/base/ambiente. Respeitar autorizações já dadas, separar implementado/integrado/publicado/aceito e manter abertas as obrigações pendentes do pedido. Consulta/documentação não herda deploy; etapa central não presume adoção dos consumidores.

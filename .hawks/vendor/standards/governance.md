@@ -1,6 +1,6 @@
 # Governança e atualização global
 
-Esta é a fonte normativa de processo, qualidade, entrega, worktrees, catálogo e prompts Hawks. Produto e identidade visual continuam no repositório de cada produto.
+Esta é a fonte normativa de processo, qualidade, entrega, worktrees, catálogo e prompts Hawks. Produto e identidade visual mantêm escopo específico; sua centralização e descoberta seguem [manual e transição](manual-and-discovery.md), sem retirada prematura das entradas locais.
 
 ## Regra de manutenção
 
@@ -33,6 +33,20 @@ Atualizar domínio, DESIGN, comandos ou runbooks locais é permitido na históri
 
 Não usar `latest` como contrato. Cada história registra a versão usada; adoção de nova versão ocorre por diff revisado, sem mudar instruções no meio da execução por atualização remota automática.
 
+## Procedência, validade e retomada
+
+No início e na retomada, o agente confere a origem efetiva, a versão/commit do pacote adotado e os contratos realmente lidos nesta execução. Compara instruções locais, remotas e registradas; explica diferenças antes da próxima ação crítica. Uma nova versão integrada na fonte oficial exige avaliação de impacto, não adoção automática nem troca silenciosa de regras durante a tarefa. PR aberta é proposta, não norma integrada. Nova restrição de segurança ou revogação de autorização impede a ação afetada mesmo com pin antigo.
+
+Para fatos relevantes, registrar fonte, revisão/artefato, ambiente quando aplicável, executor, data/hora com fuso, método, resultado e limites. Classificar a referência como verificada no contexto indicado, histórica, desatualizada ou não verificada. Mudanças de origem, ponta de integração, candidato, configuração, migrations ou dependência relevante exigem reconferir o impacto. Data recente sozinha não comprova correspondência de versão.
+
+Fonte crítica divergente não sustenta merge, publicação, exclusão, ativação ou Done até reconciliação. O agente sinaliza o trecho afetado, a correção e a condição de resolução; partes independentes continuam. Registro operacional e runtime observado precisam ser confrontados com o contrato aprovado: o estado encontrado não legitima um desvio. Histórico preserva a prova original e aponta para a decisão posterior. Nunca presumir conferência no computador de outra pessoa.
+
+## Atualização central e adoção em etapas
+
+Uma história pode limitar expressamente a entrega à fonte central, com distribuição autorizada para etapa posterior. Nesse caso, versão, compatibilidade e consumidores afetados são avaliados e a adoção fica registrada como pendente por consumidor, sem alterar seus arquivos, pins ou status de implantação. A subtarefa central pode concluir após seus próprios gates; o fechamento global continua dependente das adoções obrigatórias. Não criar exclusões permanentes a partir de um limite temporário de escopo.
+
+Norma comum permanece nesta fonte; PRODUCT, DESIGN, contratos, runbooks e decisões específicas são preservados. Interfaces opcionais de consulta não substituem a fonte canônica nem implicam decisão de adotá-las. Agendamento matinal é complementar à conferência no início/retomada e antes das ações críticas; esta norma não instala hooks, sincronização de PCs ou publicação automática.
+
 ## Sincronização obrigatória após mudanças
 
 Toda mudança, inclusive código, configuração, infraestrutura, documentação e assets, exige avaliar suas referências na triagem, revisar o impacto durante a execução e reconciliar as fontes antes do encerramento. Atualizar somente o Linear não basta quando outra fonte ficou desatualizada. Esta avaliação é responsabilidade do agente; a pessoa não precisa listar todos os documentos na história.
@@ -50,3 +64,7 @@ A revisão confere essa matriz contra o diff e as dependências conhecidas. Done
 ## Registro editorial de features/fixes
 
 Aplicar [blog e patch notes semanais](blog-and-release-notes.md) em todos os projetos. A norma é central; registros e evidências ficam com o produto; conteúdo público é mantido pelo site Hawks e distribuído às landings por feed filtrado. A exclusão do Radar registrada na rodada INF-392 não se estende ao pedido de todos os projetos na INF-413.
+
+## Manual central e transição
+
+Consultar [manual e descoberta](manual-and-discovery.md). A manutenção converge para standards/ e projects/; espelhos gerados são fixados e não editáveis como fonte. Referências locais exigidas por ferramentas permanecem até adoção integrada e validação suficiente; histórico/proposta não vira norma por importação.

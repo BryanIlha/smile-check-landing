@@ -13,3 +13,5 @@ Ativos oficiais em public/assets/visto; usar wordmark, símbolo e lockup adequad
 ## Evidências
 
 design/audits e .impeccable guardam críticas e revisões com escopo/data. Para alterar a interface, usar Impeccable e a matriz comum; não tratar uma auditoria antiga como resultado de teste atual.
+
+<!-- Entrada de produto reconciliada em INF-464, 20/10/2026. Proveniência e hashes em manifest.json e registry/manual-reviews.json; conteúdo original integral preservado em sources/. Estado operacional requer evidência datada própria. -->

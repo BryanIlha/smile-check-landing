@@ -1,0 +1,327 @@
+{
+  "id": "visto-landing",
+  "name": "Landing Visto",
+  "repository": "BryanIlha/smile-check-landing",
+  "ref": "main",
+  "commit": "6eff244143d155389904c4356ac0389f1ebee167",
+  "relationship": "integration reference; operation requires service evidence",
+  "adoptionDisposition": "active_consumer",
+  "authority": "transition_pending_central_integration_and_consumer_adoption",
+  "migrationReadiness": "reviewed_for_consumer_adoption",
+  "consumerStatus": "not_modified",
+  "operationVerification": "not_verified_live",
+  "documents": [
+    {
+      "origin": ".impeccable/critique/2026-08-06T17-28-04Z__src-app-tsx.md",
+      "centralPath": "projects/visto-landing/sources/.impeccable/critique/2026-08-06T17-28-04Z__src-app-tsx.md",
+      "originalSha256": "40be8c588842b2a5e293cca0b184180c931e19e519cb4f0fb89e70a9ef3be956",
+      "centralSha256": "a550d8d77b4a2bddd53f576acbac02c1f6964b95e07f91252a6ecf79f36bab40",
+      "classification": "historical_evidence",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/.impeccable/critique/2026-08-06T17-28-04Z__src-app-tsx.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": ".impeccable/critique/2026-08-11T23-15-26Z__src-app-tsx.md",
+      "centralPath": "projects/visto-landing/sources/.impeccable/critique/2026-08-11T23-15-26Z__src-app-tsx.md",
+      "originalSha256": "8f2e9070aed3b859b1f92e702eb4a2a2401d272a2823bc165ccf9a4b0169c96e",
+      "centralSha256": "2afec1692e776c0d0076f58173a3434352006883326b8398cd4ebfd385cc473f",
+      "classification": "historical_evidence",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/.impeccable/critique/2026-08-11T23-15-26Z__src-app-tsx.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "AGENTS.md",
+      "centralPath": "projects/visto-landing/sources/AGENTS.md",
+      "originalSha256": "9d21cc418ff2c5ab83381ef8dd376fc675735c387899cb88427488e6b5828fbd",
+      "centralSha256": "b26ef6b9ccbe59f941b11c494e9feb5e58eff786a13e6a40ef467c96d172d6fb",
+      "classification": "scoped_reference",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/AGENTS.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "DESIGN.md",
+      "centralPath": "projects/visto-landing/sources/DESIGN.md",
+      "originalSha256": "b87dcee316811aad08a482486eb41071b892b2b86bebc5e4e09e28a7dfdd1270",
+      "centralSha256": "dcd220409ae151635fe320c25934462a7626b7aed478ba80c9c36a0f90e886ff",
+      "classification": "scoped_reference",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/DESIGN.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "PRODUCT.md",
+      "centralPath": "projects/visto-landing/sources/PRODUCT.md",
+      "originalSha256": "6d275dd461ba176a1064867c08753d749980d0197e5125b3e1f81f138d573ee0",
+      "centralSha256": "ca1ad223d581fdb6827e71b7045e7d0d3533f6579bbce181464b60965175063b",
+      "classification": "scoped_reference",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/PRODUCT.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "README.md",
+      "centralPath": "projects/visto-landing/sources/README.md",
+      "originalSha256": "1bd0b575381969f49a5ca9f63ba179790b9c51b91fd453269159d2746d32c112",
+      "centralSha256": "be13045a0ed9ccbdd53168580655dd2b0f22439f64efb731cd91a837b63817cb",
+      "classification": "scoped_reference",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/README.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "design/audits/visto-landing-technical-audit.md",
+      "centralPath": "projects/visto-landing/sources/design/audits/visto-landing-technical-audit.md",
+      "originalSha256": "72bfdbd26512f0ca9ff02a3acfd064e95aa4b5c1411fcc1006e56d9ccf4759d4",
+      "centralSha256": "a19a2970640779febccad21ab3de1bd0c6bd0d1336e623bc9a0bb57c626895ac",
+      "classification": "historical_evidence",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/design/audits/visto-landing-technical-audit.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "design/audits/visto-landing.md",
+      "centralPath": "projects/visto-landing/sources/design/audits/visto-landing.md",
+      "originalSha256": "a914ec373b052cea429df04b74e1a69c826cd1d6ac590d039fa6c407a8650831",
+      "centralSha256": "c27cd49984e9b212562a32bc9a309c8d38cdb51c0a6d16e9f158629db188f7dc",
+      "classification": "historical_evidence",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/design/audits/visto-landing.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "docs/blog-integration.md",
+      "centralPath": "projects/visto-landing/sources/docs/blog-integration.md",
+      "originalSha256": "0fb653b3222e9dcea5ca1770c21a57850f50e78c3ccd377b76a4b128232b0915",
+      "centralSha256": "d750c4ed803a4fe690b1ccde5a8b67dd287e47e21c4498bfcc27eea73e09f8ca",
+      "classification": "scoped_reference",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/docs/blog-integration.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "docs/documentation-map.md",
+      "centralPath": "projects/visto-landing/sources/docs/documentation-map.md",
+      "originalSha256": "a165cb05a77f82ba3975ec299073c4d32c74dbf05753e1db819ded3a35d82179",
+      "centralSha256": "14ff0f8e254785447b3ac37a4cff718a9146a1ab0a0ac50f31d63ce66ec63a86",
+      "classification": "scoped_reference",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/docs/documentation-map.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "docs/project-workflow.md",
+      "centralPath": "projects/visto-landing/sources/docs/project-workflow.md",
+      "originalSha256": "43c57af99966bf10ccc0021ea41db3110353130b15248e5fb85763a1288adc5d",
+      "centralSha256": "e4797eb89c99b9396b912c8f110f36fdf9c9b887f29de48c8f8e20dd9746f82b",
+      "classification": "scoped_reference",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/docs/project-workflow.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "docs/releases/README.md",
+      "centralPath": "projects/visto-landing/sources/docs/releases/README.md",
+      "originalSha256": "2cd39c0e9b9a8e60f85deb3eaae3ca401edb70167bd4cac81ce463dd3123d369",
+      "centralSha256": "8cca4128bd29c98187dbad60f69a10abc67c592072e7ba8f6756b4f2e2a4002c",
+      "classification": "historical_evidence",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/docs/releases/README.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "docs/releases/entries/inf-413-visto-blog.md",
+      "centralPath": "projects/visto-landing/sources/docs/releases/entries/inf-413-visto-blog.md",
+      "originalSha256": "d7725bcf1a1bc37b17a0a95a5bc77f20b0b1d443a94d9bc61d48911f4eb8f650",
+      "centralSha256": "0642c1f060cbbf3cfd34f6c1814b03b0d0f6991761e0302268fa02a117febfe9",
+      "classification": "historical_evidence",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/docs/releases/entries/inf-413-visto-blog.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "docs/releases/entries/inf-437-visto-seo.md",
+      "centralPath": "projects/visto-landing/sources/docs/releases/entries/inf-437-visto-seo.md",
+      "originalSha256": "3329b7db84dd7634643dce137148d71f10f010d0f29167f61e367c9204ccc5c5",
+      "centralSha256": "86e8fc9f0fb5d2dc593b0f04b09f97b14f7491af892d1a7fe73dc28af0440487",
+      "classification": "historical_evidence",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/docs/releases/entries/inf-437-visto-seo.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "docs/status.md",
+      "centralPath": "projects/visto-landing/sources/docs/status.md",
+      "originalSha256": "df810cb7340ca1704c390a6706c97656c4c12dce4ca1a727e585a35b4375212e",
+      "centralSha256": "80a4ce798338f0105f566f5ddb4c08640c6e0e1e78ebb67bd5c627c88c16429e",
+      "classification": "scoped_reference",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/docs/status.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "docs/validation/INF-437-performance.md",
+      "centralPath": "projects/visto-landing/sources/docs/validation/INF-437-performance.md",
+      "originalSha256": "d5208e0396e148909dc41f89c2a12a21ca81327928fae1181dfe800973aa38b0",
+      "centralSha256": "0d694cc7e4b171c89c5a11d031c6fbeb10937dcc6055604301718b75ce6bdc60",
+      "classification": "historical_evidence",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/docs/validation/INF-437-performance.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "docs/validation/INF-437-production.md",
+      "centralPath": "projects/visto-landing/sources/docs/validation/INF-437-production.md",
+      "originalSha256": "15748db60313b4af2787bd5005906423395d47fbe3736a67f67ac15439086b48",
+      "centralSha256": "74a98ceb89478b9473f472c5da74a08fdbbef538a127a9857519ae681c8fcb43",
+      "classification": "historical_evidence",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/docs/validation/INF-437-production.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "docs/validation/INF-437-seo.md",
+      "centralPath": "projects/visto-landing/sources/docs/validation/INF-437-seo.md",
+      "originalSha256": "f82328cbeb50b96c7ac1d408cc7fc9eb10e63960f1d45a2e87ea2cf28f375189",
+      "centralSha256": "ea7a102dd105e32de9ab07a7949a59733439c8938ff9060069e6d2743ffe382b",
+      "classification": "historical_evidence",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/docs/validation/INF-437-seo.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "docs/visto-como-funciona.md",
+      "centralPath": "projects/visto-landing/sources/docs/visto-como-funciona.md",
+      "originalSha256": "1874f49220831b4cab7c3fd1f59f4ab40f91e69393c561f9f63f21e3b6071ece",
+      "centralSha256": "0216221e6368b1c683211926dc045873647b15ce15fd601bf2dbb7fef9406981",
+      "classification": "scoped_reference",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/docs/visto-como-funciona.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "prompts/build-deploy.md",
+      "centralPath": "projects/visto-landing/sources/prompts/build-deploy.md",
+      "originalSha256": "582bc337b9332e4ffcfabc6fa79c0f9b6e885e0b1f8294b560533eb9c57cf421",
+      "centralSha256": "fd37b904703310c5a8161239d574b14414be7c8e1559e26240b59c9db16f62fe",
+      "classification": "scoped_reference",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/prompts/build-deploy.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "prompts/create-app.md",
+      "centralPath": "projects/visto-landing/sources/prompts/create-app.md",
+      "originalSha256": "9124c67fee1ec53a0cde01af6fa8378b541479b51f9182c2fd55060c8561494b",
+      "centralSha256": "74351ae54c4e3378b9935723364326ffc71b8e87ce260f15d5c3fd11ecce3176",
+      "classification": "scoped_reference",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/prompts/create-app.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "prompts/create-landing.md",
+      "centralPath": "projects/visto-landing/sources/prompts/create-landing.md",
+      "originalSha256": "2034837e6b3a8a2676ef54c082f13fcafe124498ecf685e026e430abfe6ff154",
+      "centralSha256": "0aa7f31f5ff060addcbad00273632d21dbcbe540c1beb0c344313b599129800a",
+      "classification": "scoped_reference",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/prompts/create-landing.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "prompts/implement.md",
+      "centralPath": "projects/visto-landing/sources/prompts/implement.md",
+      "originalSha256": "9f104f77e6798da737f60eb79ee6c53d9cbecbcc20be8d90633b36743d32f754",
+      "centralSha256": "e017995951859abb450991fb99adb159bd5ff2aaba29b4212b73e34be1802f0f",
+      "classification": "scoped_reference",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/prompts/implement.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "prompts/review.md",
+      "centralPath": "projects/visto-landing/sources/prompts/review.md",
+      "originalSha256": "def8dc94a25fef5404210984d065b0762c264710085fd5b2160c21db0424bd77",
+      "centralSha256": "6b43cdf95e2607aba71c7cf22c0bd05c72bbab0ac2022413bfdb29291db7ba32",
+      "classification": "scoped_reference",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/prompts/review.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "prompts/triage.md",
+      "centralPath": "projects/visto-landing/sources/prompts/triage.md",
+      "originalSha256": "5baa93332685826879ed9153765588489c7dd578940476f2486880dcc2439eae",
+      "centralSha256": "5bfb234d474122be9919347b665b3a73c78bbe90e302fd790a82873b8980e057",
+      "classification": "scoped_reference",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/prompts/triage.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    },
+    {
+      "origin": "public/assets/visto/README.md",
+      "centralPath": "projects/visto-landing/sources/public/assets/visto/README.md",
+      "originalSha256": "a7e6ff96329bf13a3e82a597070f6599e0e6eb8790918a5fb20a095f93bce9f7",
+      "centralSha256": "8199c8e46951f6692887dcd25b8100bbd1f2f8d52201238b5051a7b26301325c",
+      "classification": "scoped_reference",
+      "sourceUrl": "https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/public/assets/visto/README.md",
+      "migration": "copied_complete_links_reconciled_no_source_removed",
+      "removal": "not_authorized_until_integrated_adoption_and_tool_machine_checks"
+    }
+  ],
+  "blockedDocuments": [],
+  "statusScope": "collection_step_only; current adoption is proved by consumer manifest and dated adoption registry",
+  "entrypoints": [
+    "projects/visto-landing/CONTEXT.md",
+    "projects/visto-landing/PRODUCT.md",
+    "projects/visto-landing/DESIGN.md",
+    "projects/visto-landing/CONTRACT.md"
+  ],
+  "semanticReview": {
+    "sourceCommit": "6eff244143d155389904c4356ac0389f1ebee167",
+    "sourceHashes": {
+      "AGENTS.md": "9d21cc418ff2c5ab83381ef8dd376fc675735c387899cb88427488e6b5828fbd",
+      "DESIGN.md": "b87dcee316811aad08a482486eb41071b892b2b86bebc5e4e09e28a7dfdd1270",
+      "PRODUCT.md": "6d275dd461ba176a1064867c08753d749980d0197e5125b3e1f81f138d573ee0",
+      "docs/project-workflow.md": "43c57af99966bf10ccc0021ea41db3110353130b15248e5fb85763a1288adc5d"
+    },
+    "authoredHashes": {
+      "projects/visto-landing/CONTEXT.md": "134412c2ce3a61b5b88616b5fc60eaec94468b5f5364cc4885399f69a3f8e69a",
+      "projects/visto-landing/PRODUCT.md": "cd9a0c9354646067a8099a41b9de894211e0f3bbee3eadd4342f5c7f79106110",
+      "projects/visto-landing/DESIGN.md": "dc183a9d3f1222df265a91b01582f14df7cc81c5888f0bb3538ea795663154cb",
+      "projects/visto-landing/CONTRACT.md": "307d2986fca3deaecc462f369af1e0cb854fd94589b67bddd0f41f3c35452d7d"
+    },
+    "readiness": "reviewed_for_consumer_adoption",
+    "reviewedAt": "2026-10-20",
+    "scope": "Revisão documental: conteúdo específico preservado, processo antigo referenciado à norma comum, status históricos delimitados. Não é revisão independente, integração, adoção ou validação operacional.",
+    "entrypoints": [
+      "projects/visto-landing/CONTEXT.md",
+      "projects/visto-landing/PRODUCT.md",
+      "projects/visto-landing/DESIGN.md",
+      "projects/visto-landing/CONTRACT.md"
+    ],
+    "rootMirrors": {
+      "PRODUCT.md": "projects/visto-landing/PRODUCT.md",
+      "DESIGN.md": "projects/visto-landing/DESIGN.md",
+      "docs/project-workflow.md": "projects/visto-landing/CONTRACT.md"
+    },
+    "createMissing": []
+  },
+  "authoredDocuments": [
+    "projects/visto-landing/CONTEXT.md",
+    "projects/visto-landing/PRODUCT.md",
+    "projects/visto-landing/DESIGN.md",
+    "projects/visto-landing/CONTRACT.md"
+  ],
+  "rootMirrors": {
+    "PRODUCT.md": "projects/visto-landing/PRODUCT.md",
+    "DESIGN.md": "projects/visto-landing/DESIGN.md",
+    "docs/project-workflow.md": "projects/visto-landing/CONTRACT.md"
+  },
+  "supportingDocuments": [
+    "operations/observations/2026-10-20.md"
+  ]
+}

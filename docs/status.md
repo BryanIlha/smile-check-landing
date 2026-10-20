@@ -1,3 +1,9 @@
+## INF-464 — adoção documental1.4.0 preparada em20/10/2026
+
+Base 6eff244143d155389904c4356ac0389f1ebee167, integração `main`; branch/worktree próprias. Fonte central integrada c14d1dac7c200e09754daa2a12c5d15e1c964489 (Hawks Standards PR#2, CI do merge aprovada). Esta preparação ainda precisa de PR/checks/integração do consumidor; não comprova operação, deploy ou PC de Bryan. Nenhuma mudança funcional, dado, env, canal ou servidor foi operado.
+
+Entradas/espelhos e cópia fixada serão conferidos por integridade e leitura; domínio/design e fontes originais preservados. Runbooks e anexos locais continuam em transição, sem retirada. Após entrega/gates/preservação, limpar somente esta worktree ou registrar a condição de retenção. Registros anteriores abaixo mantêm suas datas.
+
 # Estado da adoção — smile-check-landing
 
 11/10/2026. Base documental: [commit ea15d92](https://github.com/BryanIlha/smile-check-landing/commit/ea15d92095d3f2ed57e1fae1b7277ea6042f6832). Adoção Hawks 1.1.0 preparada em branch própria; integração/aceite pendentes. Sem alteração de runtime, dados, automações ou publicação. Esta leitura não comprova estado servido nem validação autenticada do produto.

@@ -1,14 +1,9 @@
 # Instruções — smile-check-landing
 
-<!-- hawks:generated; editar o template central e propagar com tools/adopt.py -->
+<!-- hawks:generated; editar a fonte central e propagar com tools/adopt.py -->
 
-1. Leia o [manifesto](.hawks/workflow.json) e os padrões fixados: [governança](.hawks/vendor/standards/governance.md), [qualidade](.hawks/vendor/standards/quality.md), [entrega](.hawks/vendor/standards/delivery.md) e [worktrees](.hawks/vendor/standards/worktrees.md).
-2. Consulte a história e comentários atuais no Linear. Procure a execução existente antes de criar branch/worktree; toda edição versionada acontece na worktree da tarefa.
-3. Leia [PRODUCT](PRODUCT.md), [DESIGN](DESIGN.md), [contrato local](docs/project-workflow.md) e os anexos pertinentes. O [estado](docs/status.md) é datado.
-4. Antes de cada fase, consulte o [catálogo](.hawks/vendor/standards/toolkit.md), leia as skills aplicáveis e verifique a capacidade real. Use MCP suficiente e registre limitação/fallback.
-5. Execute os gates comuns pelos comandos/ambientes locais; registre evidências do SHA atual, revisão, integração e aceite aplicáveis.
-6. A cada mudança, avalie e sincronize Linear, fonte central Hawks, documentos locais e referências/derivados afetados conforme a governança. Registre evidências ou não aplicabilidade justificada; revisão e encerramento conferem essa matriz.
-7. Toda feature, melhoria ou fix deve criar/atualizar um registro em `docs/releases/entries/` para os patch notes semanais. Siga [blog e notas de versão](.hawks/vendor/standards/blog-and-release-notes.md): produto, benefício, evidências, disponibilidade e estado editorial separados; revisão confere o registro. O blog Hawks agrega tudo e cada landing exibe somente os posts do seu produto.
-8. Conclua a limpeza segura da própria worktree, ou registre razão e condição de remoção. Preserve recursos, dados e sessões alheios.
+No início e em cada retomada, leia a issue/comentários atuais no Linear e execute `python3 .hawks/read.py --phase implement` (use a fase pertinente). A saída identifica as regras fixadas, compara a main central e apresenta as fontes gerais e específicas; leia também os anexos aplicáveis. Antes de integrar/publicar, repita com `--critical`. Não atualize o pin silenciosamente: reconcilie divergências e registre a decisão. Indisponibilidade permanece desconhecida; não comprova aprovação.
 
-Mudanças no processo comum são feitas na fonte central e propagadas globalmente. Produto, design e parâmetros locais não redefinem nem reduzem os gates Hawks. Consulte o [índice documental](docs/documentation-map.md) para autoridade, anexos e histórico.
+Toda edição versionada ocorre na branch/worktree própria da história; procure a execução existente. Siga o catálogo, as skills e os gates da fonte lida. Preserve PRODUCT.md, DESIGN.md, [contrato local](docs/project-workflow.md), arquivos exigidos por ferramentas e trabalho concorrente durante a transição. Conflitos entre espelho local e manual central exigem reconciliação antes da ação afetada, preservando exigências mais fortes.
+
+Confirme evidências, Linear, fonte central e referências/derivados afetados; registre features/fixes para patch notes. Declare implementação, validação, integração, publicação e aceite separadamente. Encerramento inclui limpeza segura da própria worktree ou motivo e condição de retenção. As normas completas ficam no pacote fixado, nunca nesta entrada curta.

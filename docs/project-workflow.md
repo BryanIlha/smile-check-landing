@@ -1,10 +1,10 @@
 # Contrato de trabalho — smile-check-landing
 
-Adoção Hawks 1.2.1 no [manifesto](../.hawks/workflow.json). Referência de integração revalidada em 12/10/2026: `main`, SHA `ea15d92095d3f2ed57e1fae1b7277ea6042f6832`. Confirmar novamente antes de iniciar nova história; nenhuma publicação é inferida da branch.
+Processo comum: versão e commit efetivamente lidos pelo leitor da tarefa; não usar o texto de uma adoção anterior como pin. Integração documental conferida em 20/10/2026: `BryanIlha/smile-check-landing` / `main` @ `6eff244143d155389904c4356ac0389f1ebee167`. Reconsultar antes da tarefa. As referências e versões de adoção anteriores permanecem no [contrato histórico integral](../.hawks/vendor/projects/visto-landing/sources/docs/project-workflow.md).
 
 ## Comandos reais
 
-Scripts de [package.json](../package.json), verificados sem executar runtime nesta adoção documental:
+Scripts de [package.json](https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/package.json), verificados sem executar runtime nesta adoção documental:
 
 - `npm run dev`.
 - `npm run build`.
@@ -15,14 +15,11 @@ Scripts de publicação ou dados exigem o runbook, destino, ambiente e autoriza�
 Usar assets/logos/tokens oficiais presentes na árvore e o [perfil landing do núcleo](../.hawks/vendor/profiles/landing.md). Preservar CTA e destinos verdadeiros; não transformar conteúdo de referência em funcionalidade comprovada.
 
 
-## Padrão comum
 
-Processo, qualidade, catálogo, templates e ciclo de worktrees são definidos no [núcleo fixado](../.hawks/vendor/standards/governance.md). Este contrato fornece apenas parâmetros e requisitos locais. Mudança de regra comum exige fonte central e propagação.
 
-## Sincronização após mudanças
 
-Aplicar a [sincronização obrigatória de fontes e referências](../.hawks/vendor/standards/governance.md#sincronização-obrigatória-após-mudanças): avaliar Linear, fonte central Hawks, documentos locais e derivados afetados; registrar ações/evidências ou não aplicabilidade justificada. Revisão e encerramento conferem a matriz.
+## Processo e evidência vigentes
 
-## Blog e patch notes semanais
+Regras comuns: [governança](../.hawks/vendor/standards/governance.md), [qualidade](../.hawks/vendor/standards/quality.md), [entrega](../.hawks/vendor/standards/delivery.md), [catálogo](../.hawks/vendor/standards/toolkit.md) e [worktrees](../.hawks/vendor/standards/worktrees.md). A reconciliação e os limites temporais desta superfície estão em [CONTEXT](../.hawks/vendor/projects/visto-landing/CONTEXT.md). O [contrato original integral](../.hawks/vendor/projects/visto-landing/sources/docs/project-workflow.md) conserva as anotações e referências anteriores.
 
-Toda feature/fix segue a [norma central](../.hawks/vendor/standards/blog-and-release-notes.md) e deixa [registro durável](releases/README.md) para a edição semanal. Disponibilidade deve ter evidência; não inferir lançamento do merge.
+<!-- Entrada de produto reconciliada em INF-464, 20/10/2026. Proveniência e hashes em manifest.json e registry/manual-reviews.json; conteúdo original integral preservado em sources/. Estado operacional requer evidência datada própria. -->

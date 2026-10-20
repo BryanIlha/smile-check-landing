@@ -1,0 +1,38 @@
+<!-- Hawks INF-464: imported complete text; origin BryanIlha/smile-check-landing@6eff244143d155389904c4356ac0389f1ebee167 / README.md; collected 2026-10-20; scoped_reference; not a live-operation assertion. -->
+
+## Guias do projeto
+
+[AGENTS](AGENTS.md) · [PRODUCT](PRODUCT.md) · [DESIGN](DESIGN.md) · [Contrato](docs/project-workflow.md) · [Mapa documental](docs/documentation-map.md) · [Estado](docs/status.md).
+
+Padrões Hawks fixados em [.hawks/workflow.json](https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/.hawks/workflow.json); validação: `python3 .hawks/check.py`. Alterações comuns exigem fonte central e propagação global.
+
+# Visto landing page
+
+Independent Vite + React project for the Visto public marketing page.
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+The optional `VITE_VISTO_DEMO_URL` environment variable overrides the demonstration CTA. Without it, the page uses the HAWKS BI contact email. The login CTA defaults to `https://app.visto.hawksbi.com.br/login`; `VITE_VISTO_LOGIN_URL` can override it for an explicitly configured environment.
+
+The page includes the Visto logo system and the official HAWKS BI maker mark under `public/assets/brand-kit`, and does not import code, routes, styles, or dependencies from the Visto application. The commercial layer uses GSAP for the staged hero, scroll reveals, progress fill, and pointer-driven 3D tilt; the product scene itself is CSS 3D so it stays lightweight.
+
+The visual direction follows the HAWKS BI identity guide: graphite structure, paper surfaces, operational green for action and confirmation, signal orange for attention, Instrument Sans, visible geometry, and restrained motion.
+
+## Review evidence
+
+The design audit is saved at `design/audits/visto-landing.md`. Playwright QA captures from the standalone target are kept under `public/assets/evidence/`.
+
+The product app currently running on port `5174` is the integrated Visto project. Its public marketing route is `/landing`; the authenticated product starts at `/` and redirects to `/login` without a session. Keep that implementation distinction explicit when promoting changes.
+
+## Adoção Hawks 1.2.1
+
+[AGENTS](AGENTS.md), [manifesto fixado](https://github.com/BryanIlha/smile-check-landing/blob/6eff244143d155389904c4356ac0389f1ebee167/.hawks/workflow.json), [contrato](docs/project-workflow.md), [estado da adoção](docs/status.md). As instruções Hawks governam edição versionada: métodos antigos de edição direta/publicação não dispensam worktree nem os gates atuais. Estado de produto descrito anteriormente deve ser revalidado na fonte antes de operar.
+
+## SEO — INF-437
+
+Após o build, execute `npm run check:seo` nesta pasta. A validação verifica o HTML que será servido, incluindo conteúdo pré-renderizado, canonical, assets, schema e arquivos de descoberta. `public/404.html` desativa o fallback SPA do Cloudflare Pages; preserve esse arquivo no deploy. URLs inexistentes devem retornar 404, e a homepage deve permanecer 200. Confira o relatório em `docs/validation/INF-437-seo.md` e valide os domínios oficiais após publicar. A implementação desta rodada ainda aguarda integração e deploy; registro editorial independente em docs/releases/entries/ na raiz do repositório.

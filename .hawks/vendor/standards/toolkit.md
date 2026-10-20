@@ -1,4 +1,4 @@
-# Catálogo Hawks de skills e MCPs — 1.2.0
+# Catálogo Hawks de skills e MCPs
 
 Catálogo único para todos os perfis, adotado pelo commit de `.hawks/workflow.json`. Não implica que todas as capacidades sejam usadas em toda história nem que estejam instaladas em toda máquina. Antes de **cada fase**, selecionar capacidades pelo escopo, descobrir a instalação/conexão real, ler a skill/playbook e schema da ferramenta, verificar acesso e registrar resultado. Usar MCP disponível e suficiente. Fallback deve identificar limitação observada, alternativa suportada e mesmas autorizações; nunca trocar silenciosamente a integração por shell, SQL, browser ou API improvisada.
 

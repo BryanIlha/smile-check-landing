@@ -1,3 +1,11 @@
+<!-- hawks:manual-discovery:start -->
+## Entrada vigente da INF-464
+
+Processo comum e requisitos específicos são carregados por `python3 .hawks/read.py --phase <fase>` no início/retomada; antes de integrar/publicar, usar `--critical`. Versão/commit e main observada são explícitos, sem atualização silenciosa. O [contexto do produto](../.hawks/vendor/projects/visto-landing/CONTEXT.md) resolve precedência e escopo. PRODUCT.md, DESIGN.md e docs/project-workflow.md são espelhos gerados desse recorte, verificados pelo lock; alterações são feitas na fonte central e propagadas.
+
+Fontes integrais/proveniência: `.hawks/vendor/projects/visto-landing/sources/`. Anexos, runbooks, decisões, validações e blocos de framework locais permanecem. Os registros anteriores abaixo mantêm suas datas; não redefinem o pin da tarefa nem provam disponibilidade atual. Não retirar fontes requeridas por ferramentas sem substituição integrada/testada, inclusive nas máquinas afetadas.
+<!-- hawks:manual-discovery:end -->
+
 # Mapa documental — smile-check-landing
 
 ## Autoridades vigentes

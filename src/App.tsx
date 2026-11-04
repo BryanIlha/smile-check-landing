@@ -1,3 +1,4 @@
+import { SolutionLinks } from './SolutionPage';
 import { ProductNews } from './ProductNews';
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
@@ -111,34 +112,6 @@ const navigation = [
   ["Como funciona", "#como-funciona"],
   ["Para quem é", "#para-quem"],
 ] as const;
-
-const HERO_ROTATING_LABELS = ["operação", "restaurante", "padaria", "bar"] as const;
-
-function HeroRotatingLabel() {
-  const [labelIndex, setLabelIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setLabelIndex((currentIndex) => (currentIndex + 1) % HERO_ROTATING_LABELS.length);
-    }, 2600);
-
-    return () => window.clearInterval(timer);
-  }, []);
-
-  return (
-    <span className="hero-rotating-word" aria-live="polite" aria-atomic="true">
-      {HERO_ROTATING_LABELS.map((label, index) => (
-        <span
-          key={label}
-          className={`hero-rotating-word__value${index === labelIndex ? " is-active" : ""}`}
-          aria-hidden={index !== labelIndex}
-        >
-          {label}
-        </span>
-      ))}
-    </span>
-  );
-}
 
 function Arrow() {
   return (
@@ -511,7 +484,7 @@ export function VistoLanding() {
         <div className="marketing-frame marketing-hero__layout">
           <div className="marketing-hero__copy">
             <p className="marketing-eyebrow" data-hero-label><span className="eyebrow-dot" /> Visto · rotinas operacionais</p>
-            <h1 id="hero-title" data-hero-title>Rotinas sob controle em qualquer <HeroRotatingLabel /></h1>
+            <h1 id="hero-title" data-hero-title>Checklists digitais para controlar sua operação</h1>
             <p className="marketing-lede" data-hero-copy>
               Checklists digitais por setor, turno e dia. O time executa as rotinas no local; a gestão acompanha pendências, temperaturas e correções.
             </p>
@@ -613,6 +586,8 @@ export function VistoLanding() {
         </div>
       </section>
 
+      <section className="marketing-frame seo-home-section" aria-labelledby="applications-title"><h2 id="applications-title">Da tarefa ao registro: conheça as aplicações.</h2><SolutionLinks /></section>
+      <section className="marketing-frame seo-home-section character-story" aria-labelledby="characters-title"><div><h2 id="characters-title">Uma equipe com a sua cara.</h2><p>Os personagens do Visto acompanham a identificação da equipe. Cada pessoa pode escolher um avatar; nomes e registros continuam dando contexto a quem executa e acompanha as rotinas.</p><a href="https://hawksbi.com.br/blog/visto-personagens-equipe/">Conheça os personagens e os avatares do Visto</a></div><img src="/assets/characters/elenco-visto.png" alt="Bento, Lia, Cris, Davi, Nina e Alex, seis dos personagens do Visto" width="1536" height="1024" loading="lazy" decoding="async" /></section>
       <ProductNews />
 
       <section id="solicitar-demonstracao" className="marketing-final-cta" aria-labelledby="cta-title">

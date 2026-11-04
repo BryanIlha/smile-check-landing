@@ -34,3 +34,6 @@ The product app currently running on port `5174` is the integrated Visto project
 ## SEO — INF-437
 
 Após o build, execute `npm run check:seo` nesta pasta. A validação verifica o HTML que será servido, incluindo conteúdo pré-renderizado, canonical, assets, schema e arquivos de descoberta. `public/404.html` desativa o fallback SPA do Cloudflare Pages; preserve esse arquivo no deploy. URLs inexistentes devem retornar 404, e a homepage deve permanecer 200. Confira o relatório em `docs/validation/INF-437-seo.md` e valide os domínios oficiais após publicar. A implementação desta rodada ainda aguarda integração e deploy; registro editorial independente em docs/releases/entries/ na raiz do repositório.
+
+## SEO e personagens — INF-539
+Guias públicos em `/checklists-digitais/`, `/controle-de-temperatura/` e `/checklist-com-foto/`, gerados a partir de `src/solutions.ts`. Build gera sitemap completo; `npm run check:seo` verifica todas as rotas.

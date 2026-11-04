@@ -21,8 +21,16 @@ assert(robots.includes(`Sitemap: ${canonical}sitemap.xml`));
 assert(!/Disallow:\s*\/\s*(?:\n|$)/.test(robots));
 const sitemap = await readFile(new URL('sitemap.xml', dist), 'utf8');
 assert(sitemap.includes(`<loc>${canonical}</loc>`));
-assert.equal((sitemap.match(/<loc>/g)||[]).length,1);
+assert.equal((sitemap.match(/<loc>/g)||[]).length,4);
 const notFound = await readFile(new URL('404.html', dist), 'utf8');
 assert(notFound.includes('name="robots" content="noindex, follow"'));
 assert(!notFound.includes('rel="canonical"'), '404 não deve canonicalizar para a homepage');
 console.log('SEO: HTML inicial, URLs, schema, assets, robots, sitemap e documento 404 válidos.');
+
+for(const match of sitemap.matchAll(/<loc>(.*?)<\/loc>/g)) {
+ const path=new URL(match[1]).pathname;
+ const page=await readFile(new URL(`${path.slice(1)}index.html`,dist),'utf8');
+ assert(page.includes(`rel="canonical" href="${match[1]}"`));
+ assert.equal((page.match(/<h1\b/g)||[]).length,1);
+ for(const asset of page.matchAll(/(?:src|href)="(\/[^"#?]+)"/g)) await access(new URL(asset[1].slice(1),dist));
+}

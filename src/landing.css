@@ -1879,7 +1879,7 @@ body {
 }
 
 .marketing-final-cta .marketing-eyebrow {
-  color: rgba(247, 247, 244, 0.7);
+  color: var(--marketing-green-soft);
 }
 
 .marketing-final-cta h2 {
@@ -1898,18 +1898,19 @@ body {
   padding-bottom: 0.25rem;
 }
 
-.marketing-final-cta p:not(.marketing-eyebrow) {
+.marketing-final-cta p:not(.marketing-eyebrow, .marketing-company-note) {
   max-width: 22rem;
   margin: 0 0 1.7rem;
-  color: rgba(247, 247, 244, 0.78);
+  color: var(--marketing-paper);
   font-size: 0.93rem;
   line-height: 1.6;
 }
 
-.marketing-company-note {
-  margin-top: -0.8rem !important;
-  color: rgba(247, 247, 244, 0.62) !important;
-  font-size: 0.78rem !important;
+.marketing-final-cta .marketing-company-note {
+  margin: -0.8rem 0 1.7rem;
+  color: var(--marketing-green-soft);
+  font-size: 0.78rem;
+  line-height: 1.6;
 }
 
 .marketing-final-cta__actions {
@@ -1919,27 +1920,36 @@ body {
   gap: 0.7rem;
 }
 
-.marketing-final-cta .marketing-action {
-  border-color: var(--marketing-ink);
-  background: var(--marketing-ink);
-  color: var(--marketing-paper);
+.marketing-page .marketing-final-cta .marketing-action {
+  border-color: var(--marketing-paper);
+  background: var(--marketing-paper);
+  color: var(--marketing-green-deep);
+}
+
+.marketing-page .marketing-final-cta .marketing-action:hover {
+  border-color: var(--marketing-green-soft);
+  background: var(--marketing-green-soft);
+  color: var(--marketing-green-deep);
+}
+
+.marketing-page .marketing-final-cta .marketing-action:focus-visible {
+  outline-color: var(--marketing-paper);
 }
 
 .marketing-final-cta .marketing-arrow {
-  background: var(--marketing-green);
-  color: var(--marketing-ink);
+  background: var(--marketing-green-deep);
+  color: var(--marketing-paper);
 }
 
-.marketing-final-cta .marketing-action--secondary {
-  border-color: rgba(247, 247, 244, 0.48);
+.marketing-page .marketing-final-cta .marketing-action--secondary {
   background: transparent;
   color: var(--marketing-paper);
 }
 
-.marketing-final-cta .marketing-action--secondary:hover {
+.marketing-page .marketing-final-cta .marketing-action--secondary:hover {
   border-color: var(--marketing-paper);
-  background: var(--marketing-paper);
-  color: var(--marketing-ink);
+  background: var(--marketing-ink);
+  color: var(--marketing-paper);
 }
 
 .marketing-footer {
@@ -2590,7 +2600,7 @@ body {
   .marketing-section-heading > p:last-child,
   .marketing-audience__heading > p:last-child,
   .marketing-product__heading > p,
-  .marketing-final-cta p:not(.marketing-eyebrow) {
+  .marketing-final-cta p:not(.marketing-eyebrow, .marketing-company-note) {
     font-size: 0.83rem;
   }
 
@@ -2765,9 +2775,6 @@ body {
 .solution-links { display:flex; flex-wrap:wrap; gap:16px 32px; margin:32px 0; }
 .solution-links a, .seo-home-section a, .seo-page a { text-underline-offset: .25em; }
 .solution-links a { padding:12px 0; color:#0b6b3a; font-weight:600; }
-.character-story { display:grid; grid-template-columns:1fr 1.2fr; gap:40px; align-items:center; }
-.character-story p { line-height:1.7; max-width:60ch; margin:24px 0; }
-.character-story img { width:100%; height:auto; border-radius:12px; }
 .seo-page { max-width:960px; margin:auto; padding:40px 24px 80px; font-family:'Instrument Sans',sans-serif; color:#22231f; }
 .seo-page h1 { font-size:clamp(2.3rem,5vw,4.5rem); line-height:1.08; letter-spacing:-.03em; max-width:20ch; margin:40px 0 28px; }
 .seo-page h2 { font-size:clamp(1.5rem,3vw,2.1rem); line-height:1.2; margin-bottom:20px; }
@@ -2776,7 +2783,7 @@ body {
 .seo-page section { margin-top:56px; }
 .seo-breadcrumb { margin-top:30px; line-height:1.7; }
 .seo-page .marketing-action { color:white; }
-@media(max-width:700px) { .character-story { grid-template-columns:1fr; gap:24px; } .seo-home-section { padding-top:48px; padding-bottom:48px; } }
+@media(max-width:700px) { .seo-home-section { padding-top:48px; padding-bottom:48px; } }
 
 body:has(.seo-page) { background:var(--marketing-paper); }
 .seo-page a:not(.marketing-action), .seo-home-section a { text-decoration:underline; text-underline-offset:.25em; }

@@ -15,7 +15,7 @@ npm install
 npm run dev
 ```
 
-The optional `VITE_VISTO_DEMO_URL` environment variable overrides the demonstration CTA. Without it, the page uses the HAWKS BI contact email. The login CTA defaults to `https://app.visto.hawksbi.com.br/login`; `VITE_VISTO_LOGIN_URL` can override it for an explicitly configured environment.
+The login CTA defaults to `https://app.visto.hawksbi.com.br/login`; `VITE_VISTO_LOGIN_URL` can override it for an explicitly configured environment.
 
 The page includes the Visto logo system and the official HAWKS BI maker mark under `public/assets/brand-kit`, and does not import code, routes, styles, or dependencies from the Visto application. The commercial layer uses GSAP for the staged hero, scroll reveals, progress fill, and pointer-driven 3D tilt; the product scene itself is CSS 3D so it stays lightweight.
 
@@ -34,6 +34,12 @@ The product app currently running on port `5174` is the integrated Visto project
 ## SEO — INF-437
 
 Após o build, execute `npm run check:seo` nesta pasta. A validação verifica o HTML que será servido, incluindo conteúdo pré-renderizado, canonical, assets, schema e arquivos de descoberta. `public/404.html` desativa o fallback SPA do Cloudflare Pages; preserve esse arquivo no deploy. URLs inexistentes devem retornar 404, e a homepage deve permanecer 200. Confira o relatório em `docs/validation/INF-437-seo.md` e valide os domínios oficiais após publicar. A implementação desta rodada ainda aguarda integração e deploy; registro editorial independente em docs/releases/entries/ na raiz do repositório.
+
+## Pedidos de demonstração
+
+Os botões comerciais abrem uma modal com contato, qualificação e horários livres. A landing consulta `https://hawksbi.com.br/api/visto-demo`. A rota de `BryanIlha/hawks_site` aceita somente a origem oficial do Visto e consulta a agenda do Cockpit no servidor. O Cockpit vincula o lead à reserva e confirma o horário.
+
+Para validar localmente, execute `npm run build`, `npx playwright install chromium` e `npm run test:demo`. O teste usa horários e confirmações sintéticos. Para publicar, valide primeiro a integração do Cockpit (INF-568), a rota da Hawks e a reserva ponta a ponta em ambiente isolado.
 
 ## SEO e personagens — INF-539
 Guias públicos em `/checklists-digitais/`, `/controle-de-temperatura/` e `/checklist-com-foto/`, gerados a partir de `src/solutions.ts`. Build gera sitemap completo; `npm run check:seo` verifica todas as rotas.

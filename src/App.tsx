@@ -1,8 +1,9 @@
 import { SolutionLinks } from './SolutionPage';
 import { ProductNews } from './ProductNews';
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { DemoDialog } from "./DemoDialog";
 
 import "./landing.css";
 
@@ -100,9 +101,6 @@ function VistoMark({
   );
 }
 
-const DEMO_URL =
-  import.meta.env.VITE_VISTO_DEMO_URL ??
-  "mailto:contato@hawksbi.com.br?subject=Agendar%20demonstra%C3%A7%C3%A3o%20%E2%80%94%20Visto";
 const LOGIN_URL = import.meta.env.VITE_VISTO_LOGIN_URL ?? "https://app.visto.hawksbi.com.br/login";
 const HAWKS_SITE_URL = "https://hawksbi.com.br";
 
@@ -146,6 +144,30 @@ function Action({
       <span>{children}</span>
       {!secondary && <Arrow />}
     </a>
+  );
+}
+
+function DemoAction({
+  onClick,
+  tabIndex,
+  plain = false,
+}: {
+  onClick: (event: MouseEvent<HTMLButtonElement>) => void;
+  tabIndex?: number;
+  plain?: boolean;
+}) {
+  return (
+    <button
+      type="button"
+      className={plain ? "marketing-demo-link" : "marketing-action"}
+      aria-haspopup="dialog"
+      aria-controls="visto-demo"
+      onClick={onClick}
+      tabIndex={tabIndex}
+    >
+      <span>Pedir demonstração</span>
+      {!plain && <Arrow />}
+    </button>
   );
 }
 
@@ -389,10 +411,13 @@ function useSaaSMotion(rootRef: React.RefObject<HTMLElement | null>) {
 
 export function VistoLanding() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [demoOpen, setDemoOpen] = useState(false);
   const menuButton = useRef<HTMLButtonElement>(null);
   const firstLink = useRef<HTMLAnchorElement>(null);
   const lastMenuLink = useRef<HTMLAnchorElement>(null);
   const rootRef = useRef<HTMLElement>(null);
+  const demo = useRef<HTMLDialogElement>(null);
+  const demoTrigger = useRef<HTMLButtonElement | null>(null);
   useSaaSMotion(rootRef);
 
   useEffect(() => {
@@ -423,6 +448,16 @@ export function VistoLanding() {
     }
   }
 
+  function openDemo(event: MouseEvent<HTMLButtonElement>) {
+    const dialog = demo.current;
+    if (!dialog || dialog.open) return;
+    demoTrigger.current = menuOpen ? menuButton.current : event.currentTarget;
+    setMenuOpen(false);
+    dialog.showModal();
+    setDemoOpen(true);
+    dialog.querySelector("h2")?.focus({ preventScroll: true });
+  }
+
   return (
     <main ref={rootRef} id="conteudo" className="marketing-page">
       <a className="marketing-skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -443,7 +478,7 @@ export function VistoLanding() {
           <div className="marketing-nav-actions">
             <Action href={HAWKS_SITE_URL} external secondary>Site HAWKS BI</Action>
             <a className="marketing-login" href={LOGIN_URL}>Já sou cliente</a>
-            <Action href={DEMO_URL}>Ver demonstração</Action>
+            <DemoAction onClick={openDemo} />
           </div>
           <button
             ref={menuButton}
@@ -473,7 +508,7 @@ export function VistoLanding() {
           </nav>
           <div className="marketing-mobile-menu__actions">
             <div className="marketing-mobile-menu__buttons">
-              <Action href={DEMO_URL} tabIndex={menuOpen ? 0 : -1}>Ver demonstração</Action>
+              <DemoAction onClick={openDemo} tabIndex={menuOpen ? 0 : -1} />
               <Action href={HAWKS_SITE_URL} external secondary tabIndex={menuOpen ? 0 : -1}>Site HAWKS BI</Action>
             </div>
             <a ref={lastMenuLink} href={LOGIN_URL} tabIndex={menuOpen ? 0 : -1} onClick={() => setMenuOpen(false)}>Entrar no sistema</a>
@@ -485,17 +520,16 @@ export function VistoLanding() {
         <div className="marketing-frame marketing-hero__layout">
           <div className="marketing-hero__copy">
             <p className="marketing-eyebrow" data-hero-label><span className="eyebrow-dot" /> Visto · rotinas operacionais</p>
-            <h1 id="hero-title" data-hero-title>Checklists digitais para controlar sua operação</h1>
+            <h1 id="hero-title" data-hero-title>Veja as pendências <em>de cada turno.</em></h1>
             <p className="marketing-lede" data-hero-copy>
-              Checklists digitais por setor, turno e dia. O time executa as rotinas no local; a gestão acompanha pendências, temperaturas e correções.
+              Sua equipe faz os checklists no celular. Você acompanha o que foi feito, quais temperaturas saíram da faixa e o que ainda precisa de correção.
             </p>
             <div className="marketing-hero__actions" data-hero-actions>
-              <Action href={DEMO_URL}>Ver o Visto</Action>
-              <a className="marketing-text-link" href="#como-funciona">Entender o fluxo <span aria-hidden="true">↓</span></a>
+              <DemoAction onClick={openDemo} />
+              <a className="marketing-text-link" href="#como-funciona">Como funciona <span aria-hidden="true">↓</span></a>
             </div>
             <div className="marketing-hero__meta" data-hero-copy>
-              <span><StatusDot tone="green" /> Feito para operações por setor</span>
-              <span>Execução, status e registro no mesmo fluxo</span>
+              <span><StatusDot tone="green" /> Para restaurantes, padarias e outras operações de alimentação</span>
             </div>
           </div>
           <ChecklistScene />
@@ -607,12 +641,11 @@ export function VistoLanding() {
 
       <section id="solicitar-demonstracao" className="marketing-final-cta" aria-labelledby="cta-title">
         <div className="marketing-frame marketing-final-cta__layout" data-gsap-reveal>
-          <div><p className="marketing-eyebrow"><span className="eyebrow-dot" /> Visto · HAWKS BI</p><h2 id="cta-title">Veja a rotina funcionando.<br /><em>Decida com o registro certo.</em></h2></div>
+          <div><p className="marketing-eyebrow"><span className="eyebrow-dot" /> Visto · HAWKS BI</p><h2 id="cta-title">Como seria a rotina <em>da sua equipe no Visto?</em></h2></div>
           <div>
-            <p>Agende uma demonstração guiada e veja como configurar, executar e acompanhar uma rotina no Visto.</p>
-            <p className="marketing-company-note">Visto é um produto da HAWKS BI.</p>
+            <p>Traga um checklist que sua equipe já usa. Na demonstração, mostramos como ele funciona no celular e o que você consegue acompanhar pelo painel.</p>
             <div className="marketing-final-cta__actions">
-              <Action href={DEMO_URL}>Agendar demonstração</Action>
+              <DemoAction onClick={openDemo} />
               <Action href={HAWKS_SITE_URL} external secondary>Conhecer a HAWKS BI</Action>
             </div>
           </div>
@@ -622,10 +655,18 @@ export function VistoLanding() {
       <footer className="marketing-footer">
         <div className="marketing-frame marketing-footer__layout">
           <div className="marketing-footer__brand"><VistoLogoLockup className="marketing-footer__product" reversed /><span className="marketing-footer__divider" aria-hidden="true" /><HawksWordmark className="marketing-footer__maker" reversed /></div>
-          <nav aria-label="Links do rodapé"><a href="#produto">Produto</a><a href="#novidades">Novidades</a><a href={LOGIN_URL}>Entrar no sistema</a><a href={DEMO_URL}>Agendar demonstração</a><a href={HAWKS_SITE_URL} target="_blank" rel="noreferrer">HAWKS BI ↗</a></nav>
+          <nav aria-label="Links do rodapé"><a href="#produto">Produto</a><a href="#novidades">Novidades</a><a href={LOGIN_URL}>Entrar no sistema</a><DemoAction onClick={openDemo} plain /><a href={HAWKS_SITE_URL} target="_blank" rel="noreferrer">HAWKS BI ↗</a></nav>
           <p>Visto · Rotinas por setor, execução e acompanhamento.</p>
         </div>
       </footer>
+      <DemoDialog
+        active={demoOpen}
+        dialogRef={demo}
+        onClose={() => {
+          setDemoOpen(false);
+          demoTrigger.current?.focus({ preventScroll: true });
+        }}
+      />
     </main>
   );
 }

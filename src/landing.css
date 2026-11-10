@@ -1529,9 +1529,20 @@ body {
 }
 
 .flow-visual--execute {
+  --tu-width: clamp(7.2rem, 11vw, 10rem);
+  position: relative;
   justify-content: center;
   align-items: flex-start;
   background: #f1f5f0;
+}
+
+.flow-tu {
+  position: absolute;
+  inset-block-start: calc(var(--tu-width) * -0.62);
+  inset-inline-end: 0.45rem;
+  width: var(--tu-width);
+  height: auto;
+  pointer-events: none;
 }
 
 .flow-check {
@@ -1539,6 +1550,8 @@ body {
   width: 2.1rem;
   height: 2.1rem;
   place-items: center;
+  align-self: flex-end;
+  margin-inline-end: calc(var(--tu-width) * 0.56);
   margin-bottom: 1.55rem;
   border-radius: 0.6rem;
   background: var(--marketing-green);
@@ -1808,11 +1821,48 @@ body {
   gap: clamp(3rem, 8vw, 9rem);
 }
 
-.marketing-audience__heading h2 {
-  max-width: 10ch;
+.marketing-audience__heading {
+  --lia-width: clamp(4.2rem, 7.6vw, 7.25rem);
+  padding-block-end: calc(var(--lia-width) * 0.85);
+}
+
+.audience-title-scene {
+  container-type: inline-size;
+  position: relative;
+  padding-inline-end: calc(var(--lia-width) + 0.35rem);
+}
+
+.marketing-audience__heading .audience-title-scene h2 {
+  max-width: none;
+  font-size: min(clamp(2.6rem, 4.8vw, 4.8rem), 18cqi);
+  letter-spacing: -0.04em;
+}
+
+.audience-title-scene__ending {
+  display: flex;
+  align-items: baseline;
+  gap: 0.12em;
+  white-space: nowrap;
+}
+
+.audience-title-scene__ending::after {
+  flex: 1;
+  margin-inline-end: -0.35rem;
+  border-bottom: 1px solid var(--marketing-line-light);
+  content: "";
+}
+
+.audience-lia {
+  position: absolute;
+  inset-block-start: calc(100% - var(--lia-width) * 0.92);
+  inset-inline-end: 0;
+  width: var(--lia-width);
+  height: auto;
+  pointer-events: none;
 }
 
 .marketing-audience__heading > p:last-child {
+  max-width: min(24rem, calc(100% - var(--lia-width) - 0.5rem));
   margin-top: 1.6rem;
 }
 
@@ -2036,6 +2086,11 @@ body {
     transform: scale(0.94);
     transform-origin: center right;
   }
+
+  .marketing-audience__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(23rem, 1fr);
+    gap: 2.4rem;
+  }
 }
 
 @media (max-width: 820px) {
@@ -2226,6 +2281,14 @@ body {
   .flow-card__visual {
     min-height: 8.5rem;
     margin-block: 1.6rem;
+  }
+
+  .flow-card__visual.flow-visual--execute {
+    margin-block-start: 2.4rem;
+  }
+
+  .marketing-audience__heading {
+    padding-block-end: calc(var(--lia-width) * 0.45);
   }
 
   .marketing-product__bento {
@@ -2595,6 +2658,10 @@ body {
   .marketing-product h2,
   .marketing-final-cta h2 {
     font-size: clamp(2.7rem, 13vw, 4.2rem);
+  }
+
+  .marketing-audience__heading .audience-title-scene h2 {
+    font-size: min(clamp(2.15rem, 9.8vw, 3.5rem), 18cqi);
   }
 
   .marketing-section-heading > p:last-child,

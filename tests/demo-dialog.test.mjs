@@ -39,6 +39,8 @@ async function openLanding(width, height, { availability = () => slots, submit, 
   page.setDefaultTimeout(10000);
   const errors = [];
   page.on("pageerror", (error) => errors.push(error.message));
+  await page.route("https://hawksbi.com.br/blog/feeds/visto.json", (route) =>
+    route.fulfill({ json: { schemaVersion: 1, articles: [] } }));
   await page.route(endpoint, async (route) => {
     if (route.request().method() === "POST") {
       assert.ok(submit, "Unexpected submission");
@@ -67,9 +69,8 @@ async function openLanding(width, height, { availability = () => slots, submit, 
   return { page, errors, dialog: page.locator("#visto-demo"), hero: page.locator("#inicio").getByRole("button", { name: demoLabel }) };
 }
 
-async function enterContact(dialog, phone = "+55 (11) 99999-9999") {
-  await dialog.getByLabel("Nome", { exact: true }).fill("Bruna");
-  await dialog.getByLabel("Sobrenome").fill("Teste");
+async function enterContact(dialog, phone = "+55 (11) 99999-9999", fullName = "Bruna de Oliveira Teste") {
+  await dialog.getByLabel("Nome completo").fill(fullName);
   await dialog.getByLabel("E-mail").fill("bruna@example.test");
   await dialog.getByLabel("Telefone com DDD").fill(phone);
   await dialog.getByRole("button", { name: "Continuar" }).click();
@@ -104,26 +105,23 @@ for (const [width, height] of [[320, 568], [375, 667], [768, 900], [1024, 768], 
       await hero.click();
       assert.equal(await dialog.getByRole("heading").innerText(), "Veja o Visto na prática");
       assert.equal(await dialog.evaluate(() => document.activeElement?.id), "visto-demo-title");
-      const progress = dialog.getByRole("list", { name: "Etapas da demonstração" });
-      assert.match(await progress.locator('[aria-current="step"]').innerText(), /Contato/);
+      assert.equal(await dialog.getByRole("list", { name: "Etapas da demonstração" }).count(), 0);
+      assert.equal(await dialog.getByRole("textbox").count(), 3);
       await assertFits(page, dialog, width, height);
       if (evidence) await page.screenshot({ path: `${evidence}/contato-${width}.png` });
       await page.keyboard.press("Tab");
-      assert.equal(await dialog.getByLabel("Nome", { exact: true }).evaluate((element) => element === document.activeElement), true);
+      assert.equal(await dialog.getByLabel("Nome completo").evaluate((element) => element === document.activeElement), true);
       for (let index = 0; index < 6; index++) {
         await page.keyboard.press("Tab");
         assert.equal(await page.evaluate(() => !document.activeElement?.closest("header, footer, section")), true);
       }
       await enterContact(dialog);
       await dialog.getByRole("heading", { name: "Conte sobre o seu negócio" }).waitFor();
-      assert.match(await progress.locator('[aria-current="step"]').innerText(), /Negócio/);
       await assertFits(page, dialog, width, height);
       if (evidence) await page.screenshot({ path: `${evidence}/negocio-${width}.png` });
       await enterBusiness(dialog);
       await dialog.getByRole("radio", { name: "14:00" }).waitFor();
       assert.equal(await dialog.getByRole("radio").count(), 6);
-      assert.match(await progress.locator('[aria-current="step"]').innerText(), /Horário/);
-      assert.equal(await progress.locator('[data-complete="true"]').count(), 2);
       await assertFits(page, dialog, width, height);
       if (evidence) await page.screenshot({ path: `${evidence}/agenda-${width}.png` });
       await page.keyboard.press("Escape");
@@ -154,12 +152,9 @@ test("step motion follows the visitor's motion preference", async () => {
   try {
     await hero.click();
     await enterContact(dialog);
-    const current = dialog.locator('[aria-current="step"]');
     const content = dialog.locator(".marketing-demo__content");
-    assert.equal(await current.evaluate((element) => getComputedStyle(element, "::after").transitionDuration), "0.24s");
     assert.equal(await content.evaluate((element) => getComputedStyle(element).animationName), "visto-demo-step");
     await page.emulateMedia({ reducedMotion: "reduce" });
-    assert.equal(await current.evaluate((element) => getComputedStyle(element, "::after").transitionProperty), "none");
     assert.equal(await content.evaluate((element) => getComputedStyle(element).animationName), "none");
   } finally {
     await page.close();
@@ -184,14 +179,17 @@ test("validates details, preserves them on Back and confirms only after booking"
   try {
     await hero.click();
     await dialog.getByRole("button", { name: "Continuar" }).click();
-    assert.equal(await dialog.getByLabel("Nome", { exact: true }).evaluate((input) => input.validity.valueMissing), true);
-    await enterContact(dialog, "123");
+    const fullName = dialog.getByLabel("Nome completo");
+    assert.equal(await fullName.evaluate((input) => input.validity.valueMissing), true);
+    await enterContact(dialog, "123", "Bruna");
+    assert.equal(await fullName.evaluate((input) => input.validity.customError), true);
+    await enterContact(dialog, "123", "Bruna   de Oliveira Teste");
     const phone = dialog.getByLabel("Telefone com DDD");
     assert.equal(await phone.evaluate((input) => input.validity.customError), true);
     await phone.fill("+55 (11) 99999-9999");
     await dialog.getByRole("button", { name: "Continuar" }).click();
     await dialog.getByRole("button", { name: "Voltar" }).click();
-    assert.equal(await dialog.getByLabel("Sobrenome").inputValue(), "Teste");
+    assert.equal(await fullName.inputValue(), "Bruna   de Oliveira Teste");
     await dialog.getByRole("button", { name: "Continuar" }).click();
     await enterBusiness(dialog);
     await dialog.getByRole("button", { name: "Voltar" }).click();
@@ -211,12 +209,12 @@ test("validates details, preserves them on Back and confirms only after booking"
     await dialog.getByRole("heading", { name: "Demonstração agendada" }).waitFor();
     assert.equal(requests.length, 2);
     assert.deepEqual(requests[0], requests[1]);
+    assert.equal(requests[0].lead.firstName, "Bruna");
+    assert.equal(requests[0].lead.lastName, "de Oliveira Teste");
     assert.equal(requests[0].lead.phone, "+5511999999999");
     assert.equal(requests[0].lead.employeeCount, 12);
     assert.equal(requests[0].lead.businessName, "Padaria de Teste");
     assert.match(await dialog.locator(".marketing-demo__receipt").innerText(), /14:00 às 15:00/);
-    assert.equal(await dialog.locator('[data-complete="true"]').count(), 3);
-    assert.equal(await dialog.locator('[aria-current="step"]').count(), 0);
     assert.deepEqual(errors, []);
     if (evidence) await page.screenshot({ path: `${evidence}/confirmacao-375.png` });
     await dialog.getByRole("button", { name: "Voltar ao site" }).click();

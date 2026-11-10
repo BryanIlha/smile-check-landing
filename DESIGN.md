@@ -16,4 +16,6 @@ design/audits e .impeccable guardam críticas e revisões com escopo/data. Para 
 
 Na abertura, Gui usa o WebP transparente de 384 × 576 px já publicado no login (INF-531). Os personagens da landing participam das cenas existentes. Gui fica ancorado à borda inferior da simulação (INF-564).
 
+Tu apoia a mão no cartão “Execute no momento certo” e aponta para a marca de conclusão. Lia apoia o cotovelo na linha que parte de “a rotina.” e olha para a lista de papéis. As duas imagens são decorativas, com WebP transparente, carregamento sob demanda e espaço reservado para manter a leitura. Poses geradas com ImageGen a partir das pranchas oficiais `dupla-astra.png` e `elenco.png` do aplicativo (INF-565).
+
 Na chamada de demonstração, o fundo verde profundo recebe texto em papel ou verde suave, ação principal com fundo em papel e ação secundária contornada. O foco de teclado usa contorno em papel (INF-564).

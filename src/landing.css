@@ -2884,7 +2884,7 @@ html:has(.marketing-demo[open]) {
   font-weight: 650;
 }
 
-.marketing-demo input {
+.marketing-demo :is(input, textarea, select) {
   width: 100%;
   min-height: 2.85rem;
   border: 1px solid var(--marketing-muted);
@@ -2897,14 +2897,119 @@ html:has(.marketing-demo[open]) {
   font-weight: 450;
 }
 
-.marketing-demo input::placeholder {
+.marketing-demo :is(input, textarea)::placeholder {
   color: var(--marketing-muted);
   opacity: 1;
 }
 
-.marketing-demo input:focus-visible {
+.marketing-demo :is(input, textarea, select):focus-visible {
   outline: 2px solid var(--marketing-green-deep);
   outline-offset: 2px;
+}
+
+.marketing-demo textarea {
+  resize: vertical;
+}
+
+.marketing-demo .marketing-demo__step {
+  margin: 0 0 0.35rem;
+  color: var(--marketing-green-deep);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.marketing-demo__names {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.marketing-demo__slots {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  min-width: 0;
+  gap: 0.45rem;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.marketing-demo__slots legend {
+  margin-bottom: 0.4rem;
+  padding: 0;
+  font-size: 0.875rem;
+  font-weight: 650;
+}
+
+.marketing-demo__slot {
+  position: relative;
+  cursor: pointer;
+}
+
+.marketing-demo .marketing-demo__slot input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  min-height: 0;
+  clip-path: inset(50%);
+}
+
+.marketing-demo__slot span {
+  display: grid;
+  min-height: 2.75rem;
+  place-items: center;
+  border: 1px solid var(--marketing-muted);
+  border-radius: 0.55rem;
+  color: var(--marketing-green-deep);
+  font-variant-numeric: tabular-nums;
+}
+
+.marketing-demo__slot :checked + span {
+  border-color: var(--marketing-green-deep);
+  background: var(--marketing-green-deep);
+  color: var(--marketing-paper);
+}
+
+.marketing-demo__slot :focus-visible + span {
+  outline: 2px solid var(--marketing-green-deep);
+  outline-offset: 2px;
+}
+
+.marketing-demo__slots:disabled .marketing-demo__slot {
+  cursor: default;
+}
+
+.marketing-demo__actions {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.marketing-demo .marketing-demo__back {
+  min-width: 4.5rem;
+  border: 1px solid var(--marketing-muted);
+  border-radius: 0.75rem;
+  background: transparent;
+  color: var(--marketing-green-deep);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.marketing-demo .marketing-demo__back:hover:not(:disabled) {
+  background: var(--marketing-green-soft);
+}
+
+.marketing-demo .marketing-demo__receipt {
+  display: grid;
+  gap: 0.25rem;
+  border-radius: 0.75rem;
+  background: var(--marketing-green-soft);
+  color: var(--marketing-green-deep);
+  padding: 0.85rem;
+}
+
+.marketing-demo p a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
 .marketing-demo__verification:not(:has(iframe)) {

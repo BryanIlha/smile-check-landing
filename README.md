@@ -37,9 +37,9 @@ Após o build, execute `npm run check:seo` nesta pasta. A validação verifica o
 
 ## Pedidos de demonstração
 
-Os botões comerciais abrem uma única modal. A landing consulta a configuração pública e envia o pedido para `https://hawksbi.com.br/api/visto-demo`. Essa rota do repositório `BryanIlha/hawks_site` aceita somente a origem oficial do Visto e usa as configurações de envio e verificação já mantidas no projeto Cloudflare Pages da Hawks BI.
+Os botões comerciais abrem uma modal com contato, qualificação e horários livres. A landing consulta `https://hawksbi.com.br/api/visto-demo`. A rota de `BryanIlha/hawks_site` aceita somente a origem oficial do Visto e consulta a agenda do Cockpit no servidor. O Cockpit vincula o lead à reserva e confirma o horário.
 
-Para validar localmente, execute `npm run build`, `npx playwright install chromium` e `npm run test:demo`. O teste usa respostas simuladas para a verificação e o envio. Antes de integrar a landing, publique a rota da Hawks, verifique o GET e o preflight para a origem oficial e confirme com a equipe comercial a entrega de um pedido de teste autorizado.
+Para validar localmente, execute `npm run build`, `npx playwright install chromium` e `npm run test:demo`. O teste usa horários e confirmações sintéticos. Para publicar, valide primeiro a integração do Cockpit (INF-568), a rota da Hawks e a reserva ponta a ponta em ambiente isolado.
 
 ## SEO e personagens — INF-539
 Guias públicos em `/checklists-digitais/`, `/controle-de-temperatura/` e `/checklist-com-foto/`, gerados a partir de `src/solutions.ts`. Build gera sitemap completo; `npm run check:seo` verifica todas as rotas.

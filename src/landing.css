@@ -3186,7 +3186,7 @@ html:has(.marketing-demo[open]) {
 }
 
 .marketing-demo__submit:hover:not(:disabled) {
-  background: var(--marketing-ink-soft);
+  background: color-mix(in srgb, var(--marketing-green-deep) 86%, var(--marketing-ink));
 }
 
 .marketing-demo__submit:disabled {

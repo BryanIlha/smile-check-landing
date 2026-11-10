@@ -9,13 +9,20 @@ const dayOption = new Intl.DateTimeFormat("pt-BR", { timeZone, weekday: "short",
 const hour = new Intl.DateTimeFormat("pt-BR", { timeZone, hour: "2-digit", minute: "2-digit" });
 
 const contactInitial = { fullName: "", email: "", phone: "" };
-const businessInitial = { employeeCount: "", biggestPain: "", businessName: "" };
+const businessInitial = { employeeCount: "", biggestPain: "", otherPain: "", businessName: "" };
+const painOptions = [
+  "Conferir pendências por turno",
+  "Padronizar rotinas",
+  "Controlar temperaturas",
+  "Organizar fotos e registros",
+  "Substituir papel e planilhas",
+] as const;
 const steps = ["Contato", "Negócio", "Horário"] as const;
 const titles = ["Veja o Visto na prática", "Conte sobre o seu negócio", "Escolha um horário"] as const;
 const descriptions = [
   "Comece pelos seus dados de contato.",
   "Assim a equipe prepara uma demonstração para a sua operação.",
-  "A demonstração dura 1 hora. Os horários estão no fuso de Brasília.",
+  "A demonstração dura 1 hora.",
 ] as const;
 
 type Slot = { id: string; startsAt: string; endsAt: string };
@@ -232,9 +239,10 @@ export function DemoDialog({
       return;
     }
 
+    const biggestPain = business.biggestPain === "other" ? business.otherPain.trim() : business.biggestPain;
     if (step === 1) {
-      const pain = event.currentTarget.elements.namedItem("biggestPain") as HTMLTextAreaElement;
-      if (!business.biggestPain.trim()) {
+      if (business.biggestPain === "other" && !biggestPain) {
+        const pain = event.currentTarget.elements.namedItem("otherPain") as HTMLTextAreaElement;
         pain.setCustomValidity("Conte qual é a principal dificuldade.");
         pain.reportValidity();
         return;
@@ -257,7 +265,7 @@ export function DemoDialog({
       email: contact.email.trim(),
       phone: normalizePhone(contact.phone),
       employeeCount: Number(business.employeeCount),
-      biggestPain: business.biggestPain.trim(),
+      biggestPain,
       businessName: business.businessName.trim(),
     };
     const request = { lead, slotId: selected.id };
@@ -357,7 +365,7 @@ export function DemoDialog({
               <span className="marketing-demo__receipt-mark"><DemoCheck /></span>
               <div>
                 <strong>{dayLabel.format(new Date(booking.startsAt))}</strong>
-                <span>{hour.format(new Date(booking.startsAt))} às {hour.format(new Date(booking.endsAt))} · horário de Brasília</span>
+                <span>{hour.format(new Date(booking.startsAt))} às {hour.format(new Date(booking.endsAt))}</span>
               </div>
             </div>
             <button type="button" className="marketing-demo__submit" onClick={(event) => event.currentTarget.closest("dialog")?.close()}>
@@ -397,12 +405,22 @@ export function DemoDialog({
                       value={business.employeeCount} onChange={(event) => setBusiness({ ...business, employeeCount: event.currentTarget.value })} />
                   </label>
                   <label>Qual é a maior dificuldade hoje?
-                    <textarea name="biggestPain" rows={3} maxLength={500} required placeholder="Ex.: acompanhar a execução das rotinas em cada turno."
-                      value={business.biggestPain} onChange={(event) => {
-                        event.currentTarget.setCustomValidity("");
-                        setBusiness({ ...business, biggestPain: event.currentTarget.value });
-                      }} />
+                    <select name="biggestPain" required value={business.biggestPain}
+                      onChange={(event) => setBusiness({ ...business, biggestPain: event.currentTarget.value })}>
+                      <option value="" disabled>Selecione uma opção</option>
+                      {painOptions.map((option) => <option key={option}>{option}</option>)}
+                      <option value="other">Outro</option>
+                    </select>
                   </label>
+                  {business.biggestPain === "other" && (
+                    <label>Descreva a dificuldade
+                      <textarea name="otherPain" rows={2} maxLength={500} required value={business.otherPain}
+                        onChange={(event) => {
+                          event.currentTarget.setCustomValidity("");
+                          setBusiness({ ...business, otherPain: event.currentTarget.value });
+                        }} />
+                    </label>
+                  )}
                   <label>Nome do negócio
                     <input name="businessName" autoComplete="organization" required maxLength={150} pattern={String.raw`.*\S.*`}
                       value={business.businessName} onChange={(event) => setBusiness({ ...business, businessName: event.currentTarget.value })} />
@@ -449,7 +467,7 @@ export function DemoDialog({
                   {retryOnly && selected && (
                     <p className="marketing-demo__receipt">
                       <strong>{dayLabel.format(new Date(selected.startsAt))}</strong>
-                      <span>{hour.format(new Date(selected.startsAt))} · horário de Brasília</span>
+                      <span>{hour.format(new Date(selected.startsAt))}</span>
                     </p>
                   )}
                   {needsReview && (

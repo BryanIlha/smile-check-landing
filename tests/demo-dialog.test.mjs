@@ -6,6 +6,7 @@ import { preview } from "vite";
 
 const endpoint = "https://hawksbi.com.br/api/visto-demo";
 const demoLabel = "Pedir demonstração";
+const defaultPain = "Conferir pendências por turno";
 const timeZone = "America/Sao_Paulo";
 const slots = [
   { id: "primeiro-horario", startsAt: "2030-11-20T14:00:00-03:00", endsAt: "2030-11-20T15:00:00-03:00" },
@@ -78,7 +79,7 @@ async function enterContact(dialog, phone = "+55 (11) 99999-9999", fullName = "B
 
 async function enterBusiness(dialog) {
   await dialog.getByLabel("Quantos funcionários o negócio tem?").fill("12");
-  await dialog.getByLabel("Qual é a maior dificuldade hoje?").fill("Conferir as rotinas dos turnos.");
+  await dialog.getByLabel("Qual é a maior dificuldade hoje?").selectOption(defaultPain);
   await dialog.getByLabel("Nome do negócio").fill("Padaria de Teste");
   await dialog.getByRole("button", { name: "Continuar" }).click();
 }
@@ -123,6 +124,7 @@ for (const [width, height] of [[320, 568], [375, 667], [768, 900], [1024, 768], 
       if (evidence) await page.screenshot({ path: `${evidence}/negocio-${width}.png` });
       await enterBusiness(dialog);
       await dialog.getByRole("radio", { name: "14:00" }).waitFor();
+      assert.doesNotMatch(await dialog.innerText(), /Brasília/);
       assert.equal(await dialog.getByRole("radio").count(), 6);
       assert.match(await progress.locator('[aria-current="step"]').innerText(), /Horário/);
       assert.equal(await progress.locator('[data-complete="true"]').count(), 2);
@@ -211,6 +213,7 @@ test("validates details, preserves them on Back and confirms only after booking"
     await enterBusiness(dialog);
     await dialog.getByRole("button", { name: "Voltar" }).click();
     assert.equal(await dialog.getByLabel("Nome do negócio").inputValue(), "Padaria de Teste");
+    assert.equal(await dialog.getByLabel("Qual é a maior dificuldade hoje?").inputValue(), defaultPain);
     await dialog.getByRole("button", { name: "Continuar" }).click();
     await choose(dialog, "14:00");
 
@@ -221,6 +224,7 @@ test("validates details, preserves them on Back and confirms only after booking"
     release();
     await dialog.getByRole("alert").waitFor();
     assert.match(await dialog.getByRole("alert").innerText(), /mesmo horário/);
+    assert.doesNotMatch(await dialog.locator(".marketing-demo__receipt").innerText(), /Brasília/);
     assert.equal(await dialog.getByRole("radio").count(), 0);
     await confirm.click();
     await dialog.getByRole("heading", { name: "Demonstração agendada" }).waitFor();
@@ -230,8 +234,10 @@ test("validates details, preserves them on Back and confirms only after booking"
     assert.equal(requests[0].lead.lastName, "de Oliveira Teste");
     assert.equal(requests[0].lead.phone, "+5511999999999");
     assert.equal(requests[0].lead.employeeCount, 12);
+    assert.equal(requests[0].lead.biggestPain, defaultPain);
     assert.equal(requests[0].lead.businessName, "Padaria de Teste");
     assert.match(await dialog.locator(".marketing-demo__receipt").innerText(), /14:00 às 15:00/);
+    assert.doesNotMatch(await dialog.locator(".marketing-demo__receipt").innerText(), /Brasília/);
     assert.equal(await dialog.locator('[data-complete="true"]').count(), 3);
     assert.equal(await dialog.locator('[aria-current="step"]').count(), 0);
     assert.deepEqual(errors, []);
@@ -240,6 +246,47 @@ test("validates details, preserves them on Back and confirms only after booking"
     assert.equal(await hero.evaluate((element) => element === document.activeElement), true);
   } finally {
     release();
+    await page.close();
+  }
+});
+
+test("Other requires a description and sends it as the lead's difficulty", async () => {
+  const requests = [];
+  const { page, dialog, hero } = await openLanding(320, 568, {
+    submit: async (route) => {
+      requests.push(route.request().postDataJSON());
+      await route.fulfill({ status: 201, json: { booking: { ...slots[0], id: "receipt", timeZone } } });
+    },
+  });
+  try {
+    await hero.click();
+    await enterContact(dialog);
+    await dialog.getByLabel("Quantos funcionários o negócio tem?").fill("12");
+    await dialog.getByLabel("Nome do negócio").fill("Padaria de Teste");
+    const pain = dialog.getByLabel("Qual é a maior dificuldade hoje?");
+    const detail = dialog.getByLabel("Descreva a dificuldade");
+    const next = dialog.getByRole("button", { name: "Continuar" });
+    assert.equal(await pain.getByRole("option").count(), 7);
+    await next.click();
+    assert.equal(await pain.evaluate((input) => input.validity.valueMissing), true);
+    await pain.selectOption("other");
+    await assertFits(page, dialog, 320, 568);
+    if (evidence) await page.screenshot({ path: `${evidence}/outro-320.png` });
+    await detail.fill("   ");
+    await next.click();
+    assert.equal(await detail.evaluate((input) => input.validity.customError), true);
+    await detail.fill("  Conferir a troca entre turnos.  ");
+    await pain.selectOption(defaultPain);
+    await detail.waitFor({ state: "hidden" });
+    await pain.selectOption("other");
+    assert.equal(await detail.inputValue(), "  Conferir a troca entre turnos.  ");
+    await next.click();
+    await choose(dialog, "14:00");
+    await dialog.getByRole("button", { name: "Confirmar horário" }).click();
+    await dialog.getByRole("heading", { name: "Demonstração agendada" }).waitFor();
+    assert.equal(requests.length, 1);
+    assert.equal(requests[0].lead.biggestPain, "Conferir a troca entre turnos.");
+  } finally {
     await page.close();
   }
 });

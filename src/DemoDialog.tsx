@@ -8,8 +8,9 @@ const dayLabel = new Intl.DateTimeFormat("pt-BR", { timeZone, weekday: "long", d
 const dayOption = new Intl.DateTimeFormat("pt-BR", { timeZone, weekday: "short", day: "2-digit", month: "long" });
 const hour = new Intl.DateTimeFormat("pt-BR", { timeZone, hour: "2-digit", minute: "2-digit" });
 
-const contactInitial = { fullName: "", email: "", phone: "" };
+const contactInitial = { firstName: "", lastName: "", email: "", phone: "" };
 const businessInitial = { employeeCount: "", biggestPain: "", businessName: "" };
+const steps = ["Contato", "Negócio", "Horário"] as const;
 const titles = ["Veja o Visto na prática", "Conte sobre o seu negócio", "Escolha um horário"] as const;
 const descriptions = [
   "Comece pelos seus dados de contato.",
@@ -66,11 +67,6 @@ function normalizePhone(value: string) {
   const digits = value.replace(/\D/g, "");
   const local = digits.length > 11 && digits.startsWith("55") ? digits.slice(2) : digits;
   return /^[1-9]\d(?:[2-5]\d{7}|9\d{8})$/.test(local) ? `+55${local}` : null;
-}
-
-function splitFullName(value: string) {
-  const [firstName = "", ...surname] = value.trim().split(/\s+/u);
-  return { firstName, lastName: surname.join(" ") };
 }
 
 function validSlot(value: unknown): value is Slot {
@@ -213,13 +209,6 @@ export function DemoDialog({
     if (pending.current) return;
 
     if (step === 0) {
-      const { firstName, lastName } = splitFullName(contact.fullName);
-      if (!lastName || firstName.length > 70 || lastName.length > 89) {
-        const field = event.currentTarget.elements.namedItem("fullName") as HTMLInputElement;
-        field.setCustomValidity(!lastName ? "Informe seu nome e sobrenome." : "O nome completo está longo demais.");
-        field.reportValidity();
-        return;
-      }
       const phone = normalizePhone(contact.phone);
       if (!phone) {
         const field = event.currentTarget.elements.namedItem("phone") as HTMLInputElement;
@@ -252,7 +241,8 @@ export function DemoDialog({
     }
 
     const lead = {
-      ...splitFullName(contact.fullName),
+      firstName: contact.firstName.trim(),
+      lastName: contact.lastName.trim(),
       email: contact.email.trim(),
       phone: normalizePhone(contact.phone),
       employeeCount: Number(business.employeeCount),
@@ -336,6 +326,18 @@ export function DemoDialog({
         </button>
         <h2 id="visto-demo-title" ref={heading} tabIndex={-1}>{booking ? "Demonstração agendada" : titles[step]}</h2>
         {!booking && <p className="marketing-demo__intro">{descriptions[step]}</p>}
+        <ol className="marketing-demo__progress" role="list" aria-label="Etapas da demonstração">
+          {steps.map((label, index) => {
+            const complete = !!booking || index < step;
+            return (
+              <li key={label} aria-current={!booking && index === step ? "step" : undefined} data-complete={complete}
+                aria-label={complete ? `${label}, concluída` : undefined}>
+                <span className="marketing-demo__step-mark" aria-hidden="true">{complete ? <DemoCheck /> : index + 1}</span>
+                <span>{label}</span>
+              </li>
+            );
+          })}
+        </ol>
       </div>
       <div className="marketing-demo__content" key={booking ? "receipt" : step}>
         {booking ? (
@@ -356,13 +358,16 @@ export function DemoDialog({
             <form onSubmit={submit} aria-busy={sending}>
               {step === 0 && (
                 <>
-                  <label>Nome completo
-                    <input name="fullName" autoComplete="name" placeholder="Nome e sobrenome" required maxLength={160}
-                      value={contact.fullName} onChange={(event) => {
-                        event.currentTarget.setCustomValidity("");
-                        setContact({ ...contact, fullName: event.currentTarget.value });
-                      }} />
-                  </label>
+                  <div className="marketing-demo__names">
+                    <label>Nome
+                      <input name="firstName" autoComplete="given-name" required maxLength={70} pattern={String.raw`.*\S.*`}
+                        value={contact.firstName} onChange={(event) => setContact({ ...contact, firstName: event.currentTarget.value })} />
+                    </label>
+                    <label>Sobrenome
+                      <input name="lastName" autoComplete="family-name" required maxLength={89} pattern={String.raw`.*\S.*`}
+                        value={contact.lastName} onChange={(event) => setContact({ ...contact, lastName: event.currentTarget.value })} />
+                    </label>
+                  </div>
                   <label>E-mail
                     <input name="email" type="email" autoComplete="email" placeholder="voce@empresa.com.br" required maxLength={254}
                       pattern={String.raw`[^\s@]+@[^\s@]+\.[^\s@]+`} value={contact.email}
@@ -464,9 +469,9 @@ export function DemoDialog({
                   disabled={sending || needsReview || (step === 2 && (!selected || challenge !== "ready"))}>
                   {step !== 2 ? "Continuar" : sending ? "Confirmando…" : "Confirmar horário"}
                   {!sending && (
-                    <span className="marketing-demo__action-mark" aria-hidden="true">
+                    <span className={`marketing-demo__action-mark${step < 2 ? " marketing-demo__action-mark--continue" : ""}`} aria-hidden="true">
                       {step === 2 ? <DemoCheck /> : (
-                        <svg className="marketing-demo__continue-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M3.5 8h9m-4-4 4 4-4 4" />
                         </svg>
                       )}

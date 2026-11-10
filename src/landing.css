@@ -2833,13 +2833,13 @@ html:has(.marketing-demo[open]) {
 
 .marketing-demo__header {
   position: relative;
-  padding: var(--demo-inset) var(--demo-inset) clamp(1.125rem, 3vw, 1.5rem);
-  border-bottom: 1px solid var(--marketing-line-light);
-  background: color-mix(in srgb, var(--marketing-green-soft) 45%, var(--marketing-surface));
+  padding: var(--demo-inset);
+  background: var(--marketing-green-deep);
+  color: var(--marketing-paper);
 }
 
 .marketing-demo__content {
-  padding: clamp(1.125rem, 3vw, 1.5rem) var(--demo-inset) var(--demo-inset);
+  padding: var(--demo-inset);
 }
 
 .marketing-demo h2 {
@@ -2865,6 +2865,77 @@ html:has(.marketing-demo[open]) {
 .marketing-demo .marketing-demo__intro {
   max-width: 38ch;
   margin-block-start: 0.55rem;
+  color: var(--marketing-green-soft);
+}
+
+.marketing-demo__progress {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin: clamp(0.9rem, 3vw, 1.2rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.marketing-demo__progress li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding-block-start: 0.6rem;
+  color: var(--marketing-green-soft);
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.marketing-demo__progress li::before,
+.marketing-demo__progress li::after {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 2px;
+  content: "";
+}
+
+.marketing-demo__progress li::before {
+  background: var(--marketing-line-dark);
+}
+
+.marketing-demo__progress li::after {
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 240ms var(--marketing-ease);
+}
+
+.marketing-demo__progress :is([aria-current], [data-complete="true"])::after {
+  transform: scaleX(1);
+}
+
+.marketing-demo__step-mark {
+  display: grid;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex: 0 0 1.25rem;
+  place-items: center;
+  border: 1px solid var(--marketing-line-dark);
+  border-radius: 0.25rem;
+  font-size: 0.7rem;
+  font-variant-numeric: tabular-nums;
+  transition: color 140ms ease-out, background-color 140ms ease-out;
+}
+
+.marketing-demo__progress [aria-current] {
+  color: var(--marketing-paper);
+}
+
+.marketing-demo__progress [aria-current] .marketing-demo__step-mark {
+  background: var(--marketing-paper);
+  color: var(--marketing-green-deep);
+}
+
+.marketing-demo__progress [data-complete="true"] .marketing-demo__step-mark {
+  background: var(--marketing-green-soft);
+  color: var(--marketing-green-deep);
 }
 
 .marketing-demo__close {
@@ -2878,12 +2949,16 @@ html:has(.marketing-demo[open]) {
   border: 0;
   border-radius: 0.65rem;
   background: transparent;
-  color: var(--marketing-ink-soft);
+  color: var(--marketing-paper);
   cursor: pointer;
 }
 
 .marketing-demo__close:hover {
-  background: var(--marketing-paper-deep);
+  background: var(--marketing-line-dark);
+}
+
+.marketing-demo .marketing-demo__close:focus-visible {
+  outline-color: var(--marketing-paper);
 }
 
 .marketing-demo form {
@@ -2937,6 +3012,12 @@ html:has(.marketing-demo[open]) {
   color: var(--marketing-green-deep);
 }
 
+.marketing-demo__names {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
 .marketing-demo__slots {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2974,13 +3055,13 @@ html:has(.marketing-demo[open]) {
   border: 1px solid var(--marketing-muted);
   border-radius: 0.55rem;
   background: var(--marketing-paper);
-  color: var(--marketing-ink-soft);
+  color: var(--marketing-green-deep);
   font-variant-numeric: tabular-nums;
   transition: background-color 140ms ease-out, color 140ms ease-out;
 }
 
 .marketing-demo__slot:hover :enabled:not(:checked) + span {
-  background: var(--marketing-paper-deep);
+  background: var(--marketing-green-soft);
 }
 
 .marketing-demo__slot :checked + span {
@@ -3001,7 +3082,7 @@ html:has(.marketing-demo[open]) {
 .marketing-demo__actions {
   display: flex;
   gap: 0.65rem;
-  margin-block-start: 0.25rem;
+  margin-block-start: 0.15rem;
 }
 
 .marketing-demo .marketing-demo__back {
@@ -3009,13 +3090,13 @@ html:has(.marketing-demo[open]) {
   border: 1px solid var(--marketing-muted);
   border-radius: 0.75rem;
   background: transparent;
-  color: var(--marketing-ink-soft);
+  color: var(--marketing-green-deep);
   font-weight: 700;
   cursor: pointer;
 }
 
 .marketing-demo .marketing-demo__back:hover:not(:disabled) {
-  background: var(--marketing-paper-deep);
+  background: var(--marketing-green-soft);
 }
 
 .marketing-demo .marketing-demo__back:disabled {
@@ -3027,8 +3108,8 @@ html:has(.marketing-demo[open]) {
   display: grid;
   gap: 0.25rem;
   border-radius: 0.75rem;
-  background: var(--marketing-paper);
-  color: var(--marketing-ink);
+  background: var(--marketing-green-soft);
+  color: var(--marketing-green-deep);
   padding: 1rem;
 }
 
@@ -3048,18 +3129,14 @@ html:has(.marketing-demo[open]) {
   font-size: 1.125rem;
 }
 
-.marketing-demo__receipt--confirmed div span {
-  color: var(--marketing-muted);
-}
-
 .marketing-demo__receipt-mark {
   display: grid;
   width: 2.5rem;
   height: 2.5rem;
   place-items: center;
   border-radius: 0.55rem;
-  background: var(--marketing-green-soft);
-  color: var(--marketing-green-deep);
+  background: var(--marketing-green-deep);
+  color: var(--marketing-paper);
 }
 
 .marketing-demo p a {
@@ -3104,12 +3181,9 @@ html:has(.marketing-demo[open]) {
   translate: 0 -50%;
 }
 
-.marketing-demo__submit:not(:disabled) .marketing-demo__continue-arrow {
-  color: var(--marketing-orange);
-}
-
-.marketing-demo__submit:has(.marketing-demo__continue-arrow) .marketing-demo__action-mark {
+.marketing-demo__action-mark--continue {
   background: var(--marketing-ink-soft);
+  color: var(--marketing-orange);
 }
 
 .marketing-demo__submit:disabled .marketing-demo__action-mark {
@@ -3117,7 +3191,7 @@ html:has(.marketing-demo[open]) {
 }
 
 .marketing-demo__submit:hover:not(:disabled) {
-  background: color-mix(in srgb, var(--marketing-green-deep) 82%, var(--marketing-ink));
+  background: var(--marketing-ink-soft);
 }
 
 .marketing-demo__submit:disabled {
@@ -3189,6 +3263,12 @@ html:has(.marketing-demo[open]) {
 
   .marketing-demo[open] .marketing-demo__content {
     animation: visto-demo-step 180ms ease-out;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marketing-demo__progress li::after {
+    transition: none;
   }
 }
 

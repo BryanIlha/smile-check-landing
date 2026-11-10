@@ -1,4 +1,4 @@
-# Formulário de demonstração mais simples
+# Progresso mais claro no agendamento de demonstração
 
 - id: inf-569-visto-modal-demonstracao
 - products: [visto]
@@ -16,11 +16,11 @@
 
 ## O que mudou
 
-A modal de demonstração tem cabeçalho em verde suave e um campo de nome completo. A seta laranja destaca o botão verde de continuar. O verde também indica o horário escolhido e a confirmação.
+A modal de demonstração passou a mostrar Contato, Negócio e Horário no cabeçalho. Os passos concluídos recebem um visto e a etapa atual acompanha a troca de campos. Uma seta laranja destaca o botão Continuar. A confirmação destaca a data e o horário escolhidos.
 
 ## Por que ajuda e como usar
 
-Abra “Pedir demonstração” na landing para preencher o contato, contar sobre seu negócio e escolher um horário. A confirmação destaca a data e o horário escolhidos.
+Quem abre a modal consegue ver em qual etapa está e o que vem a seguir. Abra “Pedir demonstração” na landing para começar.
 
 ## Evidências e limitações
 

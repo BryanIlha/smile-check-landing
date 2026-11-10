@@ -2815,7 +2815,6 @@ html:has(.marketing-demo[open]) {
 .marketing-demo {
   --demo-inset: clamp(1.125rem, 4.5vw, 2rem);
   --demo-form-gap: 0.85rem;
-  --demo-orange-on-paper: color-mix(in srgb, var(--marketing-orange) 65%, var(--marketing-ink));
   width: min(31rem, calc(100% - 1.5rem));
   max-height: calc(100dvh - 1.5rem);
   border: 0;
@@ -2920,8 +2919,8 @@ html:has(.marketing-demo[open]) {
   place-items: center;
   border: 1px solid var(--marketing-line-dark);
   border-radius: 0.25rem;
-  background: var(--marketing-paper);
-  color: var(--demo-orange-on-paper);
+  background: var(--marketing-ink-soft);
+  color: var(--marketing-orange);
   font-size: 0.7rem;
   font-variant-numeric: tabular-nums;
   transition: color 140ms ease-out, background-color 140ms ease-out;
@@ -3178,8 +3177,8 @@ html:has(.marketing-demo[open]) {
 }
 
 .marketing-demo__action-mark--continue {
-  background: var(--marketing-paper);
-  color: var(--demo-orange-on-paper);
+  background: var(--marketing-ink-soft);
+  color: var(--marketing-orange);
 }
 
 .marketing-demo__submit:disabled .marketing-demo__action-mark {

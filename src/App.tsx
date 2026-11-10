@@ -560,7 +560,12 @@ export function VistoLanding() {
             </article>
             <article className="flow-card" data-gsap-reveal>
               <div className="flow-card__number">02 <span>· executar</span></div>
-              <div className="flow-card__visual flow-visual--execute"><span className="flow-check">✓</span><b>6 de 8 itens</b><small>Registro em andamento</small></div>
+              <div className="flow-card__visual flow-visual--execute">
+                <img className="flow-tu" src="/assets/characters/tu-cartao.webp" width="400" height="332" alt="" loading="lazy" decoding="async" />
+                <span className="flow-check">✓</span>
+                <b>6 de 8 itens</b>
+                <small>Registro em andamento</small>
+              </div>
               <h3>Execute no momento certo.</h3>
               <p>O operador abre a rotina, responde item a item e registra a correção quando necessário.</p>
             </article>
@@ -612,7 +617,17 @@ export function VistoLanding() {
 
       <section id="para-quem" className="marketing-audience" aria-labelledby="audience-title">
         <div className="marketing-frame marketing-audience__layout">
-          <div className="marketing-audience__heading" data-gsap-reveal><p className="marketing-eyebrow"><span className="eyebrow-dot" /> Para quem é</p><h2 id="audience-title">Uma visão para quem executa e acompanha a rotina.</h2><p>Cada papel vê o que precisa fazer, revisar ou administrar.</p></div>
+          <div className="marketing-audience__heading" data-gsap-reveal>
+            <p className="marketing-eyebrow"><span className="eyebrow-dot" /> Para quem é</p>
+            <div className="audience-title-scene">
+              <h2 id="audience-title">
+                Uma visão para quem executa e acompanha{" "}
+                <span className="audience-title-scene__ending">a rotina.</span>
+              </h2>
+              <img className="audience-lia" src="/assets/characters/lia-titulo.webp" width="300" height="648" alt="" loading="lazy" decoding="async" />
+            </div>
+            <p>Cada papel vê o que precisa fazer, revisar ou administrar.</p>
+          </div>
           <div className="audience-list">
             <article data-gsap-reveal><span>01</span><div><h3>Operador</h3><p>Itens da rotina, ordem e status para executar sem dúvida.</p></div><b>Executar <i>↗</i></b></article>
             <article data-gsap-reveal><span>02</span><div><h3>Gestor</h3><p>Pendências, andamento, conclusão e correções para agir.</p></div><b>Acompanhar <i>↗</i></b></article>

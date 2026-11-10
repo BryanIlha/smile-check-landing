@@ -2919,8 +2919,8 @@ html:has(.marketing-demo[open]) {
   place-items: center;
   border: 1px solid var(--marketing-line-dark);
   border-radius: 0.25rem;
-  background: var(--marketing-ink-soft);
-  color: var(--marketing-orange);
+  background: var(--marketing-paper);
+  color: var(--marketing-green-deep);
   font-size: 0.7rem;
   font-variant-numeric: tabular-nums;
   transition: color 140ms ease-out, background-color 140ms ease-out;

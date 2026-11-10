@@ -480,6 +480,30 @@ body {
   transform-style: preserve-3d;
 }
 
+.scene-gui {
+  position: absolute;
+  z-index: 3;
+  inset-inline-end: -3.5rem;
+  inset-block-end: 1.6rem;
+  width: clamp(5.5rem, 9vw, 8rem);
+  height: auto;
+  pointer-events: none;
+  filter: drop-shadow(0 0.38rem 0.48rem rgba(17, 17, 17, 0.18));
+}
+
+@media (max-width: 1339px) {
+  .scene-stage {
+    margin-block-end: 3rem;
+  }
+
+  .scene-gui {
+    inset-inline-end: 0.2rem;
+    inset-block-start: 33.9rem;
+    inset-block-end: auto;
+    width: 5.5rem;
+  }
+}
+
 .device-mac {
   position: absolute;
   z-index: 2;
@@ -1279,7 +1303,7 @@ body {
 
 .scene-caption {
   position: absolute;
-  right: 0.7rem;
+  right: 6.5rem;
   bottom: 0.65rem;
   display: flex;
   align-items: center;
@@ -2153,6 +2177,7 @@ body {
   .scene-stage {
     min-height: 35rem;
     margin-top: 1rem;
+    margin-block-end: 7rem;
     transform: none;
   }
 
@@ -2276,6 +2301,7 @@ body {
   .scene-stage {
     min-height: 29rem;
     margin-inline: -0.65rem;
+    margin-block-end: 3.6rem;
   }
 
   .scene-stage::before {
@@ -2521,9 +2547,15 @@ body {
   }
 
   .scene-caption {
-    right: 0;
+    right: 5.5rem;
     bottom: 0.15rem;
     font-size: 0.48rem;
+  }
+
+  .scene-gui {
+    inset-inline-end: 0.15rem;
+    inset-block-start: 26.2rem;
+    width: 4.65rem;
   }
 
   .marketing-proof-strip__grid {

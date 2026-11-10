@@ -14,4 +14,4 @@ Ativos oficiais em public/assets/visto; usar wordmark, símbolo e lockup adequad
 
 design/audits e .impeccable guardam críticas e revisões com escopo/data. Para alterar a interface, usar Impeccable e a matriz comum; não tratar uma auditoria antiga como resultado de teste atual.
 
-Personagens INF-539: usar a prancha original aprovada em `public/assets/characters/elenco-visto.png`, proporção 1536×1024, com texto alternativo. Origem: coleção do aplicativo Visto (INF-487).
+Personagens INF-539: a prancha original da coleção do aplicativo (INF-487) aparece após “Para quem é”, com texto alternativo. Na abertura, Gui usa o WebP transparente de 384 × 576 px já publicado no login (INF-531). A ilustração é decorativa e está ancorada à borda inferior da simulação.

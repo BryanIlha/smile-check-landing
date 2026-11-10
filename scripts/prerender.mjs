@@ -13,6 +13,9 @@ for(const page of [null,...solutions]) {
   for(const [key,value] of Object.entries({description:page.description,'og:title':page.title,'og:description':page.description,'og:url':origin+path,'twitter:title':page.title,'twitter:description':page.description})) html=html.replace(new RegExp(`(<meta (?:name|property)="${key}" content=")[^"]*(")`),(_,a,b)=>a+escape(value)+b);
   html=html.replace(/rel="canonical" href="[^"]+"/,`rel="canonical" href="${origin+path}"`);
   const web=graph['@graph'].find(x=>x['@type']==='WebPage'); Object.assign(web,{'@id':origin+path+'#webpage',url:origin+path,name:page.title,description:page.description,breadcrumb:{'@id':origin+path+'#breadcrumbs'}});
+  delete web.mainEntity;
+  const app = graph['@graph'].find(node => node['@type'] === 'WebApplication');
+  delete app.mainEntityOfPage;
   graph['@graph'].push({'@type':'BreadcrumbList','@id':origin+path+'#breadcrumbs',itemListElement:[{'@type':'ListItem',position:1,name:'Visto',item:origin+'/'},{'@type':'ListItem',position:2,name:page.heading,item:origin+path}]});
  }
  html=html.replace(/<script type="application\/ld\+json">.*?<\/script>/s,`<script type="application/ld+json">${JSON.stringify(graph).replaceAll('<','\\u003c')}</script>`);

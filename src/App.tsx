@@ -621,14 +621,6 @@ export function VistoLanding() {
         </div>
       </section>
 
-      <section id="personagens" className="marketing-frame seo-home-section character-story" aria-labelledby="characters-title">
-        <div>
-          <h2 id="characters-title">Os personagens do Visto</h2>
-          <p>Cada pessoa pode escolher um avatar no perfil. Os personagens ajudam a reconhecer quem aparece na equipe e nos avisos. O nome de quem executou a rotina continua junto do registro.</p>
-          <a href="#novidades">Veja as novidades do Visto</a>
-        </div>
-        <img src="/assets/characters/elenco-visto.png" alt="Bento, Lia, Cris, Davi, Nina e Alex, seis dos personagens do Visto" width="1536" height="1024" loading="lazy" decoding="async" />
-      </section>
       <section className="marketing-frame seo-home-section" aria-labelledby="applications-title"><h2 id="applications-title">Da tarefa ao registro: conheça as aplicações.</h2><SolutionLinks /></section>
       <ProductNews />
 

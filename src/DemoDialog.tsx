@@ -5,10 +5,12 @@ const contactEmail = "comercial@hawksbi.com.br";
 const timeZone = "America/Sao_Paulo";
 const dayKey = new Intl.DateTimeFormat("en-CA", { timeZone, dateStyle: "short" });
 const dayLabel = new Intl.DateTimeFormat("pt-BR", { timeZone, weekday: "long", day: "2-digit", month: "long" });
+const dayOption = new Intl.DateTimeFormat("pt-BR", { timeZone, weekday: "short", day: "2-digit", month: "long" });
 const hour = new Intl.DateTimeFormat("pt-BR", { timeZone, hour: "2-digit", minute: "2-digit" });
 
-const contactInitial = { firstName: "", lastName: "", email: "", phone: "" };
+const contactInitial = { fullName: "", email: "", phone: "" };
 const businessInitial = { employeeCount: "", biggestPain: "", businessName: "" };
+const steps = ["Contato", "Negócio", "Horário"] as const;
 const titles = ["Veja o Visto na prática", "Conte sobre o seu negócio", "Escolha um horário"] as const;
 const descriptions = [
   "Comece pelos seus dados de contato.",
@@ -67,12 +69,25 @@ function normalizePhone(value: string) {
   return /^[1-9]\d(?:[2-5]\d{7}|9\d{8})$/.test(local) ? `+55${local}` : null;
 }
 
+function splitFullName(value: string) {
+  const [firstName = "", ...surname] = value.trim().split(/\s+/u);
+  return { firstName, lastName: surname.join(" ") };
+}
+
 function validSlot(value: unknown): value is Slot {
   if (!value || typeof value !== "object") return false;
   const slot = value as Partial<Slot>;
   return typeof slot.id === "string" && !!slot.id &&
     typeof slot.startsAt === "string" && typeof slot.endsAt === "string" &&
     Date.parse(slot.endsAt) - Date.parse(slot.startsAt) === 60 * 60 * 1000;
+}
+
+function DemoCheck() {
+  return (
+    <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+      <path d="m3.5 8 3 3 6-6" />
+    </svg>
+  );
 }
 
 export function DemoDialog({
@@ -119,7 +134,9 @@ export function DemoDialog({
   }
 
   useEffect(() => {
-    if (active) heading.current?.focus({ preventScroll: true });
+    if (!active || !heading.current) return;
+    heading.current.closest("dialog")?.scrollTo({ top: 0, behavior: "instant" });
+    heading.current.focus({ preventScroll: true });
   }, [active, step, booking]);
 
   useEffect(() => {
@@ -197,6 +214,13 @@ export function DemoDialog({
     if (pending.current) return;
 
     if (step === 0) {
+      const { firstName, lastName } = splitFullName(contact.fullName);
+      if (!lastName || firstName.length > 70 || lastName.length > 89) {
+        const field = event.currentTarget.elements.namedItem("fullName") as HTMLInputElement;
+        field.setCustomValidity(!lastName ? "Informe seu nome e sobrenome." : "O nome completo está longo demais.");
+        field.reportValidity();
+        return;
+      }
       const phone = normalizePhone(contact.phone);
       if (!phone) {
         const field = event.currentTarget.elements.namedItem("phone") as HTMLInputElement;
@@ -229,8 +253,7 @@ export function DemoDialog({
     }
 
     const lead = {
-      firstName: contact.firstName.trim(),
-      lastName: contact.lastName.trim(),
+      ...splitFullName(contact.fullName),
       email: contact.email.trim(),
       phone: normalizePhone(contact.phone),
       employeeCount: Number(business.employeeCount),
@@ -299,13 +322,13 @@ export function DemoDialog({
   const days = new Map<string, string>();
   for (const slot of schedule?.slots ?? []) {
     const start = new Date(slot.startsAt);
-    days.set(dayKey.format(start), dayLabel.format(start));
+    days.set(dayKey.format(start), dayOption.format(start));
   }
   const slots = schedule?.slots.filter((slot) => dayKey.format(new Date(slot.startsAt)) === day) ?? [];
 
   return (
     <dialog ref={dialogRef} id="visto-demo" className="marketing-demo" aria-labelledby="visto-demo-title" onClose={onClose}>
-      <div className="marketing-demo__content">
+      <div className="marketing-demo__header">
         <button type="button" className="marketing-demo__close" aria-label="Fechar demonstração"
           onClick={(event) => event.currentTarget.closest("dialog")?.close()}>
           <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round">
@@ -313,33 +336,46 @@ export function DemoDialog({
           </svg>
         </button>
         <h2 id="visto-demo-title" ref={heading} tabIndex={-1}>{booking ? "Demonstração agendada" : titles[step]}</h2>
+        {!booking && <p className="marketing-demo__intro">{descriptions[step]}</p>}
+        <ol className="marketing-demo__progress" role="list" aria-label="Etapas da demonstração">
+          {steps.map((label, index) => {
+            const complete = !!booking || index < step;
+            return (
+              <li key={label} aria-current={!booking && index === step ? "step" : undefined} data-complete={complete}
+                aria-label={complete ? `${label}, concluída` : undefined}>
+                <span className="marketing-demo__step-mark" aria-hidden="true">{complete ? <DemoCheck /> : index + 1}</span>
+                <span>{label}</span>
+              </li>
+            );
+          })}
+        </ol>
+      </div>
+      <div className="marketing-demo__content" key={booking ? "receipt" : step}>
         {booking ? (
           <>
-            <p className="marketing-demo__receipt">
-              <strong>{dayLabel.format(new Date(booking.startsAt))}</strong>
-              <span>{hour.format(new Date(booking.startsAt))} às {hour.format(new Date(booking.endsAt))} · horário de Brasília</span>
-            </p>
+            <div className="marketing-demo__receipt marketing-demo__receipt--confirmed">
+              <span className="marketing-demo__receipt-mark"><DemoCheck /></span>
+              <div>
+                <strong>{dayLabel.format(new Date(booking.startsAt))}</strong>
+                <span>{hour.format(new Date(booking.startsAt))} às {hour.format(new Date(booking.endsAt))} · horário de Brasília</span>
+              </div>
+            </div>
             <button type="button" className="marketing-demo__submit" onClick={(event) => event.currentTarget.closest("dialog")?.close()}>
               Voltar ao site
             </button>
           </>
         ) : (
           <>
-            <p className="marketing-demo__step">Etapa {step + 1} de 3</p>
-            <p>{descriptions[step]}</p>
             <form onSubmit={submit} aria-busy={sending}>
               {step === 0 && (
                 <>
-                  <div className="marketing-demo__names">
-                    <label>Nome
-                      <input name="firstName" autoComplete="given-name" required maxLength={70} pattern={String.raw`.*\S.*`}
-                        value={contact.firstName} onChange={(event) => setContact({ ...contact, firstName: event.currentTarget.value })} />
-                    </label>
-                    <label>Sobrenome
-                      <input name="lastName" autoComplete="family-name" required maxLength={89} pattern={String.raw`.*\S.*`}
-                        value={contact.lastName} onChange={(event) => setContact({ ...contact, lastName: event.currentTarget.value })} />
-                    </label>
-                  </div>
+                  <label>Nome completo
+                    <input name="fullName" autoComplete="name" placeholder="Nome e sobrenome" required maxLength={160}
+                      value={contact.fullName} onChange={(event) => {
+                        event.currentTarget.setCustomValidity("");
+                        setContact({ ...contact, fullName: event.currentTarget.value });
+                      }} />
+                  </label>
                   <label>E-mail
                     <input name="email" type="email" autoComplete="email" placeholder="voce@empresa.com.br" required maxLength={254}
                       pattern={String.raw`[^\s@]+@[^\s@]+\.[^\s@]+`} value={contact.email}
@@ -375,7 +411,7 @@ export function DemoDialog({
               )}
               {step === 2 && (
                 <>
-                  {scheduleStatus === "loading" && !retryOnly && <p role="status">Buscando horários disponíveis…</p>}
+                  {scheduleStatus === "loading" && !retryOnly && <p className="marketing-demo__status" role="status">Buscando horários disponíveis…</p>}
                   {scheduleStatus === "error" && !retryOnly && (
                     <p className="marketing-demo__error" role="status">
                       Os horários estão indisponíveis.{" "}
@@ -383,7 +419,7 @@ export function DemoDialog({
                     </p>
                   )}
                   {scheduleStatus === "ready" && !retryOnly && days.size === 0 && (
-                    <p role="status">Ainda não há horários abertos. Fale com a equipe pelo e-mail <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.</p>
+                    <p className="marketing-demo__status" role="status">Ainda não há horários abertos. Fale com a equipe pelo e-mail <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.</p>
                   )}
                   {scheduleStatus === "ready" && !retryOnly && days.size > 0 && (
                     <>
@@ -440,10 +476,18 @@ export function DemoDialog({
                 <button type="submit" className="marketing-demo__submit"
                   disabled={sending || needsReview || (step === 2 && (!selected || challenge !== "ready"))}>
                   {step !== 2 ? "Continuar" : sending ? "Confirmando…" : "Confirmar horário"}
+                  {!sending && (
+                    <span className={`marketing-demo__action-mark${step < 2 ? " marketing-demo__action-mark--continue" : ""}`} aria-hidden="true">
+                      {step === 2 ? <DemoCheck /> : (
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M3.5 8h9m-4-4 4 4-4 4" />
+                        </svg>
+                      )}
+                    </span>
+                  )}
                 </button>
               </div>
             </form>
-            <p className="marketing-demo__privacy">Usaremos seus dados para organizar a demonstração.</p>
           </>
         )}
       </div>

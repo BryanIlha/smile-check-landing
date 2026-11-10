@@ -316,6 +316,37 @@ body {
   font-style: normal;
 }
 
+.hero-rotating-word {
+  display: inline-grid;
+  color: var(--marketing-green-deep);
+  vertical-align: baseline;
+}
+
+.hero-rotating-word__value {
+  grid-area: 1 / 1;
+  visibility: hidden;
+  opacity: 0;
+  white-space: nowrap;
+}
+
+.hero-rotating-word__value.is-active {
+  visibility: visible;
+  opacity: 1;
+  animation: hero-word-enter 420ms var(--marketing-ease) both;
+}
+
+@keyframes hero-word-enter {
+  from {
+    opacity: 1;
+    transform: translateY(0.18em);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .marketing-product h2 em {
   color: var(--marketing-green);
   font-style: normal;

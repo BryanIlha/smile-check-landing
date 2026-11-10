@@ -111,6 +111,41 @@ const navigation = [
   ["Para quem é", "#para-quem"],
 ] as const;
 
+const HERO_ROTATING_LABELS = ["operação", "restaurante", "padaria", "bar"] as const;
+
+function HeroRotatingLabel() {
+  const [labelIndex, setLabelIndex] = useState(0);
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let timer: number | undefined;
+    const syncRotation = () => {
+      window.clearInterval(timer);
+      if (reducedMotion.matches) return;
+      timer = window.setInterval(() => {
+        setLabelIndex((currentIndex) => (currentIndex + 1) % HERO_ROTATING_LABELS.length);
+      }, 2600);
+    };
+    syncRotation();
+    reducedMotion.addEventListener("change", syncRotation);
+    return () => {
+      window.clearInterval(timer);
+      reducedMotion.removeEventListener("change", syncRotation);
+    };
+  }, []);
+
+  return (
+    <span className="hero-rotating-word" aria-live="polite" aria-atomic="true">
+      {HERO_ROTATING_LABELS.map((label, index) => (
+        <span key={label} className={`hero-rotating-word__value${index === labelIndex ? " is-active" : ""}`}
+          aria-hidden={index !== labelIndex}>
+          {label}
+        </span>
+      ))}
+    </span>
+  );
+}
+
 function Arrow() {
   return (
     <span className="marketing-arrow" aria-hidden="true">
@@ -520,7 +555,7 @@ export function VistoLanding() {
         <div className="marketing-frame marketing-hero__layout">
           <div className="marketing-hero__copy">
             <p className="marketing-eyebrow" data-hero-label><span className="eyebrow-dot" /> Visto · rotinas operacionais</p>
-            <h1 id="hero-title" data-hero-title>Veja as pendências <em>de cada turno.</em></h1>
+            <h1 id="hero-title" data-hero-title>Rotinas sob controle em qualquer <HeroRotatingLabel /></h1>
             <p className="marketing-lede" data-hero-copy>
               Sua equipe faz os checklists no celular. Você acompanha o que foi feito, quais temperaturas saíram da faixa e o que ainda precisa de correção.
             </p>

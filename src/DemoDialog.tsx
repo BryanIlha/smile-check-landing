@@ -8,7 +8,7 @@ const dayLabel = new Intl.DateTimeFormat("pt-BR", { timeZone, weekday: "long", d
 const dayOption = new Intl.DateTimeFormat("pt-BR", { timeZone, weekday: "short", day: "2-digit", month: "long" });
 const hour = new Intl.DateTimeFormat("pt-BR", { timeZone, hour: "2-digit", minute: "2-digit" });
 
-const contactInitial = { firstName: "", lastName: "", email: "", phone: "" };
+const contactInitial = { fullName: "", email: "", phone: "" };
 const businessInitial = { employeeCount: "", biggestPain: "", businessName: "" };
 const steps = ["Contato", "Negócio", "Horário"] as const;
 const titles = ["Veja o Visto na prática", "Conte sobre o seu negócio", "Escolha um horário"] as const;
@@ -67,6 +67,11 @@ function normalizePhone(value: string) {
   const digits = value.replace(/\D/g, "");
   const local = digits.length > 11 && digits.startsWith("55") ? digits.slice(2) : digits;
   return /^[1-9]\d(?:[2-5]\d{7}|9\d{8})$/.test(local) ? `+55${local}` : null;
+}
+
+function splitFullName(value: string) {
+  const [firstName = "", ...surname] = value.trim().split(/\s+/u);
+  return { firstName, lastName: surname.join(" ") };
 }
 
 function validSlot(value: unknown): value is Slot {
@@ -209,6 +214,13 @@ export function DemoDialog({
     if (pending.current) return;
 
     if (step === 0) {
+      const { firstName, lastName } = splitFullName(contact.fullName);
+      if (!lastName || firstName.length > 70 || lastName.length > 89) {
+        const field = event.currentTarget.elements.namedItem("fullName") as HTMLInputElement;
+        field.setCustomValidity(!lastName ? "Informe seu nome e sobrenome." : "O nome completo está longo demais.");
+        field.reportValidity();
+        return;
+      }
       const phone = normalizePhone(contact.phone);
       if (!phone) {
         const field = event.currentTarget.elements.namedItem("phone") as HTMLInputElement;
@@ -241,8 +253,7 @@ export function DemoDialog({
     }
 
     const lead = {
-      firstName: contact.firstName.trim(),
-      lastName: contact.lastName.trim(),
+      ...splitFullName(contact.fullName),
       email: contact.email.trim(),
       phone: normalizePhone(contact.phone),
       employeeCount: Number(business.employeeCount),
@@ -358,16 +369,13 @@ export function DemoDialog({
             <form onSubmit={submit} aria-busy={sending}>
               {step === 0 && (
                 <>
-                  <div className="marketing-demo__names">
-                    <label>Nome
-                      <input name="firstName" autoComplete="given-name" required maxLength={70} pattern={String.raw`.*\S.*`}
-                        value={contact.firstName} onChange={(event) => setContact({ ...contact, firstName: event.currentTarget.value })} />
-                    </label>
-                    <label>Sobrenome
-                      <input name="lastName" autoComplete="family-name" required maxLength={89} pattern={String.raw`.*\S.*`}
-                        value={contact.lastName} onChange={(event) => setContact({ ...contact, lastName: event.currentTarget.value })} />
-                    </label>
-                  </div>
+                  <label>Nome completo
+                    <input name="fullName" autoComplete="name" placeholder="Nome e sobrenome" required maxLength={160}
+                      value={contact.fullName} onChange={(event) => {
+                        event.currentTarget.setCustomValidity("");
+                        setContact({ ...contact, fullName: event.currentTarget.value });
+                      }} />
+                  </label>
                   <label>E-mail
                     <input name="email" type="email" autoComplete="email" placeholder="voce@empresa.com.br" required maxLength={254}
                       pattern={String.raw`[^\s@]+@[^\s@]+\.[^\s@]+`} value={contact.email}
@@ -480,7 +488,6 @@ export function DemoDialog({
                 </button>
               </div>
             </form>
-            <p className="marketing-demo__privacy">Usaremos seus dados para organizar a demonstração.</p>
           </>
         )}
       </div>

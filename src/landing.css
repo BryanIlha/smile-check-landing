@@ -2919,6 +2919,8 @@ html:has(.marketing-demo[open]) {
   place-items: center;
   border: 1px solid var(--marketing-line-dark);
   border-radius: 0.25rem;
+  background: var(--marketing-ink-soft);
+  color: var(--marketing-orange);
   font-size: 0.7rem;
   font-variant-numeric: tabular-nums;
   transition: color 140ms ease-out, background-color 140ms ease-out;
@@ -2929,8 +2931,7 @@ html:has(.marketing-demo[open]) {
 }
 
 .marketing-demo__progress [aria-current] .marketing-demo__step-mark {
-  background: var(--marketing-paper);
-  color: var(--marketing-green-deep);
+  border-color: var(--marketing-paper);
 }
 
 .marketing-demo__progress [data-complete="true"] .marketing-demo__step-mark {
@@ -3010,12 +3011,6 @@ html:has(.marketing-demo[open]) {
 .marketing-demo ::selection {
   background: var(--marketing-green-soft);
   color: var(--marketing-green-deep);
-}
-
-.marketing-demo__names {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.75rem;
 }
 
 .marketing-demo__slots {
@@ -3200,13 +3195,8 @@ html:has(.marketing-demo[open]) {
   cursor: default;
 }
 
-.marketing-demo .marketing-demo__privacy,
 .marketing-demo .marketing-demo__error {
   font-size: 0.82rem;
-}
-
-.marketing-demo .marketing-demo__privacy {
-  margin-block-start: 0.75rem;
 }
 
 .marketing-demo .marketing-demo__status,

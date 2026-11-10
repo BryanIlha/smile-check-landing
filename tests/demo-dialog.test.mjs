@@ -69,9 +69,8 @@ async function openLanding(width, height, { availability = () => slots, submit, 
   return { page, errors, dialog: page.locator("#visto-demo"), hero: page.locator("#inicio").getByRole("button", { name: demoLabel }) };
 }
 
-async function enterContact(dialog, phone = "+55 (11) 99999-9999") {
-  await dialog.getByLabel("Nome", { exact: true }).fill("Bruna");
-  await dialog.getByLabel("Sobrenome").fill("Teste");
+async function enterContact(dialog, phone = "+55 (11) 99999-9999", fullName = "Bruna de Oliveira Teste") {
+  await dialog.getByLabel("Nome completo").fill(fullName);
   await dialog.getByLabel("E-mail").fill("bruna@example.test");
   await dialog.getByLabel("Telefone com DDD").fill(phone);
   await dialog.getByRole("button", { name: "Continuar" }).click();
@@ -108,10 +107,11 @@ for (const [width, height] of [[320, 568], [375, 667], [768, 900], [1024, 768], 
       assert.equal(await dialog.evaluate(() => document.activeElement?.id), "visto-demo-title");
       const progress = dialog.getByRole("list", { name: "Etapas da demonstração" });
       assert.match(await progress.locator('[aria-current="step"]').innerText(), /Contato/);
+      assert.equal(await dialog.getByText("Usaremos seus dados para organizar a demonstração.", { exact: true }).count(), 0);
       await assertFits(page, dialog, width, height);
       if (evidence) await page.screenshot({ path: `${evidence}/contato-${width}.png` });
       await page.keyboard.press("Tab");
-      assert.equal(await dialog.getByLabel("Nome", { exact: true }).evaluate((element) => element === document.activeElement), true);
+      assert.equal(await dialog.getByLabel("Nome completo").evaluate((element) => element === document.activeElement), true);
       for (let index = 0; index < 6; index++) {
         await page.keyboard.press("Tab");
         assert.equal(await page.evaluate(() => !document.activeElement?.closest("header, footer, section")), true);
@@ -157,6 +157,10 @@ test("step motion follows the visitor's motion preference", async () => {
     await hero.click();
     const arrow = dialog.getByRole("button", { name: "Continuar" }).locator("svg");
     assert.equal(await arrow.evaluate((element) => getComputedStyle(element).stroke), "rgb(255, 121, 0)");
+    const markers = dialog.getByRole("list", { name: "Etapas da demonstração" }).locator(".marketing-demo__step-mark");
+    assert.deepEqual(await markers.evaluateAll((elements) =>
+      elements.map((element) => [element.textContent, getComputedStyle(element).color])),
+    [["1", "rgb(255, 121, 0)"], ["2", "rgb(255, 121, 0)"], ["3", "rgb(255, 121, 0)"]]);
     await enterContact(dialog);
     const current = dialog.locator('[aria-current="step"]');
     const content = dialog.locator(".marketing-demo__content");
@@ -188,14 +192,17 @@ test("validates details, preserves them on Back and confirms only after booking"
   try {
     await hero.click();
     await dialog.getByRole("button", { name: "Continuar" }).click();
-    assert.equal(await dialog.getByLabel("Nome", { exact: true }).evaluate((input) => input.validity.valueMissing), true);
-    await enterContact(dialog, "123");
+    const fullName = dialog.getByLabel("Nome completo");
+    assert.equal(await fullName.evaluate((input) => input.validity.valueMissing), true);
+    await enterContact(dialog, "123", "Bruna");
+    assert.equal(await fullName.evaluate((input) => input.validity.customError), true);
+    await enterContact(dialog, "123", "Bruna   de Oliveira Teste");
     const phone = dialog.getByLabel("Telefone com DDD");
     assert.equal(await phone.evaluate((input) => input.validity.customError), true);
     await phone.fill("+55 (11) 99999-9999");
     await dialog.getByRole("button", { name: "Continuar" }).click();
     await dialog.getByRole("button", { name: "Voltar" }).click();
-    assert.equal(await dialog.getByLabel("Sobrenome").inputValue(), "Teste");
+    assert.equal(await fullName.inputValue(), "Bruna   de Oliveira Teste");
     await dialog.getByRole("button", { name: "Continuar" }).click();
     await enterBusiness(dialog);
     await dialog.getByRole("button", { name: "Voltar" }).click();
@@ -215,6 +222,8 @@ test("validates details, preserves them on Back and confirms only after booking"
     await dialog.getByRole("heading", { name: "Demonstração agendada" }).waitFor();
     assert.equal(requests.length, 2);
     assert.deepEqual(requests[0], requests[1]);
+    assert.equal(requests[0].lead.firstName, "Bruna");
+    assert.equal(requests[0].lead.lastName, "de Oliveira Teste");
     assert.equal(requests[0].lead.phone, "+5511999999999");
     assert.equal(requests[0].lead.employeeCount, 12);
     assert.equal(requests[0].lead.businessName, "Padaria de Teste");

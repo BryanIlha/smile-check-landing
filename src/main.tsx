@@ -1,3 +1,4 @@
+import { SolutionPage } from './SolutionPage';
 import React from "react";
 import ReactDOM from "react-dom/client";
 
@@ -11,7 +12,7 @@ if (!root) {
 
 const app = (
   <React.StrictMode>
-    <VistoLanding />
+    {window.location.pathname === '/' ? <VistoLanding /> : <SolutionPage slug={window.location.pathname.replaceAll('/', '')} />}
   </React.StrictMode>
 );
 

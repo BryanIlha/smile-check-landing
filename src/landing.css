@@ -451,6 +451,30 @@ body {
   transform-style: preserve-3d;
 }
 
+.scene-gui {
+  position: absolute;
+  z-index: 3;
+  inset-inline-end: -3.5rem;
+  inset-block-end: 1.6rem;
+  width: clamp(5.5rem, 9vw, 8rem);
+  height: auto;
+  pointer-events: none;
+  filter: drop-shadow(0 0.38rem 0.48rem rgba(17, 17, 17, 0.18));
+}
+
+@media (max-width: 1339px) {
+  .scene-stage {
+    margin-block-end: 3rem;
+  }
+
+  .scene-gui {
+    inset-inline-end: 0.2rem;
+    inset-block-start: 33.9rem;
+    inset-block-end: auto;
+    width: 5.5rem;
+  }
+}
+
 .device-mac {
   position: absolute;
   z-index: 2;
@@ -1250,7 +1274,7 @@ body {
 
 .scene-caption {
   position: absolute;
-  right: 0.7rem;
+  right: 6.5rem;
   bottom: 0.65rem;
   display: flex;
   align-items: center;
@@ -2118,6 +2142,7 @@ body {
   .scene-stage {
     min-height: 35rem;
     margin-top: 1rem;
+    margin-block-end: 7rem;
     transform: none;
   }
 
@@ -2241,6 +2266,7 @@ body {
   .scene-stage {
     min-height: 29rem;
     margin-inline: -0.65rem;
+    margin-block-end: 3.6rem;
   }
 
   .scene-stage::before {
@@ -2486,9 +2512,15 @@ body {
   }
 
   .scene-caption {
-    right: 0;
+    right: 5.5rem;
     bottom: 0.15rem;
     font-size: 0.48rem;
+  }
+
+  .scene-gui {
+    inset-inline-end: 0.15rem;
+    inset-block-start: 26.2rem;
+    width: 4.65rem;
   }
 
   .marketing-proof-strip__grid {
@@ -2850,3 +2882,26 @@ html:has(.marketing-demo[open]) {
   text-underline-offset: 0.15em;
   cursor: pointer;
 }
+
+/* Public product guides reuse the established landing palette and type. */
+.seo-home-section { padding-top: 80px; padding-bottom: 80px; }
+.seo-home-section h2 { font-size: clamp(1.8rem,4vw,3rem); line-height:1.12; max-width:24ch; }
+.solution-links { display:flex; flex-wrap:wrap; gap:16px 32px; margin:32px 0; }
+.solution-links a, .seo-home-section a, .seo-page a { text-underline-offset: .25em; }
+.solution-links a { padding:12px 0; color:#0b6b3a; font-weight:600; }
+.character-story { display:grid; grid-template-columns:1fr 1.2fr; gap:40px; align-items:center; }
+.character-story p { line-height:1.7; max-width:60ch; margin:24px 0; }
+.character-story img { width:100%; height:auto; border-radius:12px; }
+.seo-page { max-width:960px; margin:auto; padding:40px 24px 80px; font-family:'Instrument Sans',sans-serif; color:#22231f; }
+.seo-page h1 { font-size:clamp(2.3rem,5vw,4.5rem); line-height:1.08; letter-spacing:-.03em; max-width:20ch; margin:40px 0 28px; }
+.seo-page h2 { font-size:clamp(1.5rem,3vw,2.1rem); line-height:1.2; margin-bottom:20px; }
+.seo-page h3 { margin:28px 0 12px; }
+.seo-page p { max-width:70ch; line-height:1.75; font-size:1.1rem; }
+.seo-page section { margin-top:56px; }
+.seo-breadcrumb { margin-top:30px; line-height:1.7; }
+.seo-page .marketing-action { color:white; }
+@media(max-width:700px) { .character-story { grid-template-columns:1fr; gap:24px; } .seo-home-section { padding-top:48px; padding-bottom:48px; } }
+
+body:has(.seo-page) { background:var(--marketing-paper); }
+.seo-page a:not(.marketing-action), .seo-home-section a { text-decoration:underline; text-underline-offset:.25em; }
+.seo-page .marketing-action { background:var(--marketing-green-deep); color:white; padding:16px 24px; display:inline-flex; border-radius:12px; }

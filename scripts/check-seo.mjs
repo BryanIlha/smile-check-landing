@@ -6,6 +6,8 @@ const canonical = html.match(/rel="canonical" href="([^"]+)"/)?.[1];
 assert(canonical && /^https:\/\/(visto|agendo)\.hawksbi\.com\.br\/$/.test(canonical), 'Canonical oficial ausente');
 assert.equal((html.match(/<h1\b/g) || []).length, 1, 'Conteúdo principal deve existir no HTML inicial');
 assert(html.includes('id="hero-title"'), 'Título visível deve ser pré-renderizado');
+assert(html.includes('Rotinas sob controle em qualquer'), 'Título original da hero ausente');
+assert(html.includes('hero-rotating-word__value is-active'), 'Palavra inicial da hero ausente');
 assert(!/href="https?:\/\/(?:localhost|127\.0\.0\.1)/.test(html), 'Link local no build público');
 assert(html.includes('name="robots" content="index, follow"'), 'Homepage deve permitir indexação');
 const data = html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s)?.[1];

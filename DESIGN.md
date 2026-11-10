@@ -10,6 +10,8 @@ Instrument Sans local (eixos de peso 400–700 e largura 75–100; licença em `
 
 Ativos oficiais em public/assets/visto; usar wordmark, símbolo e lockup adequados ao fundo, preservando proporções. Não redesenhar lettering. A composição, seções, demonstrações e CTA seguem o código aprovado. Preservar contraste, foco, teclado, mobile e movimento reduzido; GSAP não pode impedir a leitura.
 
+O título da abertura é “Rotinas sob controle em qualquer”, com operação, restaurante, padaria e bar alternando nessa ordem. A referência publicada é o build 975994ff, commit 6eff244, restaurado na INF-574.
+
 ## Evidências
 
 design/audits e .impeccable guardam críticas e revisões com escopo/data. Para alterar a interface, usar Impeccable e a matriz comum; não tratar uma auditoria antiga como resultado de teste atual.

@@ -16,7 +16,7 @@
 
 ## O que mudou
 
-A modal de demonstração passou a mostrar Contato, Negócio e Horário no cabeçalho. Os números laranja indicam a sequência e os passos concluídos recebem um visto. O contato usa um campo de nome completo e uma seta laranja destaca o botão Continuar. A confirmação destaca a data e o horário escolhidos.
+A modal de demonstração passou a mostrar Contato, Negócio e Horário no cabeçalho. Os números laranja sobre fundo claro indicam a sequência e os passos concluídos recebem um visto. O contato usa um campo de nome completo e uma seta laranja sobre fundo claro destaca o botão Continuar. A confirmação destaca a data e o horário escolhidos.
 
 ## Por que ajuda e como usar
 

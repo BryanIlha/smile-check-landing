@@ -156,11 +156,17 @@ test("step motion follows the visitor's motion preference", async () => {
   try {
     await hero.click();
     const arrow = dialog.getByRole("button", { name: "Continuar" }).locator("svg");
-    assert.equal(await arrow.evaluate((element) => getComputedStyle(element).stroke), "rgb(255, 121, 0)");
+    const arrowAppearance = await arrow.evaluate((element) => ({
+      color: getComputedStyle(element).stroke,
+      background: getComputedStyle(element.parentElement).backgroundColor,
+    }));
+    assert.equal(arrowAppearance.background, "rgb(247, 247, 244)");
     const markers = dialog.getByRole("list", { name: "Etapas da demonstração" }).locator(".marketing-demo__step-mark");
-    assert.deepEqual(await markers.evaluateAll((elements) =>
-      elements.map((element) => [element.textContent, getComputedStyle(element).color])),
-    [["1", "rgb(255, 121, 0)"], ["2", "rgb(255, 121, 0)"], ["3", "rgb(255, 121, 0)"]]);
+    const markerAppearances = await markers.evaluateAll((elements) => elements.map((element) => {
+      const style = getComputedStyle(element);
+      return { number: element.textContent, color: style.color, background: style.backgroundColor };
+    }));
+    assert.deepEqual(markerAppearances, ["1", "2", "3"].map((number) => ({ number, ...arrowAppearance })));
     await enterContact(dialog);
     const current = dialog.locator('[aria-current="step"]');
     const content = dialog.locator(".marketing-demo__content");
